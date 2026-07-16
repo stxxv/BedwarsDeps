@@ -1,3 +1,9 @@
+--[[
+
+    Used to compile files with a good executor that has proper debug and require capabilities.
+
+]]
+
 local cloneref = cloneref or function(obj)
     return obj
 end
@@ -34,7 +40,7 @@ for _, v in {'compiler', 'compiler/definitions', 'compiler/controllers'} do
 end
 
 for i,v in Definitions do
-    writefile('compiler/definitions/'..i..'.lua', HttpService:JSONEncode(v))
+    writefile('compiler/definitions/'..i..'.json', HttpService:JSONEncode(v))
 end
 
 for i,v in Controllers do
