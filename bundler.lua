@@ -22,7 +22,8 @@ local Definitions = {
     ProjectileMeta = require(ReplicatedStorage.TS.projectile["projectile-meta"]).ProjectileMeta,
     TeamUpgradeMeta = debug.getupvalue(require(ReplicatedStorage.TS.games.bedwars["team-upgrade"]["team-upgrade-meta"]).getTeamUpgradeMetaForQueue, 2),
     AppIds = require(lplr.PlayerScripts.TS.ui.types["app-config"]).BedwarsAppIds,
-    SummonerKitBalance = require(ReplicatedStorage.TS.games.bedwars.kit.kits.summoner["summoner-kit-balance"]).SummonerKitBalance
+    SummonerKitBalance = require(ReplicatedStorage.TS.games.bedwars.kit.kits.summoner["summoner-kit-balance"]).SummonerKitBalance,
+    GameSound = require(game:GetService("ReplicatedStorage").TS.sound["game-sound"]).GameSound
 }
 
 local Controllers = {
