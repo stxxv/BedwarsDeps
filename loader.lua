@@ -1,3 +1,9 @@
+local cloneref = cloneref or function(obj)
+    return obj
+end
+
+local HttpService = cloneref(game:GetService('HttpService'))
+
 local bwdeps = {}
 
 local function fetchFile(name, type)
@@ -9,7 +15,7 @@ function bwdeps:GetController(name)
 end
 
 function bwdeps:GetMeta(name)
-    return fetchFile('definitions/'..name..'/', 'json')
+    return HttpService:JSONDecode(fetchFile('definitions/'..name..'/', 'json'))
 end
 
 function bwdeps:GetMain(name)
