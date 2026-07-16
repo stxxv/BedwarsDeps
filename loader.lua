@@ -6,3 +6,5 @@ end
 
 function bwdeps:GetController(name)
 end
+
+return bwdeps
