@@ -6,8 +6,8 @@ local HttpService = cloneref(game:GetService('HttpService'))
 
 local bwdeps = {}
 
-local function fetchFile(name, type)
-    return loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/'..name..'.'..type))()
+local function fetchFile(name, codeext)
+    return loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/'..name..'.'..codeext))()
 end
 
 function bwdeps:GetController(name)
@@ -15,6 +15,10 @@ function bwdeps:GetController(name)
 end
 
 function bwdeps:GetMeta(name)
+    if name == 'ProdAnimation' then
+        return fetchFile('definitions/'..name..'/', 'lua')
+    end
+
     return HttpService:JSONDecode(fetchFile('definitions/'..name..'/', 'json'))
 end
 
