@@ -33,11 +33,16 @@ task.spawn(function()
                         returned = val,
                     }
                 end,
+                CallServer = function(self, ...)
+                    return v:InvokeServer(...)
+                end,
                 Connect = function(self, func)
                     v.OnClientInvoke = func
                 end
             })
         end
+
+        continue
     end
 end)
 
