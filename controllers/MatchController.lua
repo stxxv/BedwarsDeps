@@ -19,15 +19,15 @@ local timersecs, lasttimersecs = 0, 0
 
 task.spawn(function()
 	repeat task.wait()
-		seconds = tonumber(timer.Text:split(':')[2])
+		timersecs = tonumber(timer.Text:split(':')[2])
 	until matchController.matchState == 2
 end)
 
 task.spawn(function()
 	repeat
-        lastSeconds = seconds
+        lasttimersecs = timersecs
         task.wait()
-    until seconds > lastSeconds
+    until timersecs > lasttimersecs
 
 	matchController.matchState = 1;
 end)
