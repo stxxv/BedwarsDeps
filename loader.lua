@@ -7,6 +7,7 @@ local HttpService = cloneref(game:GetService('HttpService'))
 local bwdeps = {}
 
 local function fetchFile(name, codeext)
+    print('Fetching: '..name..'.'..codeext)
     return loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/'..name..'.'..codeext))()
 end
 
