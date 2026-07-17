@@ -59,4 +59,5 @@ function Client:GetNamespace(name)
     return {Get = Client.Get}
 end
 
+print('Loaded Client, table: '..Client)
 return Client
