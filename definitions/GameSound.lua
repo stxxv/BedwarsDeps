@@ -3692,4 +3692,4 @@ SoundManager:registerSound(t.NEW_BOW_FIRE, {
 	volume = 1.2
 })
 
-return {GameSound = t}
+return t
