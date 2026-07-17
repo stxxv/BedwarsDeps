@@ -3,14 +3,13 @@ local cloneref = cloneref or function(obj)
 end
 
 local HttpService = cloneref(game:GetService('HttpService'))
-
-local bwdeps = {}
+local gitCommit, bwdeps = HttpService:JSONDecode(game:HttpGet('https://api.github.com/repos/sstvskids/BedwarsDependencies/commits/main')).sha, {}
 
 local function fetchFile(name, codeext)
-    local time, file = os.time()
+    local time = os.clock()
     print('[COMPILER] Fetching file: '..name)
 
-    file = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/'..name..'.'..codeext))()
+    local file = loadstring(game:HttpGet(string.format('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/%s/%s.%s', gitCommit, name, codeext)))()
     print(('[COMPILER]: Fetched in %.3fs'):format(os.clock() - time))
 
     return file
