@@ -6,16 +6,14 @@ local HttpService = cloneref(game:GetService('HttpService'))
 
 local bwdeps = {}
 
-local function loadstring(code)
-    local suc, res = pcall(getgenv().loadstring, code)
-
-    print('[COMPILER]: Loadstring suc:'..suc..', result:'..res)
-    return (suc and res) or {}
-end
-
 local function fetchFile(name, codeext)
+    local time, file = os.time()
     print('[COMPILER] Fetching file: '..name)
-    return loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/'..name..'.'..codeext))()
+
+    file = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/'..name..'.'..codeext))()
+    print(('[COMPILER]: Fetched in %.3fs'):format(os.clock() - time))
+
+    return file
 end
 
 function bwdeps:GetController(name)
