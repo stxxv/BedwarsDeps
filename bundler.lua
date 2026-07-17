@@ -4,9 +4,9 @@
 
 ]]
 
-assert(isfolder, 'no folder functions :(')
-assert(delfolder, 'no folder functions :(')
-assert(makefolder, 'no folder functions :(')
+for _, v in {isfolder, delfolder, makefolder} do
+    assert(v, 'no folder functions :(')
+end
 
 assert(writefile, 'no file functions :(')
 assert(require, 'no require functions :(')
