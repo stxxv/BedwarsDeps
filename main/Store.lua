@@ -10,13 +10,12 @@ do
     matchController = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/loader.lua'))():GetController('MatchController')
 end
 
-repeat task.wait() until matchController ~= nil
 return {
     getState = function(self)
         return {
             Game = {
                 matchState = matchController.matchState,
-                queueType = workspace:GetAttribute('QueueType')
+                queueType = workspace:GetAttribute('QueueType'),
                 customMatch = {},
                 myTeam = {
                     id = lplr:GetAttribute('Team')
