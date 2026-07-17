@@ -1,6 +1,6 @@
 local SoundManager
 do
-    SoundManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/loader.lua'))():GetControllers('SoundManager')
+    SoundManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/loader.lua'))():GetController('SoundManager')
 end
 
 local t = {
