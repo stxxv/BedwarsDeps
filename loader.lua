@@ -6,6 +6,13 @@ local HttpService = cloneref(game:GetService('HttpService'))
 
 local bwdeps = {}
 
+local function loadstring(code)
+    local suc, res = pcall(getgenv().loadstring, code)
+
+    print(suc, res)
+    return res
+end
+
 local function fetchFile(name, codeext)
     print('Fetching: '..name..'.'..codeext)
     return loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/'..name..'.'..codeext))()

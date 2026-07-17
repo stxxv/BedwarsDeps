@@ -1742,5 +1742,3 @@ if not RunService:IsServer() then
 		}
 	}
 end
-
-error("Cannot use the client module on the server!")
