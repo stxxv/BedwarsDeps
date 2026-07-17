@@ -21,7 +21,7 @@ local HttpService = cloneref(game:GetService('HttpService'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
-local Definitions = {
+local Definitions, Controllers, Main = {
     DamageTypes = require(ReplicatedStorage.TS.damage["damage-type"]).DamageType,
     MatchStates = require(ReplicatedStorage.TS.match["match-state"]).MatchState,
     ItemMeta = require(ReplicatedStorage.TS.item["item-meta"]).items,
@@ -32,11 +32,10 @@ local Definitions = {
     AppIds = require(lplr.PlayerScripts.TS.ui.types["app-config"]).BedwarsAppIds,
     SummonerKitBalance = require(ReplicatedStorage.TS.games.bedwars.kit.kits.summoner["summoner-kit-balance"]).SummonerKitBalance,
     GameSound = game:GetService("ReplicatedStorage").TS.sound["game-sound"]
-}
-
-local Controllers = {
-    Network = lplr.PlayerScripts.TS.lib.network,
+}, {
     GameQuery = ReplicatedStorage.rbxts_include.node_modules["@easy-games"]["game-core"].out.shared["game-world-query"]["game-query-util"]
+}, {
+    Network = lplr.PlayerScripts.TS.lib.network
 }
 
 local time = os.time()
@@ -56,7 +55,7 @@ local function writefile(name, file)
     getgenv().writefile(name, file)
 end
 
-for _, v in {'compiler', 'compiler/definitions', 'compiler/controllers'} do
+for _, v in {'compiler', 'compiler/definitions', 'compiler/controllers', 'compiler/main'} do
     if not isfolder(v) then
         makefolder(v)
     else
@@ -80,4 +79,9 @@ for i,v in Controllers do
     writefile('compiler/controllers/'..i..'.lua', decompile(v))
 end
 
-print('[BUNDLER]: Completed in: '..(os.time() - time)..' seconds, feel free to star if you\'re using the BedwarsDependencies bundler for your script!')
+print('[BUNDLER]: Fetching main..')
+for i,v in Main do
+    writefile('compiler/main/'..i..'.lua', decompile(v))
+end
+
+print('[BUNDLER]: Completed in: '..(os.time() - time)..' seconds, feel free to star if you\'re using the Dependencies bundler for your script!')
