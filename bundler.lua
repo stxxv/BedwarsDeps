@@ -31,7 +31,7 @@ local Definitions = {
     TeamUpgradeMeta = debug.getupvalue(require(ReplicatedStorage.TS.games.bedwars["team-upgrade"]["team-upgrade-meta"]).getTeamUpgradeMetaForQueue, 2),
     AppIds = require(lplr.PlayerScripts.TS.ui.types["app-config"]).BedwarsAppIds,
     SummonerKitBalance = require(ReplicatedStorage.TS.games.bedwars.kit.kits.summoner["summoner-kit-balance"]).SummonerKitBalance,
-    GameSound = require(game:GetService("ReplicatedStorage").TS.sound["game-sound"]).GameSound
+    GameSound = game:GetService("ReplicatedStorage").TS.sound["game-sound"]
 }
 
 local Controllers = {
@@ -67,7 +67,7 @@ end
 
 print('[BUNDLER]: Fetching definitions.. (requires a good executor to require stuff, will error if bad!!)')
 for i,v in Definitions do
-    if i == 'ProdAnimations' then
+    if i == 'ProdAnimations' or i == 'GameSound' then
         writefile('compiler/definitions/'..i..'.lua', decompile(v))
         continue
     end

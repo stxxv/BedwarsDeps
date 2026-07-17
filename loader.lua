@@ -15,7 +15,7 @@ function bwdeps:GetController(name)
 end
 
 function bwdeps:GetMeta(name)
-    if name == 'ProdAnimation' then
+    if name == 'ProdAnimation' or name == 'GameSound' then
         return fetchFile('definitions/'..name..'/', 'lua')
     end
 
