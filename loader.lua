@@ -10,7 +10,7 @@ local function loadstring(code)
     local suc, res = pcall(getgenv().loadstring, code)
 
     print(suc, res)
-    return res
+    return (suc and res) or {}
 end
 
 local function fetchFile(name, codeext)
