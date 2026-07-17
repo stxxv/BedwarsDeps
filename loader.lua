@@ -3,14 +3,27 @@ local cloneref = cloneref or function(obj)
 end
 
 local HttpService = cloneref(game:GetService('HttpService'))
-local gitCommit, bwdeps = HttpService:JSONDecode(game:HttpGet('https://api.github.com/repos/sstvskids/BedwarsDependencies/commits/main')).sha, {}
+local bwdeps = {}
+
+do
+    if not isfolder('compiler') then
+        makefolder('compiler')
+    end
+
+    local commit = HttpService:JSONDecode(game:HttpGet('https://api.github.com/repos/sstvskids/BedwarsDependencies/commits'))[1].sha
+    if not isfile('compiler/commit.txt') then
+        writefile('compiler/commit.txt', commit)
+    elseif readfile('compiler/commit.txt') ~= commit then
+        writefile('compiler/commit.txt', commit)
+    end
+end
 
 local function fetchFile(name, codeext)
     local time = os.clock()
     print('[COMPILER] Fetching file: '..name)
 
-    local file = game:HttpGet(string.format('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/%s/%s.%s', gitCommit, name, codeext))
-    print(('[COMPILER]: Fetched in %.3fs'):format(os.clock() - time))
+    local file = game:HttpGet(string.format('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/%s/%s.%s', readfile('compiler/commit.txt'), name, codeext))
+    print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
 
     return file
 end
