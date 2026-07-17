@@ -9,12 +9,12 @@ local bwdeps = {}
 local function loadstring(code)
     local suc, res = pcall(getgenv().loadstring, code)
 
-    print(suc, res)
+    print('[COMPILER]: Loadstring suc:'..suc..', result:'..res)
     return (suc and res) or {}
 end
 
 local function fetchFile(name, codeext)
-    print('Fetching: '..name..'.'..codeext)
+    print('[COMPILER] Fetching file: '..name)
     return loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/'..name..'.'..codeext))()
 end
 
