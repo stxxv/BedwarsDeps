@@ -18,7 +18,7 @@ invmanage.getInventory = function(plr: Player)
 	end
 
 	if not ReplicatedStorage.Inventories:FindFirstChild(plr.Name) then
-        return;
+        return
     end
 
 	Cache[plr.UserId] = {}
