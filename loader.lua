@@ -17,19 +17,19 @@ local function fetchFile(name, codeext)
 end
 
 function bwdeps:GetController(name)
-    return fetchFile('controllers/'..name..'/', 'lua')
+    return fetchFile('controllers/'..name, 'lua')
 end
 
 function bwdeps:GetMeta(name)
     if name == 'ProdAnimation' or name == 'GameSound' then
-        return fetchFile('definitions/'..name..'/', 'lua')
+        return fetchFile('definitions/'..name, 'lua')
     end
 
-    return HttpService:JSONDecode(fetchFile('definitions/'..name..'/', 'json'))
+    return HttpService:JSONDecode(fetchFile('definitions/'..name, 'json'))
 end
 
 function bwdeps:GetMain(name)
-    return fetchFile('main/'..name..'/', 'lua')
+    return fetchFile('main/'..name, 'lua')
 end
 
 return bwdeps
