@@ -24,7 +24,10 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-	repeat lastSeconds = seconds task.wait() until seconds > lastSeconds
+	repeat
+        lastSeconds = seconds
+        task.wait()
+    until seconds > lastSeconds
 
 	matchController.matchState = 1;
 end)
