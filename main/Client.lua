@@ -44,9 +44,12 @@ for _, v in ReplicatedStorage:GetDescendants() do
     end
 end
 
+for i,v in Cache do print(i,v) end
+
 function Client:Get(name)
     for _, v in Cache do
         if v.inst.Name == name then
+            print(v)
             return v
         end
     end
