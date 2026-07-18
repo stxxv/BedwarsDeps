@@ -31,6 +31,10 @@ for _, v in ReplicatedStorage:GetDescendants() do
                     andThen = function(self, func)
                         func(val)
                     end,
+                    awaitStatus = function(self)
+                        repeat task.wait() until val ~= nil
+                        return val
+                    end
                     returned = val,
                 }
             end,
