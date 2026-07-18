@@ -6,16 +6,24 @@ do
     AnimationUtil = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/loader.lua'))():GetController('AnimationUtil')
 end
 
-function ViewmodelController:GetViewModel()
+function ViewmodelController:getViewModel()
     return workspace.CurrentCamera.Viewmodel
 end
 
 function ViewmodelController:GetAnimator()
-    if not self:GetViewModel() then return nil end
-    if not self:GetViewModel():FindFirstChildOfClass('Humanoid') then return nil end
-    if not self:GetViewModel():FindFirstChildOfClass('Humanoid'):FindFirstChildOfClass('Animator') then return nil end
+    local viewmodel = self:getViewModel()
 
-    return self:GetViewModel():FindFirstChildOfClass('Humanoid'):FindFirstChildOfClass('Animator')
+    if not viewmodel then
+        return nil
+    end
+
+    local humanoid = viewmodel:FindFirstChildOfClass('Humanoid')
+
+    if not humanoid then
+        return nil
+    end
+
+    return humanoid:FindFirstChildOfClass('Animator')
 end
 
 function ViewmodelController:PlayAnimation(animationType, config)
@@ -37,8 +45,6 @@ end
 
 function ViewmodelController:StopAnimation(track, fadeTime)
     if track then
-        table.remove(self.tracks, track)
-        
         track:Stop(fadeTime or 0)
         track:Destroy()
     end
