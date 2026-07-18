@@ -16,13 +16,14 @@ do
     end
 
     CollectionService:GetInstanceAddedSignal('block'):Connect(function(block)
-        Cache[block.Position] = v
+        Cache[block.Position] = block
         table.insert(Positions, block.Position)
     end)
 
     CollectionService:GetInstanceRemovedSignal('block'):Connect(function(block)
-        if table.find(Positions, block.Position) then
-            table.remove(Positions, table.find(Positions, block.Position))
+        local idx
+        if idx then
+            table.remove(Positions, idx)
         end
 
         Cache[block.Position] = nil
