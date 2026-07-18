@@ -1,17 +1,9 @@
 return {
     getPlayerTeam = function(Player: Player)
-        if not Player:IsA('Instance') then
+        if not Player or not Player:IsA('Player') then
             return nil
         end
 
-        if not Player:IsA('Player') then
-            return nil
-        end
-
-        if Player:GetAttribute('Team') then
-            return {
-                id = Player:GetAttribute('Team')
-            }
-        end
+        return Player:GetAttribute('Team')
     end
 }
