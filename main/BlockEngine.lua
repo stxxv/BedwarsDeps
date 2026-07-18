@@ -18,7 +18,7 @@ do
         table.insert(Positions, block.Position)
     end)
 
-    CollectionService:GetInstanceRemoveSignal('block'):Connect(function(block)
+    CollectionService:GetInstanceRemovedSignal('block'):Connect(function(block)
         if table.find(Positions, block.Position) then
             table.remove(Positions, table.find(Positions, block.Position))
         end
