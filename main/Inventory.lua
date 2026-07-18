@@ -21,7 +21,11 @@ invmanage.getInventory = function(plr: Player)
         return
     end
 
-	Cache[plr.UserId] = {}
+	if not Cache[plr.UserId] then
+		Cache[plr.UserId] = {}
+	end
+	table.clear(Cache[plr.UserId])
+	
 	Cache[plr.UserId].items = {}
     Cache[plr.UserId].armor = {}
     Cache[plr.UserId].hand = nil
