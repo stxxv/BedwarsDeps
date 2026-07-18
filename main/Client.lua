@@ -34,7 +34,7 @@ for _, v in ReplicatedStorage:GetDescendants() do
                     awaitStatus = function(self)
                         repeat task.wait() until val ~= nil
                         return val
-                    end
+                    end,
                     returned = val,
                 }
             end,
