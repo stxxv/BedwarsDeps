@@ -6,10 +6,7 @@ local CollectionService = cloneref(game:GetService('CollectionService'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
-local Engine, Cache = {}, CollectionService:GetTagged('Blocks')
-
-local rayParams = RaycastParams.new()
-rayParams.FilterType = Enum.RaycastFilterType.Exclude
+local Engine, Cache = {}, CollectionService:GetTagged('block')
 
 Engine.Store = {
     getBlockAt = function(self, pos: Vector3)
@@ -20,6 +17,15 @@ Engine.Store = {
         end
 
         return nil
+    end,
+    getAllBlockPositions = function(self)
+        local positions = {}
+
+        for i,v in Cache do
+            table.insert(positions, v.Position)
+        end
+
+        return positions
     end
 }
 
