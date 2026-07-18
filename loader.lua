@@ -10,11 +10,8 @@ do
         makefolder('compiler')
     end
 
-    local commit = HttpService:JSONDecode(game:HttpGet('https://api.github.com/repos/sstvskids/BedwarsDependencies/commits'))[1].sha
     if not isfile('compiler/commit.txt') then
-        writefile('compiler/commit.txt', commit)
-    elseif readfile('compiler/commit.txt') ~= commit then
-        writefile('compiler/commit.txt', commit)
+        writefile('compiler/commit.txt', HttpService:JSONDecode(game:HttpGet('https://api.github.com/repos/sstvskids/BedwarsDependencies/commits'))[1].sha)
     end
 end
 
