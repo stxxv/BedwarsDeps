@@ -41,7 +41,7 @@ invmanage.getInventory = function(plr: Player)
 	end
 
 	for i = 0, 2 do
-		local armorItem = lplr:FindFirstChild('Character'):FindFirstChild('ArmorInvItem_'..i)
+		local armorItem = lplr.Character:FindFirstChild('ArmorInvItem_'..i)
 
 		if armorItem and armorItem.Value then
 			table.insert(Cache[plr.UserId].armor, {
@@ -54,7 +54,7 @@ invmanage.getInventory = function(plr: Player)
 		end
 	end
 
-	local Hand = lplr:FindFirstChild('Character'):FindFirstChild('HandInvItem')
+	local Hand = lplr.Character:FindFirstChild('HandInvItem')
 	if Hand and Hand.Value then
 		Cache[plr.UserId].hand = {
 			tool = Hand.Value,
