@@ -13,7 +13,7 @@ local Knockback = {
     }
 }
 
-function Knockback:calculateKnockbackVelocity(direction, mass, modifiers, kbMultiplier)
+function Knockback.calculateKnockbackVelocity(direction, mass, modifiers, kbMultiplier)
     if direction.Magnitude == 0 then return Vector3.zero end
 
     kbMultiplier = kbMultiplier or 1
