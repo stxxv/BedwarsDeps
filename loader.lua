@@ -17,7 +17,7 @@ end
 
 local function fetchFile(name, codeext)
     local time = os.clock()
-    print('[COMPILER] Fetching file: '..name)
+    print('[COMPILER]: Fetching file: '..name)
 
     local file = game:HttpGet(string.format('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/%s/%s.%s', readfile('compiler/commit.txt'), name, codeext))
     print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
