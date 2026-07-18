@@ -24,21 +24,9 @@ Engine.Store = {
 }
 
 function Engine:getBlockPosition(pos: Vector3)
-    if not lplr.Character and lplr.Character.PrimaryPart then
-        return nil
-    end
+    local blockPos = pos / 3
 
-    rayParams.FilterDescendantsInstances = {lplr.Character}
-
-    local Origin = RootPart.Position
-    local Offset = Position - Origin
-
-    local BlockRaycast = workspace:Raycast(Origin, Offset, rayParams)
-    if BlockRaycast and BlockRaycast.Instance and BlockRaycast.Instance.CanCollide then
-        return BlockRaycast.Position
-    end
-
-    return nil
+    return Vector3.new(math.round(blockPos.X), math.round(blockPos.Y), math.round(blockPos.Z))
 end
 
 function Engine:getStore()
