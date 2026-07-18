@@ -9,7 +9,7 @@ local lplr = Players.LocalPlayer
 local Engine, Cache = {}, CollectionService:GetTagged('Blocks')
 
 local rayParams = RaycastParams.new()
-BlockRaycastParameters.FilterType = Enum.RaycastFilterType.Exclude
+rayParams.FilterType = Enum.RaycastFilterType.Exclude
 
 Engine.Store = {
     getBlockAt = function(self, pos: Vector3)
@@ -28,12 +28,12 @@ function Engine:getBlockPosition(pos: Vector3)
         return nil
     end
 
-    BlockRaycastParameters.FilterDescendantsInstances = {lplr.Character}
+    rayParams.FilterDescendantsInstances = {lplr.Character}
 
     local Origin = RootPart.Position
     local Offset = Position - Origin
 
-    local BlockRaycast = workspace:Raycast(Origin, Offset, BlockRaycastParameters)
+    local BlockRaycast = workspace:Raycast(Origin, Offset, rayParams)
     if BlockRaycast and BlockRaycast.Instance and BlockRaycast.Instance.CanCollide then
         return BlockRaycast.Position
     end
