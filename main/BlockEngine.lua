@@ -7,6 +7,23 @@ local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
 local Engine, Cache = {}, CollectionService:GetTagged('block')
+local Positions = {}
+
+do
+    for i,v in Cache do
+        table.insert(Positions, v.Position)
+    end
+
+    CollectionService:GetInstanceAddedSignal('block'):Connect(function(block)
+        table.insert(Positions, block.Position)
+    end)
+
+    CollectionService:GetInstanceRemoveSignal('block'):Connect(function(block)
+        if table.find(Positions, block.Position) then
+            table.remove(Positions, table.find(Positions, block.Position))
+        end
+    end)
+end
 
 Engine.Store = {
     getBlockAt = function(self, pos: Vector3)
@@ -19,13 +36,7 @@ Engine.Store = {
         return nil
     end,
     getAllBlockPositions = function(self)
-        local positions = {}
-
-        for i,v in Cache do
-            table.insert(positions, v.Position)
-        end
-
-        return positions
+        return Positions
     end
 }
 
