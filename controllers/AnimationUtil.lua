@@ -6,7 +6,7 @@ end
 local animUtil = {}
 animUtil.__index = animUtil
 
-function animUtil:playAnimation(self, object, animId, options)
+function animUtil:playAnimation(object, animId, options)
     options = options or {}
 
     local animator
