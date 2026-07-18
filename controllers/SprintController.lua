@@ -11,19 +11,15 @@ return {
     getMovementStatusModifier = function(self)
         local speedboost, speedboostpie = lplr.Character and lplr.Character:GetAttribute('SpeedBoost'), lplr.Character and lplr.Character:GetAttribute('SpeedPieBuff')
         if speedboost then
-            modifiers = {
-                [{
-                    moveSpeedMultiplier = speedboost
-                }] = true
-            }
+            modifiers[{
+                moveSpeedMultiplier = speedboost
+            }] = true
         elseif speedboostpie then
-            modifiers = {
-                [{
-                    moveSpeedMultiplier = speedboostpie
-                }] = true
-            }
+            modifiers[{
+                moveSpeedMultiplier = speedboostpie
+            }] = true
         else
-            modifiers = nil
+            modifiers = {}
         end
 
         return {
