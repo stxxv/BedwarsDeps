@@ -19,7 +19,7 @@ function ViewmodelController:GetAnimator()
 end
 
 function ViewmodelController:PlayAnimation(animationType, config)
-    if not self:GetAnimator() then return nil
+    if not self:GetAnimator() then return nil end
     config = config or {}
 
     local animation = Instance.new('Animation')
