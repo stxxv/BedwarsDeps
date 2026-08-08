@@ -8,6 +8,7 @@ end
 
 local VirtualUser = cloneref(game:GetService('VirtualUser'))
 local HttpService = cloneref(game:GetService('HttpService'))
+local CoreGui = cloneref(game:GetService('CoreGui'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
@@ -18,6 +19,39 @@ end
 
 local function isAlive()
 	return (lplr.Character:FindFirstChildOfClass('Humanoid').Health > 0 and true) or false
+end
+
+local PlayerGUI = lplr.PlayerGUI
+lplr.CharacterAdded:Connect(function()
+    PlayerGUI = lplr.PlayerGUI
+end)
+
+local function getBlockingUI(pos)
+    local suc, res = pcall(function()
+        return PlayerGUI:GetGuiObjectsAtPosition(pos.X, pos.Y)
+    end)
+
+    if suc then
+        for _, v in res do
+            if v.Visible and (v:IsA('TextButton') or obj:IsA('ImageButton') or obj:IsA('TextBox')) then
+                return true
+            end
+        end
+    end
+
+    local sucCore, resCore = pcall(function()
+        return PlayerGUI:GetGuiObjectsAtPosition(pos.X, pos.Y)
+    end)
+
+    if sucCore then
+        for _, v in resCore do
+            if v.Visible and (v:IsA('TextButton') or obj:IsA('ImageButton') or obj:IsA('TextBox')) then
+                return true
+            end
+        end
+    end
+
+    return false
 end
 
 do
@@ -51,6 +85,10 @@ function SwordController:swingSwordAtMouse()
     local item = self:getHandItem()
     if not item then
     	return
+    end
+
+    if getBlockingUI(Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)) then
+        return
     end
 
     VirtualUser:ClickButton1(Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2))
