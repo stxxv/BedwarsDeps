@@ -6,8 +6,7 @@ local CollectionService = cloneref(game:GetService('CollectionService'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
-local Engine, Cache = {}, {}
-local Positions = {}
+local Engine, Cache, Positions = {}, {}, {}
 
 do
     for i,v in CollectionService:GetTagged('block') do
