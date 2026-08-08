@@ -21,14 +21,14 @@ local function isAlive()
 	return (lplr.Character:FindFirstChildOfClass('Humanoid').Health > 0 and true) or false
 end
 
-local PlayerGUI = lplr.PlayerGUI
+local PlayerGui = lplr.PlayerGui
 lplr.CharacterAdded:Connect(function()
-    PlayerGUI = lplr.PlayerGUI
+    PlayerGui = lplr.PlayerGui
 end)
 
 local function getBlockingUI(pos)
     local suc, res = pcall(function()
-        return PlayerGUI:GetGuiObjectsAtPosition(pos.X, pos.Y)
+        return PlayerGui:GetGuiObjectsAtPosition(pos.X, pos.Y)
     end)
 
     if suc then
@@ -40,7 +40,7 @@ local function getBlockingUI(pos)
     end
 
     local sucCore, resCore = pcall(function()
-        return PlayerGUI:GetGuiObjectsAtPosition(pos.X, pos.Y)
+        return CoreGui:GetGuiObjectsAtPosition(pos.X, pos.Y)
     end)
 
     if sucCore then
