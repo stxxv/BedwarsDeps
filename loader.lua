@@ -5,21 +5,11 @@ end
 local HttpService = cloneref(game:GetService('HttpService'))
 local bwdeps = {}
 
-do
-    if not isfolder('compiler') then
-        makefolder('compiler')
-    end
-
-    if not isfile('compiler/commit.txt') then
-        writefile('compiler/commit.txt', HttpService:JSONDecode(game:HttpGet('https://api.github.com/repos/sstvskids/BedwarsDependencies/commits'))[1].sha)
-    end
-end
-
 local function fetchFile(name, codeext)
     local time = os.clock()
     print('[COMPILER]: Fetching file: '..name)
 
-    local file = game:HttpGet(string.format('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/%s/%s.%s', readfile('compiler/commit.txt'), name, codeext))
+    local file = game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/%s.%s', name, codeext))
     print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
 
     return file

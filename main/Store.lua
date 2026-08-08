@@ -7,7 +7,7 @@ local lplr = Players.LocalPlayer
 
 local matchController
 do
-    matchController = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/loader.lua'))():GetController('MatchController')
+    matchController = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))():GetController('MatchController')
 end
 
 return {

@@ -1,6 +1,6 @@
 local AnimationType
 do
-    AnimationType = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/loader.lua'))():GetMeta('AnimationType')
+    AnimationType = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))():GetMeta('AnimationType')
 end
 
 return {

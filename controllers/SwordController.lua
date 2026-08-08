@@ -11,7 +11,7 @@ local HttpService = cloneref(game:GetService('HttpService'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
-local ItemMeta = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/loader.lua'))():GetMeta('ItemMeta')
+local ItemMeta = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))():GetMeta('ItemMeta')
 local function getItemMeta(item)
 	return ItemMeta.items[item]
 end

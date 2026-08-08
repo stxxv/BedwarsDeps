@@ -1,3 +1,9 @@
+--[[
+
+    to-do: add proper Sprint on attribute change (Sprinting)
+
+]]
+
 local cloneref = cloneref or function(obj)
     return obj
 end

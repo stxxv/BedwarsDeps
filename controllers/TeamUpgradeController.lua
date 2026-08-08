@@ -1,6 +1,6 @@
 local Client
 do
-    Client = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/BedwarsDependencies/refs/heads/main/loader.lua'))():GetMain('Client')
+    Client = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))():GetMain('Client')
 end
 
 local Upgrades = {}
