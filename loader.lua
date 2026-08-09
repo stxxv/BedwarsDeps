@@ -3,12 +3,13 @@ local cloneref = cloneref or function(obj)
 end
 
 local HttpService = cloneref(game:GetService('HttpService'))
+local env = (type(getgenv) == 'function' and getgenv()) or _G
 
-if not getgenv().HTTPCache then
-    getgenv().HTTPCache = {}
+if not env.HTTPCache then
+    env.HTTPCache = {}
 end
 
-local bwdeps, Cache = {}, getgenv().HTTPCache
+local bwdeps, Cache = {}, env.HTTPCache
 
 local function fetchFile(name, codeext)
     local time = os.clock()
