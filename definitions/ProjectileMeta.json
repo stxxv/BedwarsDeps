@@ -647,23 +647,22 @@
         "predictionLifetimeSec": 1,
         "flightRotation": null
     },
-    "tennis_ball": {
-        "combat": {
-            "damage": 25
-        },
-        "impactParticles": "default",
-        "lifetimeSec": 3,
-        "knockbackMultiplier": {
-            "vertical": 1.15,
-            "horizontal": 1.3
-        },
-        "predictionLifetimeSec": 2,
-        "launchVelocity": 180,
+    "fire_match": {
+        "launchVelocity": 80,
         "impactSound": [
             "rbxassetid://8165640209"
         ],
-        "armorMultiplier": 0.8,
+        "combat": {
+            "noApplyDamageCooldown": true,
+            "damageType": 15,
+            "damage": 1
+        },
         "flightRotation": null,
+        "lifetimeSec": 2.8,
+        "knockbackMultiplier": {
+            "disabled": true
+        },
+        "predictionLifetimeSec": 2,
         "gravitationalAcceleration": 35
     },
     "mage_spell_fire": {
@@ -1194,6 +1193,45 @@
         "predictionLifetimeSec": 2,
         "gravitationalAcceleration": 0
     },
+    "villain_magical_girl_rapier_projectile": {
+        "firedFromServer": true,
+        "combat": {
+            "noApplyDamageCooldown": true,
+            "ignoreDamageTakenCooldown": true,
+            "damage": 25
+        },
+        "lifetimeSec": 1.2,
+        "knockbackMultiplier": {
+            "horizontal": 0.1
+        },
+        "predictionLifetimeSec": 1,
+        "launchVelocity": 400,
+        "spinSpeed": 20,
+        "flightRotation": null,
+        "bypassShooterLock": true,
+        "gravitationalAcceleration": 2,
+        "spinAxis": null,
+        "projectileModel": "villain_magical_girl_rapier_projectile"
+    },
+    "owl_projectile_EMERALD": {
+        "firedFromServer": true,
+        "combat": {
+            "noApplyDamageCooldown": true,
+            "armorMultiplier": 0.8,
+            "ignoreDamageTakenCooldown": true,
+            "damage": 18
+        },
+        "lifetimeSec": 2.4,
+        "knockbackMultiplier": {
+            "horizontal": 1
+        },
+        "predictionLifetimeSec": 1,
+        "launchVelocity": 220,
+        "bypassShooterLock": true,
+        "gravitationalAcceleration": 35,
+        "hitscanRegionMultiplier": 2,
+        "projectileModel": "owl_projectile"
+    },
     "frosted_snowball": {
         "launchVelocity": 270,
         "impactSound": [
@@ -1289,34 +1327,6 @@
         "flightRotation": null,
         "getProjectileOverridesFunction": null
     },
-    "throwable_egg": {
-        "launchVelocity": 120,
-        "impactSound": [
-            "rbxassetid://13024113119"
-        ],
-        "impactParticles": "default",
-        "flightRotation": null,
-        "gravitationalAcceleration": 70
-    },
-    "owl_projectile_EMERALD": {
-        "firedFromServer": true,
-        "combat": {
-            "noApplyDamageCooldown": true,
-            "armorMultiplier": 0.8,
-            "ignoreDamageTakenCooldown": true,
-            "damage": 18
-        },
-        "lifetimeSec": 2.4,
-        "knockbackMultiplier": {
-            "horizontal": 1
-        },
-        "predictionLifetimeSec": 1,
-        "launchVelocity": 220,
-        "bypassShooterLock": true,
-        "gravitationalAcceleration": 35,
-        "hitscanRegionMultiplier": 2,
-        "projectileModel": "owl_projectile"
-    },
     "frost_single_water_bullet": {
         "launchVelocity": 180,
         "impactSound": [
@@ -1357,6 +1367,14 @@
         },
         "gravitationalAcceleration": 10
     },
+    "jack_oil_projectile": {
+        "launchVelocity": 140,
+        "gravitationalAcceleration": 65,
+        "lifetimeSec": 2.8,
+        "flightRotation": null,
+        "predictionLifetimeSec": 2,
+        "projectileModel": "oil_projectile"
+    },
     "slime_water_bullet": {
         "launchVelocity": 180,
         "impactSound": [
@@ -1377,12 +1395,6 @@
         },
         "gravitationalAcceleration": 10
     },
-    "deploy_skeleton": {
-        "launchVelocity": 80,
-        "flightRotation": null,
-        "predictionLifetimeSec": 1,
-        "gravitationalAcceleration": 30
-    },
     "single_water_bullet": {
         "launchVelocity": 180,
         "impactSound": [
@@ -1402,6 +1414,28 @@
         },
         "gravitationalAcceleration": 10,
         "projectileModel": "water"
+    },
+    "deploy_skeleton": {
+        "launchVelocity": 80,
+        "flightRotation": null,
+        "predictionLifetimeSec": 1,
+        "gravitationalAcceleration": 30
+    },
+    "watermelon_seed": {
+        "launchVelocity": 330,
+        "impactSound": [
+            "rbxassetid://9185484842"
+        ],
+        "combat": {
+            "damage": 10
+        },
+        "impactParticles": "default",
+        "flightRotation": null,
+        "knockbackMultiplier": {
+            "disabled": true
+        },
+        "lifetimeSec": 2,
+        "gravitationalAcceleration": 10
     },
     "life_headhunter_arrow": {
         "combat": {
@@ -1426,22 +1460,6 @@
         "flightRotation": null,
         "projectileModel": "life_arrow"
     },
-    "watermelon_seed": {
-        "launchVelocity": 330,
-        "impactSound": [
-            "rbxassetid://9185484842"
-        ],
-        "combat": {
-            "damage": 10
-        },
-        "impactParticles": "default",
-        "flightRotation": null,
-        "knockbackMultiplier": {
-            "disabled": true
-        },
-        "lifetimeSec": 2,
-        "gravitationalAcceleration": 10
-    },
     "attack_spirit": {
         "canHitAllyPlayers": true,
         "lifetimeSec": 2.8,
@@ -1458,6 +1476,14 @@
         ],
         "gravitationalAcceleration": 80,
         "projectileModel": "attack_spirit"
+    },
+    "lightning_strike": {
+        "launchVelocity": 120,
+        "impactSound": [
+            "rbxassetid://7263165647"
+        ],
+        "flightRotation": null,
+        "gravitationalAcceleration": 50
     },
     "cluster_bomb": {
         "launchVelocity": 120,
@@ -1481,13 +1507,12 @@
         "predictionLifetimeSec": 1.75,
         "gravitationalAcceleration": 0
     },
-    "lightning_strike": {
-        "launchVelocity": 120,
-        "impactSound": [
-            "rbxassetid://7263165647"
-        ],
+    "pit": {
+        "launchVelocity": 100,
+        "lifetimeSec": 3,
         "flightRotation": null,
-        "gravitationalAcceleration": 50
+        "predictionLifetimeSec": 2,
+        "gravitationalAcceleration": 85
     },
     "throwing_knife": {
         "launchVelocity": 170,
@@ -1518,12 +1543,34 @@
         "flightRotation": null,
         "projectileModel": "arrow"
     },
-    "pit": {
-        "launchVelocity": 100,
-        "lifetimeSec": 3,
+    "sorcerer_projectile_1_halloween_huge": {
+        "firedFromServer": true,
+        "combat": {
+            "noApplyDamageCooldown": true,
+            "damageType": 59,
+            "ignoreDamageTakenCooldown": true,
+            "damage": 30
+        },
+        "lifetimeSec": 0.9,
+        "knockbackMultiplier": {
+            "vertical": 0.1,
+            "horizontal": 0.3
+        },
+        "predictionLifetimeSec": 1,
+        "explosive": {
+            "explosionType": "sorcerer_explosion_1_huge",
+            "explodeOnLifetimeEnd": true,
+            "explodeOnImpact": true,
+            "removeDefaultExplosionEffect": true,
+            "destroyMapBlocks": false
+        },
+        "launchVelocity": 1000,
+        "spinSpeed": 1.2,
         "flightRotation": null,
-        "predictionLifetimeSec": 2,
-        "gravitationalAcceleration": 85
+        "bypassShooterLock": true,
+        "gravitationalAcceleration": 0,
+        "spinAxis": null,
+        "projectileModel": "sorcerer_projectile_1_halloween_huge"
     },
     "iron_arrow": {
         "combat": {
@@ -1640,22 +1687,22 @@
         "launchVelocity": 120,
         "gravitationalAcceleration": 60
     },
-    "sorcerer_projectile_1_halloween_huge": {
+    "sorcerer_projectile_3_halloween": {
         "firedFromServer": true,
         "combat": {
             "noApplyDamageCooldown": true,
             "damageType": 59,
             "ignoreDamageTakenCooldown": true,
-            "damage": 30
+            "damage": 35
         },
-        "lifetimeSec": 0.9,
+        "lifetimeSec": 1.1,
         "knockbackMultiplier": {
-            "vertical": 0.1,
-            "horizontal": 0.3
+            "vertical": 0.3,
+            "horizontal": 0.8
         },
         "predictionLifetimeSec": 1,
         "explosive": {
-            "explosionType": "sorcerer_explosion_1_huge",
+            "explosionType": "sorcerer_explosion_3",
             "explodeOnLifetimeEnd": true,
             "explodeOnImpact": true,
             "removeDefaultExplosionEffect": true,
@@ -1667,7 +1714,7 @@
         "bypassShooterLock": true,
         "gravitationalAcceleration": 0,
         "spinAxis": null,
-        "projectileModel": "sorcerer_projectile_1_halloween_huge"
+        "projectileModel": "sorcerer_projectile_3_halloween"
     },
     "villain_magical_girl_scepter_multi_projectile": {
         "combat": {
@@ -1734,22 +1781,22 @@
         "gravitationalAcceleration": 0,
         "projectileModel": "fireball"
     },
-    "sorcerer_projectile_3_halloween": {
+    "sorcerer_projectile_1_halloween": {
         "firedFromServer": true,
         "combat": {
             "noApplyDamageCooldown": true,
             "damageType": 59,
             "ignoreDamageTakenCooldown": true,
-            "damage": 35
+            "damage": 15
         },
-        "lifetimeSec": 1.1,
+        "lifetimeSec": 0.9,
         "knockbackMultiplier": {
-            "vertical": 0.3,
-            "horizontal": 0.8
+            "vertical": 0.1,
+            "horizontal": 0.3
         },
         "predictionLifetimeSec": 1,
         "explosive": {
-            "explosionType": "sorcerer_explosion_3",
+            "explosionType": "sorcerer_explosion_1",
             "explodeOnLifetimeEnd": true,
             "explodeOnImpact": true,
             "removeDefaultExplosionEffect": true,
@@ -1761,7 +1808,7 @@
         "bypassShooterLock": true,
         "gravitationalAcceleration": 0,
         "spinAxis": null,
-        "projectileModel": "sorcerer_projectile_3_halloween"
+        "projectileModel": "sorcerer_projectile_1_halloween"
     },
     "turretArtilleryBullet": {
         "launchVelocity": 320,
@@ -1830,52 +1877,9 @@
         "predictionLifetimeSec": 2,
         "gravitationalAcceleration": 35
     },
-    "sorcerer_projectile_1_halloween": {
-        "firedFromServer": true,
-        "combat": {
-            "noApplyDamageCooldown": true,
-            "damageType": 59,
-            "ignoreDamageTakenCooldown": true,
-            "damage": 15
-        },
-        "lifetimeSec": 0.9,
-        "knockbackMultiplier": {
-            "vertical": 0.1,
-            "horizontal": 0.3
-        },
-        "predictionLifetimeSec": 1,
-        "explosive": {
-            "explosionType": "sorcerer_explosion_1",
-            "explodeOnLifetimeEnd": true,
-            "explodeOnImpact": true,
-            "removeDefaultExplosionEffect": true,
-            "destroyMapBlocks": false
-        },
-        "launchVelocity": 1000,
-        "spinSpeed": 1.2,
-        "flightRotation": null,
-        "bypassShooterLock": true,
-        "gravitationalAcceleration": 0,
-        "spinAxis": null,
-        "projectileModel": "sorcerer_projectile_1_halloween"
-    },
-    "sand_spear": {
-        "combat": {
-            "ignoreDamageTakenCooldown": true,
-            "damage": 30
-        },
-        "impactParticles": "default",
-        "lifetimeSec": 8,
-        "knockbackMultiplier": {
-            "horizontal": 1.5
-        },
-        "predictionLifetimeSec": 2,
-        "launchVelocity": 250,
-        "impactSound": [
-            "rbxassetid://13032311764"
-        ],
-        "flightRotation": null,
-        "gravitationalAcceleration": 90
+    "beehive_grenade": {
+        "launchVelocity": 60,
+        "gravitationalAcceleration": 50
     },
     "sorcerer_projectile_3": {
         "firedFromServer": true,
@@ -1905,11 +1909,6 @@
         "spinAxis": null,
         "projectileModel": "sorcerer_projectile_3"
     },
-    "hot_potato": {
-        "launchVelocity": 100,
-        "flightRotation": null,
-        "gravitationalAcceleration": 50
-    },
     "life_arrow": {
         "combat": {
             "damageType": 54,
@@ -1935,6 +1934,11 @@
         "flightRotation": null,
         "projectileModel": "life_arrow"
     },
+    "hot_potato": {
+        "launchVelocity": 100,
+        "flightRotation": null,
+        "gravitationalAcceleration": 50
+    },
     "tactical_crossbow_arrow": {
         "combat": {
             "armorMultiplier": 0.95,
@@ -1953,6 +1957,15 @@
         "gravitationalAcceleration": 35,
         "flightRotation": null,
         "projectileModel": "arrow"
+    },
+    "throwable_egg": {
+        "launchVelocity": 120,
+        "impactSound": [
+            "rbxassetid://13024113119"
+        ],
+        "impactParticles": "default",
+        "flightRotation": null,
+        "gravitationalAcceleration": 70
     },
     "santa_bomb_siege": {
         "launchVelocity": 60,
@@ -1977,25 +1990,12 @@
         "predictionLifetimeSec": 2,
         "gravitationalAcceleration": 0
     },
-    "villain_magical_girl_rapier_projectile": {
-        "firedFromServer": true,
+    "firework_projectile": {
+        "launchVelocity": 0.001,
         "combat": {
-            "noApplyDamageCooldown": true,
-            "ignoreDamageTakenCooldown": true,
-            "damage": 25
+            "damage": 10
         },
-        "lifetimeSec": 1.2,
-        "knockbackMultiplier": {
-            "horizontal": 0.1
-        },
-        "predictionLifetimeSec": 1,
-        "launchVelocity": 400,
-        "spinSpeed": 20,
-        "flightRotation": null,
-        "bypassShooterLock": true,
-        "gravitationalAcceleration": 2,
-        "spinAxis": null,
-        "projectileModel": "villain_magical_girl_rapier_projectile"
+        "gravitationalAcceleration": 1
     },
     "ice_fishing_bobber": {
         "launchVelocity": 50,
@@ -2005,16 +2005,23 @@
         "predictionLifetimeSec": 0.8,
         "projectileModel": "fisherman_bobber"
     },
-    "firework_projectile": {
-        "launchVelocity": 0.001,
-        "combat": {
-            "damage": 10
-        },
-        "gravitationalAcceleration": 1
-    },
     "disco_grenade": {
         "launchVelocity": 60,
         "gravitationalAcceleration": 50
+    },
+    "ninja_chakram_4": {
+        "returnOnHit": true,
+        "returnDistance": 60,
+        "lifetimeSec": 20,
+        "returnWithConstantVelocity": true,
+        "predictionLifetimeSec": 0.3333333333333333,
+        "gravitationalAcceleration": 0,
+        "keepProjectileOnHit": true,
+        "destroyOnReturnLerpFinished": true,
+        "spinSpeed": 20,
+        "flightRotation": null,
+        "spinAxis": null,
+        "launchVelocity": 180
     },
     "frozen_snowball": {
         "combat": {
@@ -2054,25 +2061,6 @@
         "spinAxis": null,
         "launchVelocity": 180
     },
-    "ninja_chakram_4": {
-        "returnOnHit": true,
-        "returnDistance": 60,
-        "lifetimeSec": 20,
-        "returnWithConstantVelocity": true,
-        "predictionLifetimeSec": 0.3333333333333333,
-        "gravitationalAcceleration": 0,
-        "keepProjectileOnHit": true,
-        "destroyOnReturnLerpFinished": true,
-        "spinSpeed": 20,
-        "flightRotation": null,
-        "spinAxis": null,
-        "launchVelocity": 180
-    },
-    "popup_cube": {
-        "launchVelocity": 120,
-        "flightRotation": null,
-        "gravitationalAcceleration": 120
-    },
     "festive_sword_wave1": {
         "launchVelocity": 80,
         "gravitationalAcceleration": 0,
@@ -2087,6 +2075,11 @@
         "wallHitscanRegionMultiplier": 0.5,
         "projectileModel": "festive_sword_wave1"
     },
+    "popup_cube": {
+        "launchVelocity": 120,
+        "flightRotation": null,
+        "gravitationalAcceleration": 120
+    },
     "ninja_chakram_1": {
         "returnOnHit": true,
         "returnDistance": 60,
@@ -2100,6 +2093,11 @@
         "flightRotation": null,
         "spinAxis": null,
         "launchVelocity": 180
+    },
+    "block_kicker_block": {
+        "launchVelocity": 100,
+        "lifetimeSec": 8,
+        "gravitationalAcceleration": 20
     },
     "cactus": {
         "launchVelocity": 70,
@@ -2119,18 +2117,6 @@
         "predictionLifetimeSec": 0.2,
         "gravitationalAcceleration": 0
     },
-    "block_kicker_block": {
-        "launchVelocity": 100,
-        "lifetimeSec": 8,
-        "gravitationalAcceleration": 20
-    },
-    "glue_trap_charging": {
-        "launchVelocity": 100,
-        "lifetimeSec": 3,
-        "flightRotation": null,
-        "predictionLifetimeSec": 2,
-        "gravitationalAcceleration": 85
-    },
     "dark_ball": {
         "launchVelocity": 240,
         "impactSound": [
@@ -2147,10 +2133,12 @@
         },
         "gravitationalAcceleration": 0
     },
-    "deploy_spirit": {
-        "launchVelocity": 120,
+    "glue_trap_charging": {
+        "launchVelocity": 100,
+        "lifetimeSec": 3,
         "flightRotation": null,
-        "gravitationalAcceleration": 120
+        "predictionLifetimeSec": 2,
+        "gravitationalAcceleration": 85
     },
     "gumball": {
         "combat": {
@@ -2175,6 +2163,11 @@
         ],
         "gravitationalAcceleration": 40
     },
+    "deploy_spirit": {
+        "launchVelocity": 120,
+        "flightRotation": null,
+        "gravitationalAcceleration": 120
+    },
     "headhunter_arrow": {
         "combat": {
             "armorMultiplier": 0.95,
@@ -2191,17 +2184,6 @@
         "flightRotation": null,
         "projectileModel": "arrow"
     },
-    "halloween_obby_falling_object": {
-        "launchVelocity": 60,
-        "impactSound": [
-            "rbxassetid://11003762139"
-        ],
-        "combat": {
-            "damage": 30
-        },
-        "lifetimeSec": 3,
-        "projectileModel": "large_rock_projectile"
-    },
     "flower_crossbow_arrow_iron": {
         "combat": {
             "armorMultiplier": 0.95,
@@ -2214,6 +2196,33 @@
         },
         "predictionLifetimeSec": 1.1,
         "launchVelocity": 400,
+        "arrow": true,
+        "gravitationalAcceleration": 35,
+        "flightRotation": null,
+        "projectileModel": "arrow"
+    },
+    "halloween_obby_falling_object": {
+        "launchVelocity": 60,
+        "impactSound": [
+            "rbxassetid://11003762139"
+        ],
+        "combat": {
+            "damage": 30
+        },
+        "lifetimeSec": 3,
+        "projectileModel": "large_rock_projectile"
+    },
+    "flower_arrow": {
+        "combat": {
+            "damage": 16
+        },
+        "impactParticles": "default",
+        "lifetimeSec": 2.8,
+        "knockbackMultiplier": {
+            "horizontal": 0.95
+        },
+        "predictionLifetimeSec": 2,
+        "launchVelocity": 240,
         "arrow": true,
         "gravitationalAcceleration": 35,
         "flightRotation": null,
@@ -2235,21 +2244,23 @@
         "predictionLifetimeSec": 2,
         "gravitationalAcceleration": 65
     },
-    "flower_arrow": {
+    "sand_spear": {
         "combat": {
-            "damage": 16
+            "ignoreDamageTakenCooldown": true,
+            "damage": 30
         },
         "impactParticles": "default",
-        "lifetimeSec": 2.8,
+        "lifetimeSec": 8,
         "knockbackMultiplier": {
-            "horizontal": 0.95
+            "horizontal": 1.5
         },
         "predictionLifetimeSec": 2,
-        "launchVelocity": 240,
-        "arrow": true,
-        "gravitationalAcceleration": 35,
+        "launchVelocity": 250,
+        "impactSound": [
+            "rbxassetid://13032311764"
+        ],
         "flightRotation": null,
-        "projectileModel": "arrow"
+        "gravitationalAcceleration": 90
     },
     "owl_projectile": {
         "firedFromServer": true,
@@ -2320,9 +2331,24 @@
         "gravitationalAcceleration": 0,
         "projectileModel": "raven"
     },
-    "beehive_grenade": {
-        "launchVelocity": 60,
-        "gravitationalAcceleration": 50
+    "owl_projectile_DIAMOND": {
+        "firedFromServer": true,
+        "combat": {
+            "noApplyDamageCooldown": true,
+            "armorMultiplier": 0.8,
+            "ignoreDamageTakenCooldown": true,
+            "damage": 14
+        },
+        "lifetimeSec": 2.4,
+        "knockbackMultiplier": {
+            "horizontal": 1
+        },
+        "predictionLifetimeSec": 1,
+        "launchVelocity": 220,
+        "bypassShooterLock": true,
+        "gravitationalAcceleration": 35,
+        "hitscanRegionMultiplier": 2,
+        "projectileModel": "owl_projectile"
     },
     "pumpkin_bomb_1": {
         "launchVelocity": 100,
@@ -2361,25 +2387,6 @@
         "arrow": true,
         "flightRotation": null,
         "gravitationalAcceleration": 20
-    },
-    "owl_projectile_DIAMOND": {
-        "firedFromServer": true,
-        "combat": {
-            "noApplyDamageCooldown": true,
-            "armorMultiplier": 0.8,
-            "ignoreDamageTakenCooldown": true,
-            "damage": 14
-        },
-        "lifetimeSec": 2.4,
-        "knockbackMultiplier": {
-            "horizontal": 1
-        },
-        "predictionLifetimeSec": 1,
-        "launchVelocity": 220,
-        "bypassShooterLock": true,
-        "gravitationalAcceleration": 35,
-        "hitscanRegionMultiplier": 2,
-        "projectileModel": "owl_projectile"
     },
     "owl_projectile_WOOD": {
         "firedFromServer": true,
@@ -2429,6 +2436,25 @@
         "flightRotation": null,
         "predictionLifetimeSec": 2,
         "gravitationalAcceleration": 75
+    },
+    "tennis_ball": {
+        "combat": {
+            "damage": 25
+        },
+        "impactParticles": "default",
+        "lifetimeSec": 3,
+        "knockbackMultiplier": {
+            "vertical": 1.15,
+            "horizontal": 1.3
+        },
+        "predictionLifetimeSec": 2,
+        "launchVelocity": 180,
+        "impactSound": [
+            "rbxassetid://8165640209"
+        ],
+        "armorMultiplier": 0.8,
+        "flightRotation": null,
+        "gravitationalAcceleration": 35
     },
     "glitch_throwable_bridge": {
         "launchVelocity": 140,

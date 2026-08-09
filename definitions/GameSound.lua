@@ -1,6 +1,7 @@
+local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
 local SoundManager
 do
-    SoundManager = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))():GetController('SoundManager')
+	SoundManager = Loader:GetController('SoundManager')
 end
 
 local t = {
@@ -1809,6 +1810,17 @@ local t = {
 	FALCON_DESUMMON = "rbxassetid://17024848363",
 	FALCONER_SEND_FALCON = "rbxassetid://16913423770",
 	FALCONER_RECALL_FALCON = "rbxassetid://16913423519",
+	SEAGULL_CHIRP_1 = "rbxassetid://129719286351130",
+	SEAGULL_CHIRP_2 = "rbxassetid://83529482711611",
+	SEAGULL_CHIRP_3 = "rbxassetid://101464403376087",
+	SEAGULL_CRY_1 = "rbxassetid://115020515014960",
+	SEAGULL_CRY_2 = "rbxassetid://98162378259809",
+	SEAGULL_SCREECH_1 = "rbxassetid://77685768322688",
+	SEAGULL_SCREECH_2 = "rbxassetid://96463855249462",
+	FALCONER_RECALL_SEAGULL = "rbxassetid://111135136256546",
+	FALCONER_SEND_SEAGULL = "rbxassetid://126294180022557",
+	SEAGULL_SUMMON = "rbxassetid://123860885159231",
+	SEAGULL_DESUMMON = "rbxassetid://75039394078463",
 	TOILET_FLUSH = "rbxassetid://16990831513",
 	SQUAD_LAUNCH_1 = "rbxassetid://17440290428",
 	SQUAD_LAUNCH_2 = "rbxassetid://17440290599",
@@ -2270,6 +2282,10 @@ local t = {
 	GROVE_EASTER_COLLECTED = "rbxassetid://139870248582050",
 	GROVE_EASTER_CHANNEL_LOOP = "rbxassetid://130510104925654",
 	GROVE_EASTER_COLLECT_START = "rbxassetid://126430052854069",
+	GROVE_ELYSIUM_BUFF = "rbxassetid://128661734545837",
+	GROVE_ELYSIUM_COLLECTED = "rbxassetid://115459581517557",
+	GROVE_ELYSIUM_CHANNEL_LOOP = "rbxassetid://92737205901913",
+	GROVE_ELYSIUM_COLLECT_START = "rbxassetid://134994850610387",
 	CACTUS_ABSORB_1 = "rbxassetid://105309494077817",
 	CACTUS_ABSORB_2 = "rbxassetid://78243793904803",
 	CACTUS_ABSORB_3 = "rbxassetid://88803645480490",
@@ -2471,7 +2487,11 @@ local t = {
 	SAND_HIT_2 = "rbxassetid://106326570851593",
 	SAND_HIT_3 = "rbxassetid://72073122843901",
 	SAND_HIT_4 = "rbxassetid://116306631611269",
-	SAND_FALLING = "rbxassetid://78284653581104"
+	SAND_FALLING = "rbxassetid://78284653581104",
+	VOID_JACK_CONSUME = "rbxassetid://95209265169418",
+	VOID_JACK_SPIT = "rbxassetid://109302423433408",
+	VOID_JACK_SPLASH = "rbxassetid://82699775426596",
+	JACK_CONSUME = "rbxassetid://126011038389055"
 }
 
 SoundManager:registerSound(t.DESERT_ISLAND_MUSIC, {
@@ -3692,4 +3712,7 @@ SoundManager:registerSound(t.NEW_BOW_FIRE, {
 	volume = 1.2
 })
 
-return t
+SoundManager:preload()
+return {
+	GameSound = t
+}

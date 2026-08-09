@@ -67,7 +67,6 @@
         "lockAfterPurchase": true,
         "itemType": "wood_sword",
         "price": 0,
-        "requireInInventoryToTierUp": true,
         "superiorItems": [
             "stone_sword"
         ],
@@ -99,15 +98,16 @@
         "lockAfterPurchase": true,
         "itemType": "stone_sword",
         "price": 20,
-        "requireInInventoryToTierUp": true,
+        "prevTier": "wood_sword",
         "nextTier": "iron_sword",
         "superiorItems": [
             "iron_sword"
         ],
-        "currency": "iron",
         "ignoreAttribute": "DisableSword",
-        "amount": 1,
+        "currency": "iron",
         "category": "Combat",
+        "amount": 1,
+        "skipRequireInInventoryToTierUp": true,
         "disabledInQueue": [
             "tnt_wars"
         ],
@@ -128,7 +128,7 @@
         "lockAfterPurchase": true,
         "itemType": "iron_sword",
         "price": 70,
-        "requireInInventoryToTierUp": true,
+        "prevTier": "stone_sword",
         "nextTier": "diamond_sword",
         "superiorItems": [
             "diamond_sword",
@@ -160,15 +160,16 @@
         "lockAfterPurchase": true,
         "itemType": "diamond_sword",
         "price": 4,
-        "requireInInventoryToTierUp": true,
+        "prevTier": "iron_sword",
         "nextTier": "emerald_sword",
         "superiorItems": [
             "emerald_sword"
         ],
-        "currency": "emerald",
         "ignoreAttribute": "DisableSword",
-        "amount": 1,
+        "currency": "emerald",
         "category": "Combat",
+        "amount": 1,
+        "canDowngrade": true,
         "disabledInQueue": [
             "tnt_wars",
             "bedwars_og_to4"
@@ -193,6 +194,8 @@
         "lockAfterPurchase": true,
         "itemType": "emerald_sword",
         "price": 20,
+        "prevTier": "diamond_sword",
+        "canDowngrade": true,
         "currency": "emerald",
         "ignoreAttribute": "DisableSword",
         "amount": 1,
@@ -218,6 +221,94 @@
         ]
     },
     {
+        "lockAfterPurchase": true,
+        "itemType": "wood_dao",
+        "price": 0,
+        "superiorItems": [
+            "stone_dao"
+        ],
+        "currency": "iron",
+        "amount": 0,
+        "disabled": true,
+        "category": "Combat",
+        "spawnWithItems": [
+            "wood_dao"
+        ],
+        "requiresKit": [
+            "dasher"
+        ]
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "stone_dao",
+        "price": 28,
+        "nextTier": "iron_dao",
+        "superiorItems": [
+            "iron_dao"
+        ],
+        "currency": "iron",
+        "amount": 1,
+        "category": "Combat",
+        "spawnWithItems": [
+            "stone_dao"
+        ],
+        "requiresKit": [
+            "dasher"
+        ]
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "iron_dao",
+        "price": 85,
+        "nextTier": "diamond_dao",
+        "superiorItems": [
+            "diamond_dao"
+        ],
+        "currency": "iron",
+        "amount": 1,
+        "category": "Combat",
+        "spawnWithItems": [
+            "iron_dao"
+        ],
+        "requiresKit": [
+            "dasher"
+        ]
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "diamond_dao",
+        "price": 6,
+        "nextTier": "emerald_dao",
+        "superiorItems": [
+            "emerald_dao"
+        ],
+        "currency": "emerald",
+        "amount": 1,
+        "canDowngrade": true,
+        "category": "Combat",
+        "spawnWithItems": [
+            "iron_dao"
+        ],
+        "requiresKit": [
+            "dasher"
+        ]
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "emerald_dao",
+        "price": 24,
+        "currency": "emerald",
+        "amount": 1,
+        "canDowngrade": true,
+        "category": "Combat",
+        "spawnWithItems": [
+            "diamond_dao"
+        ],
+        "requiresKit": [
+            "dasher"
+        ]
+    },
+    {
         "currency": "void_crystal",
         "itemType": "void_sword",
         "amount": 1,
@@ -234,7 +325,6 @@
         "lockAfterPurchase": true,
         "itemType": "wood_gun_blade",
         "price": 0,
-        "requireInInventoryToTierUp": true,
         "superiorItems": [
             "stone_gun_blade"
         ],
@@ -250,7 +340,6 @@
         "lockAfterPurchase": true,
         "itemType": "stone_gun_blade",
         "price": 28,
-        "requireInInventoryToTierUp": true,
         "nextTier": "iron_gun_blade",
         "superiorItems": [
             "iron_gun_blade"
@@ -269,7 +358,6 @@
         "lockAfterPurchase": true,
         "itemType": "iron_gun_blade",
         "price": 85,
-        "requireInInventoryToTierUp": true,
         "nextTier": "diamond_gun_blade",
         "superiorItems": [
             "diamond_gun_blade"
@@ -288,13 +376,13 @@
         "lockAfterPurchase": true,
         "itemType": "diamond_gun_blade",
         "price": 5,
-        "requireInInventoryToTierUp": true,
         "nextTier": "emerald_gun_blade",
         "superiorItems": [
             "emerald_gun_blade"
         ],
         "currency": "emerald",
         "amount": 1,
+        "canDowngrade": true,
         "category": "Combat",
         "spawnWithItems": [
             "iron_gun_blade"
@@ -304,24 +392,24 @@
         ]
     },
     {
-        "requiresKit": [
-            "gun_blade"
-        ],
-        "currency": "emerald",
+        "lockAfterPurchase": true,
         "itemType": "emerald_gun_blade",
-        "amount": 1,
         "price": 22,
+        "currency": "emerald",
+        "amount": 1,
+        "canDowngrade": true,
         "category": "Combat",
         "spawnWithItems": [
             "diamond_gun_blade"
         ],
-        "lockAfterPurchase": true
+        "requiresKit": [
+            "gun_blade"
+        ]
     },
     {
         "lockAfterPurchase": true,
         "itemType": "wood_scythe",
         "price": 0,
-        "requireInInventoryToTierUp": true,
         "superiorItems": [
             "stone_scythe"
         ],
@@ -353,7 +441,6 @@
         "lockAfterPurchase": true,
         "itemType": "stone_scythe",
         "price": 20,
-        "requireInInventoryToTierUp": true,
         "nextTier": "iron_scythe",
         "superiorItems": [
             "iron_scythe"
@@ -382,7 +469,6 @@
         "lockAfterPurchase": true,
         "itemType": "iron_scythe",
         "price": 70,
-        "requireInInventoryToTierUp": true,
         "nextTier": "diamond_scythe",
         "superiorItems": [
             "diamond_scythe"
@@ -411,13 +497,13 @@
         "lockAfterPurchase": true,
         "itemType": "diamond_scythe",
         "price": 4,
-        "requireInInventoryToTierUp": true,
         "nextTier": "mythic_scythe",
         "superiorItems": [
             "mythic_scythe"
         ],
-        "currency": "emerald",
         "requireAttribute": "SCYTHE",
+        "currency": "emerald",
+        "canDowngrade": true,
         "amount": 1,
         "category": "Combat",
         "disabledInQueue": [
@@ -444,8 +530,9 @@
         "lockAfterPurchase": true,
         "itemType": "mythic_scythe",
         "price": 20,
-        "currency": "emerald",
         "requireAttribute": "SCYTHE",
+        "currency": "emerald",
+        "canDowngrade": true,
         "amount": 1,
         "category": "Combat",
         "disabledInQueue": [
@@ -472,7 +559,6 @@
         "lockAfterPurchase": true,
         "itemType": "wood_great_hammer",
         "price": 0,
-        "requireInInventoryToTierUp": true,
         "superiorItems": [
             "stone_great_hammer"
         ],
@@ -504,7 +590,6 @@
         "lockAfterPurchase": true,
         "itemType": "stone_great_hammer",
         "price": 20,
-        "requireInInventoryToTierUp": true,
         "nextTier": "iron_great_hammer",
         "superiorItems": [
             "iron_great_hammer"
@@ -533,7 +618,6 @@
         "lockAfterPurchase": true,
         "itemType": "iron_great_hammer",
         "price": 70,
-        "requireInInventoryToTierUp": true,
         "nextTier": "diamond_great_hammer",
         "superiorItems": [
             "diamond_great_hammer"
@@ -562,13 +646,13 @@
         "lockAfterPurchase": true,
         "itemType": "diamond_great_hammer",
         "price": 4,
-        "requireInInventoryToTierUp": true,
         "nextTier": "mythic_great_hammer",
         "superiorItems": [
             "mythic_great_hammer"
         ],
-        "currency": "emerald",
         "requireAttribute": "GREAT_HAMMER",
+        "currency": "emerald",
+        "canDowngrade": true,
         "amount": 1,
         "category": "Combat",
         "disabledInQueue": [
@@ -595,8 +679,9 @@
         "lockAfterPurchase": true,
         "itemType": "mythic_great_hammer",
         "price": 20,
-        "currency": "emerald",
         "requireAttribute": "GREAT_HAMMER",
+        "currency": "emerald",
+        "canDowngrade": true,
         "amount": 1,
         "category": "Combat",
         "disabledInQueue": [
@@ -623,7 +708,6 @@
         "lockAfterPurchase": true,
         "itemType": "wood_dagger",
         "price": 0,
-        "requireInInventoryToTierUp": true,
         "superiorItems": [
             "stone_dagger"
         ],
@@ -655,7 +739,6 @@
         "lockAfterPurchase": true,
         "itemType": "stone_dagger",
         "price": 20,
-        "requireInInventoryToTierUp": true,
         "nextTier": "iron_dagger",
         "superiorItems": [
             "iron_dagger"
@@ -684,7 +767,6 @@
         "lockAfterPurchase": true,
         "itemType": "iron_dagger",
         "price": 70,
-        "requireInInventoryToTierUp": true,
         "nextTier": "diamond_dagger",
         "superiorItems": [
             "diamond_dagger"
@@ -713,13 +795,13 @@
         "lockAfterPurchase": true,
         "itemType": "diamond_dagger",
         "price": 4,
-        "requireInInventoryToTierUp": true,
         "nextTier": "mythic_dagger",
         "superiorItems": [
             "mythic_dagger"
         ],
-        "currency": "emerald",
         "requireAttribute": "DAGGER",
+        "currency": "emerald",
+        "canDowngrade": true,
         "amount": 1,
         "category": "Combat",
         "disabledInQueue": [
@@ -746,8 +828,9 @@
         "lockAfterPurchase": true,
         "itemType": "mythic_dagger",
         "price": 20,
-        "currency": "emerald",
         "requireAttribute": "DAGGER",
+        "currency": "emerald",
+        "canDowngrade": true,
         "amount": 1,
         "category": "Combat",
         "disabledInQueue": [
@@ -774,7 +857,6 @@
         "lockAfterPurchase": true,
         "itemType": "wood_gauntlets",
         "price": 0,
-        "requireInInventoryToTierUp": true,
         "superiorItems": [
             "stone_gauntlets"
         ],
@@ -806,7 +888,6 @@
         "lockAfterPurchase": true,
         "itemType": "stone_gauntlets",
         "price": 20,
-        "requireInInventoryToTierUp": true,
         "nextTier": "iron_gauntlets",
         "superiorItems": [
             "iron_gauntlets"
@@ -835,7 +916,6 @@
         "lockAfterPurchase": true,
         "itemType": "iron_gauntlets",
         "price": 70,
-        "requireInInventoryToTierUp": true,
         "nextTier": "diamond_gauntlets",
         "superiorItems": [
             "diamond_gauntlets"
@@ -864,13 +944,13 @@
         "lockAfterPurchase": true,
         "itemType": "diamond_gauntlets",
         "price": 4,
-        "requireInInventoryToTierUp": true,
         "nextTier": "mythic_gauntlets_plain",
         "superiorItems": [
             "mythic_gauntlets_plain"
         ],
-        "currency": "emerald",
         "requireAttribute": "GAUNTLETS",
+        "currency": "emerald",
+        "canDowngrade": true,
         "amount": 1,
         "category": "Combat",
         "disabledInQueue": [
@@ -897,8 +977,9 @@
         "lockAfterPurchase": true,
         "itemType": "mythic_gauntlets_plain",
         "price": 20,
-        "currency": "emerald",
         "requireAttribute": "GAUNTLETS",
+        "currency": "emerald",
+        "canDowngrade": true,
         "amount": 1,
         "category": "Combat",
         "disabledInQueue": [
@@ -1010,6 +1091,20 @@
         ]
     },
     {
+        "category": "Combat",
+        "currency": "iron",
+        "itemType": "void_axe",
+        "amount": 1,
+        "price": 40,
+        "requiresKit": [
+            "regent"
+        ],
+        "spawnWithItems": [
+            "void_axe"
+        ],
+        "lockAfterPurchase": true
+    },
+    {
         "lockAfterPurchase": true,
         "itemType": "void_chestplate",
         "price": 18,
@@ -1104,6 +1199,199 @@
             "headhunter"
         ],
         "category": "Combat"
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "tactical_crossbow",
+        "price": 6,
+        "superiorItems": [
+            "tactical_headhunter"
+        ],
+        "currency": "emerald",
+        "amount": 1,
+        "disabledInQueue": [
+            "tnt_wars"
+        ],
+        "category": "Combat",
+        "spawnWithItems": [
+            "tactical_crossbow"
+        ],
+        "requiresKit": [
+            "archer"
+        ]
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "tactical_headhunter",
+        "price": 21,
+        "currency": "emerald",
+        "amount": 1,
+        "requiresKit": [
+            "archer"
+        ],
+        "disabledInQueue": [
+            "tnt_wars"
+        ],
+        "spawnWithItems": [
+            "tactical_headhunter"
+        ],
+        "category": "Combat"
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "flower_bow",
+        "price": 24,
+        "superiorItems": [
+            "flower_crossbow"
+        ],
+        "currency": "iron",
+        "amount": 1,
+        "requiresKit": [
+            "flower_bee"
+        ],
+        "spawnWithItems": [
+            "flower_bow"
+        ],
+        "category": "Combat"
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "flower_crossbow",
+        "price": 7,
+        "superiorItems": [
+            "flower_headhunter"
+        ],
+        "currency": "emerald",
+        "amount": 1,
+        "disabledInQueue": [
+            "tnt_wars"
+        ],
+        "category": "Combat",
+        "spawnWithItems": [
+            "flower_crossbow"
+        ],
+        "requiresKit": [
+            "flower_bee"
+        ]
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "flower_headhunter",
+        "price": 24,
+        "currency": "emerald",
+        "amount": 1,
+        "requiresKit": [
+            "flower_bee"
+        ],
+        "disabledInQueue": [
+            "tnt_wars"
+        ],
+        "spawnWithItems": [
+            "flower_headhunter"
+        ],
+        "category": "Combat"
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "falconer_bow",
+        "price": 32,
+        "superiorItems": [
+            "falconer_crossbow"
+        ],
+        "currency": "iron",
+        "amount": 1,
+        "requiresKit": [
+            "falconer"
+        ],
+        "spawnWithItems": [
+            "falconer_bow"
+        ],
+        "category": "Combat"
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "falconer_crossbow",
+        "price": 8,
+        "superiorItems": [
+            "falconer_headhunter"
+        ],
+        "currency": "emerald",
+        "amount": 1,
+        "disabledInQueue": [
+            "tnt_wars"
+        ],
+        "category": "Combat",
+        "spawnWithItems": [
+            "falconer_crossbow"
+        ],
+        "requiresKit": [
+            "falconer"
+        ]
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "falconer_headhunter",
+        "price": 25,
+        "currency": "emerald",
+        "amount": 1,
+        "requiresKit": [
+            "falconer"
+        ],
+        "disabledInQueue": [
+            "tnt_wars"
+        ],
+        "spawnWithItems": [
+            "falconer_headhunter"
+        ],
+        "category": "Combat"
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "life_bow",
+        "price": 24,
+        "superiorItems": [
+            "life_crossbow"
+        ],
+        "currency": "iron",
+        "amount": 1,
+        "category": "Combat",
+        "spawnWithItems": [
+            "life_bow"
+        ],
+        "requiresKit": [
+            "nazar"
+        ]
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "life_crossbow",
+        "price": 7,
+        "superiorItems": [
+            "life_headhunter"
+        ],
+        "currency": "emerald",
+        "amount": 1,
+        "category": "Combat",
+        "spawnWithItems": [
+            "life_crossbow"
+        ],
+        "requiresKit": [
+            "nazar"
+        ]
+    },
+    {
+        "requiresKit": [
+            "nazar"
+        ],
+        "lockAfterPurchase": true,
+        "itemType": "life_headhunter",
+        "amount": 1,
+        "price": 24,
+        "category": "Combat",
+        "spawnWithItems": [
+            "life_headhunter"
+        ],
+        "currency": "emerald"
     },
     {
         "currency": "iron",
@@ -1466,43 +1754,6 @@
         ]
     },
     {
-        "lockAfterPurchase": true,
-        "itemType": "tactical_crossbow",
-        "price": 6,
-        "superiorItems": [
-            "tactical_headhunter"
-        ],
-        "currency": "emerald",
-        "amount": 1,
-        "disabledInQueue": [
-            "tnt_wars"
-        ],
-        "category": "Combat",
-        "spawnWithItems": [
-            "tactical_crossbow"
-        ],
-        "requiresKit": [
-            "archer"
-        ]
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "tactical_headhunter",
-        "price": 21,
-        "currency": "emerald",
-        "amount": 1,
-        "requiresKit": [
-            "archer"
-        ],
-        "disabledInQueue": [
-            "tnt_wars"
-        ],
-        "spawnWithItems": [
-            "tactical_headhunter"
-        ],
-        "category": "Combat"
-    },
-    {
         "currency": "iron",
         "itemType": "spear",
         "amount": 1,
@@ -1530,7 +1781,7 @@
         "itemType": "damage_axolotl",
         "dontGiveItem": true,
         "price": 90,
-        "prevTier": "shield_axolotl",
+        "skipRequireInInventoryToTierUp": true,
         "nextTier": "break_speed_axolotl",
         "currency": "iron",
         "amount": 1,
@@ -1538,14 +1789,15 @@
         "category": "Combat",
         "requiresKit": [
             "axolotl"
-        ]
+        ],
+        "prevTier": "shield_axolotl"
     },
     {
         "lockAfterPurchase": true,
         "itemType": "break_speed_axolotl",
         "dontGiveItem": true,
         "price": 1,
-        "prevTier": "damage_axolotl",
+        "skipRequireInInventoryToTierUp": true,
         "nextTier": "health_regen_axolotl",
         "currency": "emerald",
         "amount": 1,
@@ -1553,21 +1805,23 @@
         "category": "Combat",
         "requiresKit": [
             "axolotl"
-        ]
+        ],
+        "prevTier": "damage_axolotl"
     },
     {
         "lockAfterPurchase": true,
         "itemType": "health_regen_axolotl",
         "dontGiveItem": true,
         "price": 5,
-        "prevTier": "break_speed_axolotl",
+        "skipRequireInInventoryToTierUp": true,
         "currency": "emerald",
         "amount": 1,
         "tiered": true,
         "category": "Combat",
         "requiresKit": [
             "axolotl"
-        ]
+        ],
+        "prevTier": "break_speed_axolotl"
     },
     {
         "currency": "iron",
@@ -1719,7 +1973,6 @@
         "lockAfterPurchase": true,
         "itemType": "summoner_claw_1",
         "price": 0,
-        "requireInInventoryToTierUp": true,
         "superiorItems": [
             "summoner_claw_2"
         ],
@@ -1733,96 +1986,6 @@
         "requiresKit": [
             "summoner"
         ]
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "wood_dao",
-        "price": 0,
-        "requireInInventoryToTierUp": true,
-        "superiorItems": [
-            "stone_dao"
-        ],
-        "currency": "iron",
-        "amount": 0,
-        "disabled": true,
-        "category": "Combat",
-        "spawnWithItems": [
-            "wood_dao"
-        ],
-        "requiresKit": [
-            "dasher"
-        ]
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "stone_dao",
-        "price": 28,
-        "requireInInventoryToTierUp": true,
-        "nextTier": "iron_dao",
-        "superiorItems": [
-            "iron_dao"
-        ],
-        "currency": "iron",
-        "amount": 1,
-        "category": "Combat",
-        "spawnWithItems": [
-            "stone_dao"
-        ],
-        "requiresKit": [
-            "dasher"
-        ]
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "iron_dao",
-        "price": 85,
-        "requireInInventoryToTierUp": true,
-        "nextTier": "diamond_dao",
-        "superiorItems": [
-            "diamond_dao"
-        ],
-        "currency": "iron",
-        "amount": 1,
-        "category": "Combat",
-        "spawnWithItems": [
-            "iron_dao"
-        ],
-        "requiresKit": [
-            "dasher"
-        ]
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "diamond_dao",
-        "price": 6,
-        "requireInInventoryToTierUp": true,
-        "nextTier": "emerald_dao",
-        "superiorItems": [
-            "emerald_dao"
-        ],
-        "currency": "emerald",
-        "amount": 1,
-        "category": "Combat",
-        "spawnWithItems": [
-            "iron_dao"
-        ],
-        "requiresKit": [
-            "dasher"
-        ]
-    },
-    {
-        "requiresKit": [
-            "dasher"
-        ],
-        "currency": "emerald",
-        "itemType": "emerald_dao",
-        "amount": 1,
-        "price": 24,
-        "category": "Combat",
-        "spawnWithItems": [
-            "diamond_dao"
-        ],
-        "lockAfterPurchase": true
     },
     {
         "currency": "iron",
@@ -1870,6 +2033,7 @@
         "currency": "emerald",
         "amount": 1,
         "tiered": true,
+        "skipRequireInInventoryToTierUp": true,
         "category": "Combat",
         "requiresKit": [
             "disruptor"
@@ -1990,23 +2154,6 @@
         "lockAfterPurchase": true
     },
     {
-        "lockAfterPurchase": true,
-        "itemType": "flower_bow",
-        "price": 24,
-        "superiorItems": [
-            "flower_crossbow"
-        ],
-        "currency": "iron",
-        "amount": 1,
-        "requiresKit": [
-            "flower_bee"
-        ],
-        "spawnWithItems": [
-            "flower_bow"
-        ],
-        "category": "Combat"
-    },
-    {
         "category": "Combat",
         "currency": "iron",
         "itemType": "harpoon",
@@ -2019,43 +2166,6 @@
             "harpoon"
         ],
         "lockAfterPurchase": true
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "flower_crossbow",
-        "price": 7,
-        "superiorItems": [
-            "flower_headhunter"
-        ],
-        "currency": "emerald",
-        "amount": 1,
-        "disabledInQueue": [
-            "tnt_wars"
-        ],
-        "category": "Combat",
-        "spawnWithItems": [
-            "flower_crossbow"
-        ],
-        "requiresKit": [
-            "flower_bee"
-        ]
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "flower_headhunter",
-        "price": 24,
-        "currency": "emerald",
-        "amount": 1,
-        "requiresKit": [
-            "flower_bee"
-        ],
-        "disabledInQueue": [
-            "tnt_wars"
-        ],
-        "spawnWithItems": [
-            "flower_headhunter"
-        ],
-        "category": "Combat"
     },
     {
         "category": "Combat",
@@ -2149,10 +2259,10 @@
         ]
     },
     {
-        "currency": "emerald",
-        "itemType": "oil_consumable",
+        "currency": "iron",
+        "itemType": "fire_match",
         "amount": 1,
-        "price": 1,
+        "price": 8,
         "category": "Combat",
         "requiresKit": [
             "oil_man"
@@ -2218,7 +2328,7 @@
         "currency": "iron",
         "itemType": "santa_bomb",
         "amount": 1,
-        "price": 70,
+        "price": 60,
         "category": "Combat",
         "requiresKit": [
             "santa"
@@ -2231,7 +2341,7 @@
         "currency": "iron",
         "itemType": "santa_bomb_siege",
         "amount": 1,
-        "price": 225,
+        "price": 200,
         "category": "Combat",
         "requiresKit": [
             "santa"
@@ -2364,7 +2474,8 @@
         "requiresKit": [
             "scarab"
         ],
-        "category": "Combat"
+        "category": "Combat",
+        "skipRequireInInventoryToTierUp": true
     },
     {
         "lockAfterPurchase": true,
@@ -2378,6 +2489,7 @@
         "requiresKit": [
             "scarab"
         ],
+        "skipRequireInInventoryToTierUp": true,
         "category": "Combat"
     },
     {
@@ -2406,7 +2518,8 @@
         "requiresKit": [
             "scarab"
         ],
-        "category": "Combat"
+        "category": "Combat",
+        "skipRequireInInventoryToTierUp": true
     },
     {
         "lockAfterPurchase": true,
@@ -2420,6 +2533,7 @@
         "requiresKit": [
             "scarab"
         ],
+        "skipRequireInInventoryToTierUp": true,
         "category": "Combat"
     },
     {
@@ -2448,6 +2562,7 @@
         "requiresKit": [
             "tinker"
         ],
+        "skipRequireInInventoryToTierUp": true,
         "category": "Combat"
     },
     {
@@ -2463,6 +2578,7 @@
         "requiresKit": [
             "tinker"
         ],
+        "skipRequireInInventoryToTierUp": true,
         "category": "Combat"
     },
     {
@@ -2477,6 +2593,7 @@
         "requiresKit": [
             "tinker"
         ],
+        "skipRequireInInventoryToTierUp": true,
         "category": "Combat"
     },
     {
@@ -2488,20 +2605,6 @@
         "requiresKit": [
             "trapper"
         ]
-    },
-    {
-        "category": "Combat",
-        "currency": "iron",
-        "itemType": "void_axe",
-        "amount": 1,
-        "price": 40,
-        "requiresKit": [
-            "regent"
-        ],
-        "spawnWithItems": [
-            "void_axe"
-        ],
-        "lockAfterPurchase": true
     },
     {
         "currency": "emerald",
@@ -2557,7 +2660,7 @@
     {
         "lockAfterPurchase": true,
         "itemType": "frost_staff_2",
-        "price": 4,
+        "price": 5,
         "prevTier": "frost_staff_1",
         "nextTier": "frost_staff_3",
         "currency": "emerald",
@@ -2573,7 +2676,7 @@
     {
         "lockAfterPurchase": true,
         "itemType": "frost_staff_3",
-        "price": 6,
+        "price": 8,
         "prevTier": "frost_staff_2",
         "currency": "emerald",
         "amount": 1,
@@ -2585,108 +2688,6 @@
         "requiresKit": [
             "winter_lady"
         ]
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "falconer_bow",
-        "price": 32,
-        "superiorItems": [
-            "falconer_crossbow"
-        ],
-        "currency": "iron",
-        "amount": 1,
-        "requiresKit": [
-            "falconer"
-        ],
-        "spawnWithItems": [
-            "falconer_bow"
-        ],
-        "category": "Combat"
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "falconer_crossbow",
-        "price": 8,
-        "superiorItems": [
-            "falconer_headhunter"
-        ],
-        "currency": "emerald",
-        "amount": 1,
-        "disabledInQueue": [
-            "tnt_wars"
-        ],
-        "category": "Combat",
-        "spawnWithItems": [
-            "falconer_crossbow"
-        ],
-        "requiresKit": [
-            "falconer"
-        ]
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "falconer_headhunter",
-        "price": 25,
-        "currency": "emerald",
-        "amount": 1,
-        "requiresKit": [
-            "falconer"
-        ],
-        "disabledInQueue": [
-            "tnt_wars"
-        ],
-        "spawnWithItems": [
-            "falconer_headhunter"
-        ],
-        "category": "Combat"
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "life_bow",
-        "price": 24,
-        "superiorItems": [
-            "life_crossbow"
-        ],
-        "currency": "iron",
-        "amount": 1,
-        "category": "Combat",
-        "spawnWithItems": [
-            "life_bow"
-        ],
-        "requiresKit": [
-            "nazar"
-        ]
-    },
-    {
-        "lockAfterPurchase": true,
-        "itemType": "life_crossbow",
-        "price": 7,
-        "superiorItems": [
-            "life_headhunter"
-        ],
-        "currency": "emerald",
-        "amount": 1,
-        "category": "Combat",
-        "spawnWithItems": [
-            "life_crossbow"
-        ],
-        "requiresKit": [
-            "nazar"
-        ]
-    },
-    {
-        "requiresKit": [
-            "nazar"
-        ],
-        "lockAfterPurchase": true,
-        "itemType": "life_headhunter",
-        "amount": 1,
-        "price": 24,
-        "category": "Combat",
-        "spawnWithItems": [
-            "life_headhunter"
-        ],
-        "currency": "emerald"
     },
     {
         "disabled": true,
@@ -2769,7 +2770,7 @@
         "category": "Tools"
     },
     {
-        "disabled": false,
+        "disabled": true,
         "currency": "emerald",
         "itemType": "firework_backpack",
         "amount": 1,
@@ -2782,7 +2783,7 @@
         "category": "Combat"
     },
     {
-        "disabled": false,
+        "disabled": true,
         "currency": "iron",
         "itemType": "firework_arrow",
         "amount": 4,
@@ -2865,7 +2866,8 @@
         "category": "Combat",
         "requiresKit": [
             "spirit_summoner"
-        ]
+        ],
+        "skipRequireInInventoryToTierUp": true
     },
     {
         "currency": "emerald",
