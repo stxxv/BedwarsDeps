@@ -69,7 +69,7 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function() -- 20, 77
         end)
 
         TweenService:Create(Workspace.CurrentCamera, TweenInfo.new(0.1, Enum.EasingStyle.Linear), {
-            FieldOfView = math.min(100, fovController:getFOV() / 1.1)
+            FieldOfView = math.min(107, fovController:getFOV() * 1.1)
         }):Play()
     else
         Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
@@ -79,7 +79,7 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function() -- 20, 77
         end)
 
         TweenService:Create(Workspace.CurrentCamera, TweenInfo.new(0.1, Enum.EasingStyle.Linear), {
-            FieldOfView = math.min(100, fovController:getFOV() / 1.1)
+            FieldOfView = math.min(107, fovController:getFOV() / 1.1)
         }):Play()
     end
 end)
