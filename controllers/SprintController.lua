@@ -8,6 +8,8 @@ local cloneref = cloneref or function(obj)
     return obj
 end
 
+local ContextActionService = cloneref(game:GetService('ContextActionService'))
+local InputService = cloneref(game:GetService('UserInputService'))
 local TweenService = cloneref(game:GetService('TweenService'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
@@ -44,6 +46,7 @@ local SprintController, Connections = {
     getModifiers = function(self)
         return modifiers
     end,
+    blockSprint = false,
     sprinting = false
 }, {}
 
@@ -94,6 +97,18 @@ end
 
 function SprintController:stopSprinting()
     lplr:SetAttribute('Sprinting', false)
+end
+
+if InputService.KeyboardEnabled then
+    ContextActionService:BindActionAtPriority('Sprint', function(_, inputState)
+        if inputState == Enum.UserInputState.Begin then
+            sprintController:startSprinting()
+        elseif inputState == Enum.UserInputState.End then
+            sprintController:stopSprinting()
+        end
+
+        return Enum.ContextActionResult.Sink
+    end, false, Enum.ContextActionPriority.High.Value, Enum.KeyCode.LeftShift)
 end
 
 return SprintController
