@@ -110,9 +110,9 @@ end
 if InputService.KeyboardEnabled then
     ContextActionService:BindActionAtPriority('Sprint', function(_, inputState)
         if inputState == Enum.UserInputState.Begin then
-            sprintController:startSprinting()
+            SprintController:startSprinting()
         elseif inputState == Enum.UserInputState.End then
-            sprintController:stopSprinting()
+            SprintController:stopSprinting()
         end
 
         return Enum.ContextActionResult.Sink
