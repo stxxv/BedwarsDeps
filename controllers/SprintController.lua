@@ -87,7 +87,7 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
     end
 end)
 
-function sprintController:setBlocked(bool)
+function SprintController:setBlocked(bool)
     self.blockSprint = bool
 
     if self.sprinting and self.blockSprint then
