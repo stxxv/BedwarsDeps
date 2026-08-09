@@ -1,3 +1,4 @@
+
 local cloneref = cloneref or function(obj)
     return obj
 end
@@ -8,6 +9,15 @@ local lplr = Players.LocalPlayer
 local Client
 do
     Client = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))():GetMain('Client')
+end
+
+if not lplr:WaitForChild('PlayerGui'):WaitForChild('TopBarAppGui'):WaitForChild('TopBarApp'):FindFirstChild('2'):FindFirstChild('5') then
+    return {
+        matchState = 0,
+        getMatchState = function(self)
+            return self.matchState
+        end
+    }
 end
 
 local matchController, timer = {
