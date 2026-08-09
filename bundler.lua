@@ -34,7 +34,8 @@ local Definitions, Controllers, Main = {
     GameSound = game:GetService("ReplicatedStorage").TS.sound["game-sound"],
     Shop = require(ReplicatedStorage.TS.games.bedwars.shop["bedwars-shop"]).BedwarsShop.ShopItems
 }, {
-    GameQuery = ReplicatedStorage.rbxts_include.node_modules["@easy-games"]["game-core"].out.shared["game-world-query"]["game-query-util"]
+    GameQuery = ReplicatedStorage.rbxts_include.node_modules["@easy-games"]["game-core"].out.shared["game-world-query"]["game-query-util"],
+    IdUtil = ReplicatedStorage.TS.util["id-util"]
 }, {
     Network = lplr.PlayerScripts.TS.lib.network
 }

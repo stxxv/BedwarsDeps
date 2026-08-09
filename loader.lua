@@ -3,16 +3,26 @@ local cloneref = cloneref or function(obj)
 end
 
 local HttpService = cloneref(game:GetService('HttpService'))
-local bwdeps = {}
+
+if not getgenv().HTTPCache then
+    getgenv().HTTPCache = {}
+end
+
+local bwdeps, Cache = {}, getgenv().HTTPCache
 
 local function fetchFile(name, codeext)
     local time = os.clock()
     print('[COMPILER]: Fetching file: '..name)
 
-    local file = game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/%s.%s', name, codeext))
+    if Cache[name] then
+        print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
+        return Cache[name]
+    end
+
+    Cache[name] = game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/%s.%s', name, codeext))
     print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
 
-    return file
+    return Cache[name]
 end
 
 function bwdeps:GetController(name)

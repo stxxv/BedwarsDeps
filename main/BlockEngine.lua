@@ -1,3 +1,9 @@
+--[[
+
+    To-do: fix this horrid mess of code, actual fix logic fr
+
+]]
+
 local cloneref = cloneref or function(obj)
     return obj
 end

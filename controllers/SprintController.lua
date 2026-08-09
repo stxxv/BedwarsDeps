@@ -1,6 +1,6 @@
 --[[
 
-    to-do: add proper Sprint on attribute change (Sprinting)
+    aids code but it gets the job done
 
 ]]
 
@@ -8,12 +8,21 @@ local cloneref = cloneref or function(obj)
     return obj
 end
 
+local TweenService = cloneref(game:GetService('TweenService'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
-local modifiers = {}
+local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
+do
+    local fovController = Loader:GetController('FovController')
+end
 
-return {
+local function isAlive()
+	return (lplr.Character:FindFirstChildOfClass('Humanoid').Health > 0 and true) or false
+end
+
+local modifiers = {}
+local SprintController, Connections = {
     getMovementStatusModifier = function(self)
         local speedboost, speedboostpie = lplr.Character and lplr.Character:GetAttribute('SpeedBoost'), lplr.Character and lplr.Character:GetAttribute('SpeedPieBuff')
         if speedboost then
@@ -34,5 +43,57 @@ return {
     end,
     getModifiers = function(self)
         return modifiers
+    end,
+    sprinting = false
+}, {}
+
+lplr:GetAttributeChangedSignal('Sprinting'):Connect(function() -- 20, 77
+    local val = lplr:GetAttribute('Sprinting')
+    if not isAlive() then return end
+
+    do
+        SprintController.sprinting = val
+        if Connections.SpeedHook then
+            Connections.SpeedHook:Disconnect()
+            Connections.SpeedHook = nil
+        end
     end
-}
+
+    if val then
+        lplr.Character.Humanoid.WalkSpeed = 20
+
+        Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
+            if lplr.Character.Humanoid.WalkSpeed ~= 20 then
+                lplr.Character.Humanoid.WalkSpeed = 20
+            end
+        end)
+
+        TweenService:Create(Workspace.CurrentCamera, TweenInfo.new(0.1, Enum.EasingStyle.Linear), {
+            FieldOfView = math.min(100, fovController:getFOV() / 1.1)
+        }):Play()
+    else
+        Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
+            if lplr.Character.Humanoid.WalkSpeed ~= 14 then
+                lplr.Character.Humanoid.WalkSpeed = 14
+            end
+        end)
+
+        TweenService:Create(Workspace.CurrentCamera, TweenInfo.new(0.1, Enum.EasingStyle.Linear), {
+            FieldOfView = math.min(100, fovController:getFOV() / 1.1)
+        }):Play()
+    end
+end)
+
+function SprintController:isSprinting()
+    return self.sprinting
+end
+
+function SprintController:startSprinting()
+    lplr:SetAttribute('Sprinting', true)
+end
+
+function SprintController:stopSprinting()
+    lplr:SetAttribute('Sprinting', false)
+end
+
+return SprintController

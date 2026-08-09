@@ -9,7 +9,6 @@ local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
 local Client, Cache = {}, {}
-
 for _, v in ReplicatedStorage:GetDescendants() do
     if v:IsA('RemoteEvent') then
         table.insert(Cache, {
@@ -60,6 +59,16 @@ Client.WaitFor = Client.Get
 
 function Client:GetNamespace(name)
     return {Get = Client.Get}
+end
+
+function Client:OnEvent(name, func)
+    Client:Get(name).inst.OnClientEvent:Connect(func)
+
+    return {
+        andThen = function(self, func)
+            func(val)
+        end
+    }
 end
 
 return Client

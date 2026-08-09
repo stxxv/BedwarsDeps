@@ -33,7 +33,7 @@ local function getBlockingUI(pos)
 
     if suc then
         for _, v in res do
-            if v.Visible and (v:IsA('TextButton') or obj:IsA('ImageButton') or obj:IsA('TextBox')) then
+            if v.Visible and (v:IsA('TextButton') or obj:IsA('ImageButton') or obj:IsA('TextBox') or obj:IsA('Frame')) then
                 return true
             end
         end
@@ -45,7 +45,7 @@ local function getBlockingUI(pos)
 
     if sucCore then
         for _, v in resCore do
-            if v.Visible and (v:IsA('TextButton') or obj:IsA('ImageButton') or obj:IsA('TextBox')) then
+            if v.Visible and (v:IsA('TextButton') or obj:IsA('ImageButton') or obj:IsA('TextBox') or obj:IsA('Frame')) then
                 return true
             end
         end
