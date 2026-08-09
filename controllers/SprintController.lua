@@ -47,7 +47,7 @@ local SprintController, Connections = {
     sprinting = false
 }, {}
 
-lplr:GetAttributeChangedSignal('Sprinting'):Connect(function() -- 20, 77
+lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
     local val = lplr:GetAttribute('Sprinting')
     if not isAlive() then return end
 
