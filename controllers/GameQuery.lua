@@ -120,4 +120,6 @@ function v1.raycast(p1, p2, p3, p4, p5) --[[ raycast | Line: 35 ]]
 end
 v1.ADJUST_CAN_QUERY = false
 
-return v1
+return {
+	GameQueryUtil = v1
+}

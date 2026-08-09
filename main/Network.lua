@@ -135,59 +135,60 @@ if not RunService:IsRunning() then
 end
 
 if not RunService:IsServer() then
-	local v11, v12, v13, v14, v15, v16
+	local v11, v12, v13, v14, v15, v16, v17
 
-	v11 = ReplicatedStorage:WaitForChild("ZAP"):WaitForChild("ZAP_RELIABLE")
-	v12 = v11:IsA("RemoteEvent")
-	assert(v12, "Expected ZAP_RELIABLE to be a RemoteEvent")
-	v13 = function() --[[ SendEvents | Line: 155 | Upvalues: v2 (ref), v1 (ref), v11 (copy), v4 (ref), v3 (ref) ]]
+	v11 = ReplicatedStorage:WaitForChild("ZAP", 10)
+	assert(v11, "Timed out waiting for ReplicatedStorage.ZAP")
+	v12 = v11:WaitForChild("ZAP_RELIABLE", 10)
+	assert(v12, "Timed out waiting for ReplicatedStorage.ZAP.ZAP_RELIABLE")
+	v13 = v12:IsA("RemoteEvent")
+	assert(v13, "Expected ZAP_RELIABLE to be a RemoteEvent")
+	v14 = function() --[[ SendEvents | Line: 157 | Upvalues: v2 (ref), v1 (ref), v12 (copy), v4 (ref), v3 (ref) ]]
 		if v2 == 0 then
 			return
 		end
 
-		local v12 = buffer.create(v2)
+		local v13 = buffer.create(v2)
 
-		buffer.copy(v12, 0, v1, 0, v2)
-		v11:FireServer(v12, v4)
+		buffer.copy(v13, 0, v1, 0, v2)
+		v12:FireServer(v13, v4)
 		v1 = buffer.create(64)
 		v2 = 0
 		v3 = 64
 		table.clear(v4)
 	end
-	RunService.Heartbeat:Connect(v13)
-	v14 = table.create(11)
+	RunService.Heartbeat:Connect(v14)
 	v15 = table.create(11)
-	v16 = 0
-	v14[0] = {}
+	v16 = table.create(11)
+	v17 = 0
 	v15[0] = {}
-	v14[1] = {}
+	v16[0] = {}
 	v15[1] = {}
-	v14[2] = {}
+	v16[1] = {}
 	v15[2] = {}
-	v14[3] = {}
+	v16[2] = {}
 	v15[3] = {}
-	v14[4] = {}
+	v16[3] = {}
 	v15[4] = {}
-	v14[5] = {}
+	v16[4] = {}
 	v15[5] = {}
-	v14[6] = {}
+	v16[5] = {}
 	v15[6] = {}
-	v14[7] = {}
+	v16[6] = {}
 	v15[7] = {}
-	v14[8] = {}
+	v16[7] = {}
 	v15[8] = {}
-	v14[9] = {}
+	v16[8] = {}
 	v15[9] = {}
-	v15[10] = table.create(255)
-	v11.OnClientEvent:Connect(function(p13, p23) --[[ Line: 195 | Upvalues: v6 (ref), v8 (ref), v7 (ref), v9 (ref), v14 (copy), v15 (copy) ]]
+	v16[9] = {}
+	v16[10] = table.create(255)
+	v12.OnClientEvent:Connect(function(p13, p23) --[[ Line: 197 | Upvalues: v6 (ref), v8 (ref), v7 (ref), v9 (ref), v15 (copy), v16 (copy) ]]
 		v6 = p13
 		v8 = p23
 		v7 = 0
 		v9 = 0
 
-		local v1 = buffer.len(p13)
-
-		while v7 < v1 do
+		while v7 < buffer.len(p13) do
 			local v43 = v7
 
 			v7 = v7 + 1
@@ -195,7 +196,7 @@ if not RunService:IsServer() then
 			local v44 = buffer.readu8(p13, v43)
 
 			if v44 == 0 then
-				local v2, v3, v4, v5, v62, v72, v82, v92, v10, v11, v122, v13, v142
+				local v2, v3, v4, v5, v62, v72, v82, v92, v10, v11, v122, v13, v14
 
 				v9 = v9 + 1
 
@@ -623,20 +624,20 @@ if not RunService:IsServer() then
 					local v194 = v7
 
 					v7 = v7 + 1
-					v142 = buffer.readu8(p13, v194)
+					v14 = buffer.readu8(p13, v194)
 				else
-					v142 = nil
+					v14 = nil
 				end
 
-				if v14[0][1] then
-					for v196, v197 in v14[0] do
-						task.spawn(v197, v45, v5, v4, v2, v3, v62, v72, v82, v92, v10, v11, v122, v13, v142)
+				if v15[0][1] then
+					for v196, v197 in v15[0] do
+						task.spawn(v197, v45, v5, v4, v2, v3, v62, v72, v82, v92, v10, v11, v122, v13, v14)
 					end
 
 					continue
 				end
 
-				table.insert(v15[0], {
+				table.insert(v16[0], {
 					v45,
 					v5,
 					v4,
@@ -650,16 +651,16 @@ if not RunService:IsServer() then
 					v11,
 					v122,
 					v13,
-					v142
+					v14
 				})
 
-				if #v15[0] > 64 then
-					warn((("[ZAP] %* events in queue for EntityDamageEventZap. Did you forget to attach a listener?"):format(#v15[0])))
+				if #v16[0] > 64 then
+					warn((("[ZAP] %* events in queue for EntityDamageEventZap. Did you forget to attach a listener?"):format(#v16[0])))
 				else
 					continue
 				end
 			else
-				local v152, v16, v17, v18, v19, v20, v21, v222, v23, v24, v25, v26, v27, v28, v29, v30, v31, v322, v33, v34, v35, v36, v37, v38, v39, v40, v41, v422
+				local v152, v162, v17, v18, v19, v20, v21, v222, v23, v24, v25, v26, v27, v28, v29, v30, v31, v322, v33, v34, v35, v36, v37, v38, v39, v40, v41, v422
 
 				if v44 == 1 then
 					local v200 = v7
@@ -682,21 +683,21 @@ if not RunService:IsServer() then
 
 					local v211 = vector.create(v204, buffer.readf32(p13, v206), (buffer.readf32(p13, v209)))
 
-					if v14[1][1] then
+					if v15[1][1] then
 						v2122 = v201
 						v213 = v211
 
-						for v214, v215 in v14[1] do
+						for v214, v215 in v15[1] do
 							task.spawn(v215, v201, v211)
 						end
 
 						continue
 					end
 
-					table.insert(v15[1], { v201, v211 })
+					table.insert(v16[1], { v201, v211 })
 
-					if #v15[1] > 64 then
-						warn((("[ZAP] %* events in queue for PickupItemEventZap. Did you forget to attach a listener?"):format(#v15[1])))
+					if #v16[1] > 64 then
+						warn((("[ZAP] %* events in queue for PickupItemEventZap. Did you forget to attach a listener?"):format(#v16[1])))
 					else
 						continue
 					end
@@ -748,14 +749,14 @@ if not RunService:IsServer() then
 
 					if buffer.readu8(p13, v235) == 1 then
 						v9 = v9 + 1
-						v16 = p23[v9]
-						assert(if v16 == nil then true else v16:IsA("Accessory"))
+						v162 = p23[v9]
+						assert(if v162 == nil then true else v162:IsA("Accessory"))
 						v17 = v228
 						v18 = v233
 					else
 						v17 = v228
 						v18 = v233
-						v16 = nil
+						v162 = nil
 					end
 
 					local v238 = v7
@@ -867,20 +868,20 @@ if not RunService:IsServer() then
 						v24 = nil
 					end
 
-					if v14[2][1] then
-						for v268, v269 in v14[2] do
-							task.spawn(v269, v152, v17, v229, v18, v16, v19, v20, v21, v222, v23, v24)
+					if v15[2][1] then
+						for v268, v269 in v15[2] do
+							task.spawn(v269, v152, v17, v229, v18, v162, v19, v20, v21, v222, v23, v24)
 						end
 
 						continue
 					end
 
-					table.insert(v15[2], {
+					table.insert(v16[2], {
 						v152,
 						v17,
 						v229,
 						v18,
-						v16,
+						v162,
 						v19,
 						v20,
 						v21,
@@ -889,8 +890,8 @@ if not RunService:IsServer() then
 						v24
 					})
 
-					if #v15[2] > 64 then
-						warn((("[ZAP] %* events in queue for ProjectileLaunchZap. Did you forget to attach a listener?"):format(#v15[2])))
+					if #v16[2] > 64 then
+						warn((("[ZAP] %* events in queue for ProjectileLaunchZap. Did you forget to attach a listener?"):format(#v16[2])))
 					else
 						continue
 					end
@@ -991,18 +992,18 @@ if not RunService:IsServer() then
 						v31 = nil
 					end
 
-					if v14[3][1] then
-						for v3022, v303 in v14[3] do
+					if v15[3][1] then
+						for v3022, v303 in v15[3] do
 							task.spawn(v303, v26, v27, v284, v25, v28, v29, v30, v31)
 						end
 
 						continue
 					end
 
-					table.insert(v15[3], { v26, v27, v284, v25, v28, v29, v30, v31 })
+					table.insert(v16[3], { v26, v27, v284, v25, v28, v29, v30, v31 })
 
-					if #v15[3] > 64 then
-						warn((("[ZAP] %* events in queue for ProjectileImpactZap. Did you forget to attach a listener?"):format(#v15[3])))
+					if #v16[3] > 64 then
+						warn((("[ZAP] %* events in queue for ProjectileImpactZap. Did you forget to attach a listener?"):format(#v16[3])))
 					else
 						continue
 					end
@@ -1072,18 +1073,18 @@ if not RunService:IsServer() then
 
 					local v334 = if buffer.readu8(p13, v333) == 1 then true else false
 
-					if v14[4][1] then
-						for v335, v336 in v14[4] do
+					if v15[4][1] then
+						for v335, v336 in v15[4] do
 							task.spawn(v336, t2, v334)
 						end
 
 						continue
 					end
 
-					table.insert(v15[4], { t2, v334 })
+					table.insert(v16[4], { t2, v334 })
 
-					if #v15[4] > 64 then
-						warn((("[ZAP] %* events in queue for UpdateMapDataZap. Did you forget to attach a listener?"):format(#v15[4])))
+					if #v16[4] > 64 then
+						warn((("[ZAP] %* events in queue for UpdateMapDataZap. Did you forget to attach a listener?"):format(#v16[4])))
 					else
 						continue
 					end
@@ -1116,21 +1117,21 @@ if not RunService:IsServer() then
 
 					local v353 = buffer.readstring(p13, v3522, v350)
 
-					if v14[5][1] then
+					if v15[5][1] then
 						v354 = v347
 						v355 = v353
 
-						for v356, v357 in v14[5] do
+						for v356, v357 in v15[5] do
 							task.spawn(v357, v347, v353)
 						end
 
 						continue
 					end
 
-					table.insert(v15[5], { v347, v353 })
+					table.insert(v16[5], { v347, v353 })
 
-					if #v15[5] > 64 then
-						warn((("[ZAP] %* events in queue for PlaceBlockEventZap. Did you forget to attach a listener?"):format(#v15[5])))
+					if #v16[5] > 64 then
+						warn((("[ZAP] %* events in queue for PlaceBlockEventZap. Did you forget to attach a listener?"):format(#v16[5])))
 					else
 						continue
 					end
@@ -1214,18 +1215,18 @@ if not RunService:IsServer() then
 						v33 = nil
 					end
 
-					if v14[6][1] then
-						for v400, v401 in v14[6] do
+					if v15[6][1] then
+						for v400, v401 in v15[6] do
 							task.spawn(v401, v34, v35, v36, v322, v33)
 						end
 
 						continue
 					end
 
-					table.insert(v15[6], { v34, v35, v36, v322, v33 })
+					table.insert(v16[6], { v34, v35, v36, v322, v33 })
 
-					if #v15[6] > 64 then
-						warn((("[ZAP] %* events in queue for BreakBlockEventZap. Did you forget to attach a listener?"):format(#v15[6])))
+					if #v16[6] > 64 then
+						warn((("[ZAP] %* events in queue for BreakBlockEventZap. Did you forget to attach a listener?"):format(#v16[6])))
 					else
 						continue
 					end
@@ -1279,18 +1280,18 @@ if not RunService:IsServer() then
 						v38 = nil
 					end
 
-					if v14[7][1] then
-						for v420, v421 in v14[7] do
+					if v15[7][1] then
+						for v420, v421 in v15[7] do
 							task.spawn(v421, v403, v39, v37, v38)
 						end
 
 						continue
 					end
 
-					table.insert(v15[7], { v403, v39, v37, v38 })
+					table.insert(v16[7], { v403, v39, v37, v38 })
 
-					if #v15[7] > 64 then
-						warn((("[ZAP] %* events in queue for EntityHealEventZap. Did you forget to attach a listener?"):format(#v15[7])))
+					if #v16[7] > 64 then
+						warn((("[ZAP] %* events in queue for EntityHealEventZap. Did you forget to attach a listener?"):format(#v16[7])))
 					else
 						continue
 					end
@@ -1413,18 +1414,18 @@ if not RunService:IsServer() then
 						v422 = nil
 					end
 
-					if v14[8][1] then
-						for v483, v484 in v14[8] do
+					if v15[8][1] then
+						for v483, v484 in v15[8] do
 							task.spawn(v484, v428, v434, v440, v443, t2, v40, v41, v422)
 						end
 
 						continue
 					end
 
-					table.insert(v15[8], { v428, v434, v440, v443, t2, v40, v41, v422 })
+					table.insert(v16[8], { v428, v434, v440, v443, t2, v40, v41, v422 })
 
-					if #v15[8] > 64 then
-						warn((("[ZAP] %* events in queue for AddMatchEventCountdownZap. Did you forget to attach a listener?"):format(#v15[8])))
+					if #v16[8] > 64 then
+						warn((("[ZAP] %* events in queue for AddMatchEventCountdownZap. Did you forget to attach a listener?"):format(#v16[8])))
 					else
 						continue
 					end
@@ -1449,21 +1450,21 @@ if not RunService:IsServer() then
 
 					local v494 = buffer.readstring(p13, v493, v491)
 
-					if v14[9][1] then
+					if v15[9][1] then
 						v495 = v488
 						v496 = v494
 
-						for v497, v498 in v14[9] do
+						for v497, v498 in v15[9] do
 							task.spawn(v498, v488, v494)
 						end
 
 						continue
 					end
 
-					table.insert(v15[9], { v488, v494 })
+					table.insert(v16[9], { v488, v494 })
 
-					if #v15[9] > 64 then
-						warn((("[ZAP] %* events in queue for KitsUpdateEventZap. Did you forget to attach a listener?"):format(#v15[9])))
+					if #v16[9] > 64 then
+						warn((("[ZAP] %* events in queue for KitsUpdateEventZap. Did you forget to attach a listener?"):format(#v16[9])))
 					else
 						continue
 					end
@@ -1532,13 +1533,13 @@ if not RunService:IsServer() then
 						t2[k] = t22
 					end
 
-					local v530 = v15[10][v502]
+					local v530 = v16[10][v502]
 
 					if v530 then
 						task.spawn(v530, t2)
 					end
 
-					v15[10][v502] = nil
+					v16[10][v502] = nil
 
 					continue
 				end
@@ -1550,195 +1551,197 @@ if not RunService:IsServer() then
 	table.freeze(t)
 
 	return {
-		SendEvents = v13,
+		SendEvents = v14,
 		EntityDamageEventZap = {
-			On = function(p13) --[[ On | Line: 721 | Upvalues: v14 (copy), v15 (copy) ]]
-				local v1 = v14[0]
+			On = function(p13) --[[ On | Line: 723 | Upvalues: v15 (copy), v16 (copy) ]]
+				local v1 = v15[0]
 
 				table.insert(v1, p13)
 
-				for v2, v3 in v15[0] do
+				for v2, v3 in v16[0] do
 					task.spawn(p13, unpack(v3))
 				end
 
-				v15[0] = {}
+				v16[0] = {}
 
-				return function() --[[ Line: 751 | Upvalues: v14 (ref), p13 (copy) ]]
-					table.remove(v14[0], table.find(v14[0], p13))
+				return function() --[[ Line: 753 | Upvalues: v15 (ref), p13 (copy) ]]
+					table.remove(v15[0], table.find(v15[0], p13))
 				end
 			end
 		},
 		PickupItemEventZap = {
-			On = function(p13) --[[ On | Line: 757 | Upvalues: v14 (copy), v15 (copy) ]]
-				local v1 = v14[1]
+			On = function(p13) --[[ On | Line: 759 | Upvalues: v15 (copy), v16 (copy) ]]
+				local v1 = v15[1]
 
 				table.insert(v1, p13)
 
-				for v2, v3 in v15[1] do
+				for v2, v3 in v16[1] do
 					task.spawn(p13, unpack(v3))
 				end
 
-				v15[1] = {}
+				v16[1] = {}
 
-				return function() --[[ Line: 763 | Upvalues: v14 (ref), p13 (copy) ]]
-					table.remove(v14[1], table.find(v14[1], p13))
+				return function() --[[ Line: 765 | Upvalues: v15 (ref), p13 (copy) ]]
+					table.remove(v15[1], table.find(v15[1], p13))
 				end
 			end
 		},
 		ProjectileLaunchZap = {
-			On = function(p13) --[[ On | Line: 769 | Upvalues: v14 (copy), v15 (copy) ]]
-				local v1 = v14[2]
+			On = function(p13) --[[ On | Line: 771 | Upvalues: v15 (copy), v16 (copy) ]]
+				local v1 = v15[2]
 
 				table.insert(v1, p13)
 
-				for v2, v3 in v15[2] do
+				for v2, v3 in v16[2] do
 					task.spawn(p13, unpack(v3))
 				end
 
-				v15[2] = {}
+				v16[2] = {}
 
-				return function() --[[ Line: 780 | Upvalues: v14 (ref), p13 (copy) ]]
-					table.remove(v14[2], table.find(v14[2], p13))
+				return function() --[[ Line: 782 | Upvalues: v15 (ref), p13 (copy) ]]
+					table.remove(v15[2], table.find(v15[2], p13))
 				end
 			end
 		},
 		ProjectileImpactZap = {
-			On = function(p13) --[[ On | Line: 786 | Upvalues: v14 (copy), v15 (copy) ]]
-				local v1 = v14[3]
+			On = function(p13) --[[ On | Line: 788 | Upvalues: v15 (copy), v16 (copy) ]]
+				local v1 = v15[3]
 
 				table.insert(v1, p13)
 
-				for v2, v3 in v15[3] do
+				for v2, v3 in v16[3] do
 					task.spawn(p13, unpack(v3))
 				end
 
-				v15[3] = {}
+				v16[3] = {}
 
-				return function() --[[ Line: 792 | Upvalues: v14 (ref), p13 (copy) ]]
-					table.remove(v14[3], table.find(v14[3], p13))
+				return function() --[[ Line: 794 | Upvalues: v15 (ref), p13 (copy) ]]
+					table.remove(v15[3], table.find(v15[3], p13))
 				end
 			end
 		},
 		UpdateMapDataZap = {
-			On = function(p13) --[[ On | Line: 798 | Upvalues: v14 (copy), v15 (copy) ]]
-				local v1 = v14[4]
+			On = function(p13) --[[ On | Line: 800 | Upvalues: v15 (copy), v16 (copy) ]]
+				local v1 = v15[4]
 
 				table.insert(v1, p13)
 
-				for v2, v3 in v15[4] do
+				for v2, v3 in v16[4] do
 					task.spawn(p13, unpack(v3))
 				end
 
-				v15[4] = {}
+				v16[4] = {}
 
-				return function() --[[ Line: 809 | Upvalues: v14 (ref), p13 (copy) ]]
-					table.remove(v14[4], table.find(v14[4], p13))
+				return function() --[[ Line: 811 | Upvalues: v15 (ref), p13 (copy) ]]
+					table.remove(v15[4], table.find(v15[4], p13))
 				end
 			end
 		},
 		PlaceBlockEventZap = {
-			On = function(p13) --[[ On | Line: 815 | Upvalues: v14 (copy), v15 (copy) ]]
-				local v1 = v14[5]
+			On = function(p13) --[[ On | Line: 817 | Upvalues: v15 (copy), v16 (copy) ]]
+				local v1 = v15[5]
 
 				table.insert(v1, p13)
 
-				for v2, v3 in v15[5] do
+				for v2, v3 in v16[5] do
 					task.spawn(p13, unpack(v3))
 				end
 
-				v15[5] = {}
+				v16[5] = {}
 
-				return function() --[[ Line: 821 | Upvalues: v14 (ref), p13 (copy) ]]
-					table.remove(v14[5], table.find(v14[5], p13))
+				return function() --[[ Line: 823 | Upvalues: v15 (ref), p13 (copy) ]]
+					table.remove(v15[5], table.find(v15[5], p13))
 				end
 			end
 		},
 		BreakBlockEventZap = {
-			On = function(p13) --[[ On | Line: 827 | Upvalues: v14 (copy), v15 (copy) ]]
-				local v1 = v14[6]
+			On = function(p13) --[[ On | Line: 829 | Upvalues: v15 (copy), v16 (copy) ]]
+				local v1 = v15[6]
 
 				table.insert(v1, p13)
 
-				for v2, v3 in v15[6] do
+				for v2, v3 in v16[6] do
 					task.spawn(p13, unpack(v3))
 				end
 
-				v15[6] = {}
+				v16[6] = {}
 
-				return function() --[[ Line: 833 | Upvalues: v14 (ref), p13 (copy) ]]
-					table.remove(v14[6], table.find(v14[6], p13))
+				return function() --[[ Line: 835 | Upvalues: v15 (ref), p13 (copy) ]]
+					table.remove(v15[6], table.find(v15[6], p13))
 				end
 			end
 		},
 		EntityHealEventZap = {
-			On = function(p13) --[[ On | Line: 839 | Upvalues: v14 (copy), v15 (copy) ]]
-				local v1 = v14[7]
+			On = function(p13) --[[ On | Line: 841 | Upvalues: v15 (copy), v16 (copy) ]]
+				local v1 = v15[7]
 
 				table.insert(v1, p13)
 
-				for v2, v3 in v15[7] do
+				for v2, v3 in v16[7] do
 					task.spawn(p13, unpack(v3))
 				end
 
-				v15[7] = {}
+				v16[7] = {}
 
-				return function() --[[ Line: 845 | Upvalues: v14 (ref), p13 (copy) ]]
-					table.remove(v14[7], table.find(v14[7], p13))
+				return function() --[[ Line: 847 | Upvalues: v15 (ref), p13 (copy) ]]
+					table.remove(v15[7], table.find(v15[7], p13))
 				end
 			end
 		},
 		AddMatchEventCountdownZap = {
-			On = function(p13) --[[ On | Line: 851 | Upvalues: v14 (copy), v15 (copy) ]]
-				local v1 = v14[8]
+			On = function(p13) --[[ On | Line: 853 | Upvalues: v15 (copy), v16 (copy) ]]
+				local v1 = v15[8]
 
 				table.insert(v1, p13)
 
-				for v2, v3 in v15[8] do
+				for v2, v3 in v16[8] do
 					task.spawn(p13, unpack(v3))
 				end
 
-				v15[8] = {}
+				v16[8] = {}
 
-				return function() --[[ Line: 860 | Upvalues: v14 (ref), p13 (copy) ]]
-					table.remove(v14[8], table.find(v14[8], p13))
+				return function() --[[ Line: 862 | Upvalues: v15 (ref), p13 (copy) ]]
+					table.remove(v15[8], table.find(v15[8], p13))
 				end
 			end
 		},
 		KitsUpdateEventZap = {
-			On = function(p13) --[[ On | Line: 866 | Upvalues: v14 (copy), v15 (copy) ]]
-				local v1 = v14[9]
+			On = function(p13) --[[ On | Line: 868 | Upvalues: v15 (copy), v16 (copy) ]]
+				local v1 = v15[9]
 
 				table.insert(v1, p13)
 
-				for v2, v3 in v15[9] do
+				for v2, v3 in v16[9] do
 					task.spawn(p13, unpack(v3))
 				end
 
-				v15[9] = {}
+				v16[9] = {}
 
-				return function() --[[ Line: 872 | Upvalues: v14 (ref), p13 (copy) ]]
-					table.remove(v14[9], table.find(v14[9], p13))
+				return function() --[[ Line: 874 | Upvalues: v15 (ref), p13 (copy) ]]
+					table.remove(v15[9], table.find(v15[9], p13))
 				end
 			end
 		},
 		FetchMapDataFuncZap = {
-			Call = function() --[[ Call | Line: 878 | Upvalues: alloc (copy), v1 (ref), v5 (ref), v16 (ref), v15 (copy) ]]
+			Call = function() --[[ Call | Line: 880 | Upvalues: alloc (copy), v1 (ref), v5 (ref), v17 (ref), v16 (copy) ]]
 				alloc(1)
 				buffer.writeu8(v1, v5, 0)
-				v16 = v16 + 1
-				v16 = v16 % 256
+				v17 = v17 + 1
+				v17 = v17 % 256
 
-				if not v15[10][v16] then
+				if not v16[10][v17] then
 					alloc(1)
-					buffer.writeu8(v1, v5, v16)
-					v15[10][v16] = coroutine.running()
+					buffer.writeu8(v1, v5, v17)
+					v16[10][v17] = coroutine.running()
 
 					return coroutine.yield()
 				end
 
-				v16 = v16 - 1
+				v17 = v17 - 1
 				error("Zap has more than 256 calls awaiting a response, and therefore this packet has been dropped")
 			end
 		}
 	}
 end
+
+error("Cannot use the client module on the server!")
