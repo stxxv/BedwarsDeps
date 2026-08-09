@@ -31,7 +31,7 @@ local Settings = setmetatable({
     mobile_block_break_button = true,
     emote_volume = 1,
     mobileShiftLock = false,
-    profile_visibility = "public",
+    profile_visibility = 'public',
     pc_shift_lock = true,
     backgroundMusicVolume = 0.5,
     mobile_sword_hold = true,
@@ -45,10 +45,7 @@ local Settings = setmetatable({
     __newindex = function(tbl, key, value)
         rawset(tbl, key, value)
 
-        if key == 'fov' then
-            fovController:setFOV(value)
-        end
-        ReplicatedStorage.rbxts_include.node_modules["@rbxts"].net.out._NetManaged.SetSettings:FireServer(tbl)
+        ReplicatedStorage.rbxts_include.node_modules['@rbxts'].net.out._NetManaged.SetSettings:FireServer(tbl)
     end
 })
 
