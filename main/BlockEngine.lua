@@ -44,10 +44,18 @@ Engine.Store = {
     end
 }
 
+Engine.BlockEngineRemotes = {
+    Client = Client
+}
+
 function Engine:getBlockPosition(pos: Vector3)
     local blockPos = pos / 3
 
     return Vector3.new(math.round(blockPos.X), math.round(blockPos.Y), math.round(blockPos.Z))
+end
+
+function Engine:getDefaultHealthKey()
+    return 'Health'
 end
 
 function Engine:getStore()
