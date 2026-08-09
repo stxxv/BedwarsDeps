@@ -7,10 +7,11 @@ local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
 local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
+local Client, matchController, fovController
 do
-    local Client = Loader:GetMain('Client')
-    local matchController = Loader:GetController('MatchController')
-    local fovController = Loader:GetController('FovController')
+    Client = Loader:GetMain('Client')
+    matchController = Loader:GetController('MatchController')
+    fovController = Loader:GetController('FovController')
 end
 
 local Settings = setmetatable({
@@ -74,7 +75,7 @@ end
 
 local Store = {
     Game = Game,
-    Settings = Settings
+    Settings = Settings,
     Bedwars = Bedwars,
     Kits = Kits
 }

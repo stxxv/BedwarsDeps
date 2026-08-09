@@ -62,7 +62,7 @@ function Client:GetNamespace(name)
 end
 
 function Client:OnEvent(name, func)
-    Client:Get(name).inst.OnClientEvent:Connect(func)
+    local val = Client:Get(name).inst.OnClientEvent:Connect(func)
 
     return {
         andThen = function(self, func)
