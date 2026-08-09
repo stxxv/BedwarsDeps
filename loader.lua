@@ -20,10 +20,18 @@ local function fetchFile(name, codeext)
         return Cache[name]
     end
 
-    Cache[name] = game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/%s.%s', name, codeext))
-    print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
+    local suc, res = pcall(function()
+        return game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/%s.%s', name, codeext))
+    end)
 
-    return Cache[name]
+    if suc then
+        Cache[name] = res
+        print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
+
+        return Cache[name]
+    end
+
+    return warn('[COMPILER]: Unable to fetch file: '..name)
 end
 
 function bwdeps:GetController(name)
