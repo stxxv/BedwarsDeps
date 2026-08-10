@@ -31,7 +31,7 @@ function ViewmodelController:playAnimation(animationType, config)
     config = config or {}
 
     local animation = Instance.new('Animation')
-    animation.AnimationId = 'rbxassetid://'..AnimationUtil:getAssetId(animationType)
+    animation.AnimationId = AnimationUtil:getAssetId(animationType)
 
     local track = self:getAnimator():LoadAnimation(animation)
     track.Looped = config.looped or false

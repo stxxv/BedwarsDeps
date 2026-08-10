@@ -42,6 +42,10 @@ function animUtil:playAnimation(object, animId, options)
         return nil
     end
 
+    if type(animId) == 'number' then
+        animId = animUtil:getAssetId(animId)
+    end
+
     local animation = Instance.new('Animation')
     animation.AnimationId = animId
 
