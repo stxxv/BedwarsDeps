@@ -62,9 +62,7 @@ local Game, Bedwars = {
 do
     task.spawn(function()
         repeat
-            print('updating match state to: ', tostring(matchController:getMatchState())) 
             Game.matchState = matchController:getMatchState()
-
             task.wait()
         until false
     end)
