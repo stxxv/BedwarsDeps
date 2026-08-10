@@ -94,4 +94,7 @@ function SwordController:swingSwordAtMouse()
     VirtualUser:ClickButton1(Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2))
 end
 
+function SwordController:playSwordEffect()
+end
+
 return SwordController
