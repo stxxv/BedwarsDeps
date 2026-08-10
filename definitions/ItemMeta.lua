@@ -11,7 +11,22 @@ do
 end
 
 function ItemMeta.getItemMeta(item)
-    return ItemMeta[item]
+    local suc, res = pcall(function()
+        return ItemMeta[item]
+    end)
+
+    if not suc then
+        warn('[itemmeta]: first method not avaliable..')
+        local suc2, res2 = pcall(function()
+            return ItemMeta.items[item]
+        end)
+
+        if suc2 then
+            return res2
+        end
+    else
+        return res
+    end
 end
 
 return ItemMeta
