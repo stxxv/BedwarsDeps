@@ -59,14 +59,12 @@ local Game, Bedwars = {
     kit = lplr:GetAttribute('PlayingAsKits')
 }
 
-do
-    task.spawn(function()
-        repeat
-            Game.matchState = matchController:getMatchState()
-            task.wait()
-        until false
-    end)
-end
+task.spawn(function()
+    repeat
+        Game.matchState = matchController:getMatchState()
+        task.wait()
+    until false
+end)
 
 local Kits = {
     angelProgress = 0
@@ -82,7 +80,7 @@ local Store = {
     Game = Game,
     Settings = Settings,
     Bedwars = Bedwars,
-    Kits = Kits
+    Kit = Kits
 }
 
 return {
