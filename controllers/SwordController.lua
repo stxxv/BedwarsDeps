@@ -1,5 +1,6 @@
 local SwordController = {
     lastSwing = 0,
+    lastAttack = 0,
     swingCounter = 0,
     thirdPersonAnimPlaying = false
 }
