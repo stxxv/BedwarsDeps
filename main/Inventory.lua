@@ -66,7 +66,6 @@ invmanage.getInventory = function(plr: Player)
 		}
 	end
 
-	print('got inv for: '..plr.Name)
 	return Cache[plr.UserId]
 end
 
