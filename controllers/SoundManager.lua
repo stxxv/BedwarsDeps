@@ -126,4 +126,7 @@ function SoundManager:playRandomSound(list, config)
     return self:playSound(list[math.random(#list)], config)
 end
 
+function SoundManager:preload()
+end
+
 return SoundManager

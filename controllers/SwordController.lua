@@ -17,7 +17,7 @@ local lplr = Players.LocalPlayer
 local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
 local RandomUtil, AnimationUtil, ViewmodelController, SoundManager, AnimationType, GameSound
 do
-    ViewmodelController = Loader:GetController('RandomUtil')
+    ViewmodelController = Loader:GetController('ViewmodelController')
     AnimationUtil = Loader:GetController('AnimationUtil')
     SoundManager = Loader:GetController('SoundManager')
     AnimationType = Loader:GetMeta('AnimationType')
