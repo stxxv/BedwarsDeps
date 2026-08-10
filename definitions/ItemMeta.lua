@@ -16,7 +16,7 @@ function ItemMeta.getItemMeta(item)
     end)
 
     if not suc then
-        warn('[itemmeta]: first method not avaliable..')
+        warn('[ItemMeta]: First method not avaliable, trying legacy method')
         local suc2, res2 = pcall(function()
             return ItemMeta.items[item]
         end)
