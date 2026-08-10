@@ -15,9 +15,9 @@ local function fetchFile(name, codeext)
     local time = os.clock()
     print('[COMPILER]: Fetching file: '..name)
 
-    if Cache[name] then
+    if Cache[name] and Cache[name].ext == codeext then
         print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
-        return Cache[name]
+        return Cache[name].file
     end
 
     local suc, res = pcall(function()
@@ -25,10 +25,13 @@ local function fetchFile(name, codeext)
     end)
 
     if suc then
-        Cache[name] = res
-        print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
+        Cache[name] = {
+            file = res,
+            ext = codeext
+        }
 
-        return Cache[name]
+        print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
+        return Cache[name].file
     end
 
     return warn('[COMPILER]: Unable to fetch file: '..name)
