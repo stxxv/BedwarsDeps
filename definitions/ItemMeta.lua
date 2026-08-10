@@ -11,7 +11,7 @@ do
 end
 
 function ItemMeta.getItemMeta(item)
-    return ItemMeta['items'][item]
+    return ItemMeta[item]
 end
 
 return ItemMeta
