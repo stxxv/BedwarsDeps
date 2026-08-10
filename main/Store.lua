@@ -49,7 +49,7 @@ local Settings = setmetatable({
 })
 
 local Game, Bedwars = {
-    matchState = matchController.matchState,
+    matchState = matchController:getMatchState(),
     queueType = workspace:GetAttribute('QueueType'),
     customMatch = {},
     myTeam = {
