@@ -103,14 +103,26 @@ function SwordController:swingSwordAtMouse()
 end
 
 function SwordController:playSwordEffect(swordObj, chargedAttack)
-    if not swordObj or swordObj.sword then return end
-
     local sword, sword2, sword3 = swordObj.sword, swordObj.sword, swordObj.sword
     chargedAttack = chargedAttack or false
 
-    sword = sword.swingAnimations or {AnimationType.SWORD_SWING}
-    sword2 = sword2.firstPersonSwingAnimations or {AnimationType.FP_SWING_SWORD}
-    sword3 = sword3.swingSounds or {GameSound.SWORD_SWING_1, GameSound.SWORD_SWING_2}        
+    if sword ~= nil then
+        sword = sword.swingAnimations
+    else
+        sword = {AnimationType.SWORD_SWING}
+    end
+
+    if sword2 ~= nil then
+        sword2 = sword2.swingAnimations
+    else
+        sword2 = {AnimationType.FP_SWING_SWORD}
+    end
+
+    if sword3 ~= nil then
+        sword3 = sword3.swingAnimations
+    else
+        sword3 = {GameSound.SWORD_SWING_1, GameSound.SWORD_SWING_2}
+    end
 
     local randomize, animation = sword.randomizeSwingAnimations
     animation = (randomize and RandomUtil.fromList(unpack(sword))) or sword[math.min(self.swingCounter, #sword - 1) + 1]
