@@ -27,13 +27,13 @@ function ViewmodelController:getAnimator()
 end
 
 function ViewmodelController:playAnimation(animationType, config)
-    if not self:GetAnimator() then return nil end
+    if not self:getAnimator() then return nil end
     config = config or {}
 
     local animation = Instance.new('Animation')
     animation.AnimationId = 'rbxassetid://'..AnimationUtil:getAssetId(animationType)
 
-    local track = self:GetAnimator():LoadAnimation(animation)
+    local track = self:getAnimator():LoadAnimation(animation)
     track.Looped = config.looped or false
     track.Priority = config.priority or Enum.AnimationPriority.Action
 
@@ -43,7 +43,7 @@ function ViewmodelController:playAnimation(animationType, config)
     return track
 end
 
-function ViewmodelController:S=stopAnimation(track, fadeTime)
+function ViewmodelController:stopAnimation(track, fadeTime)
     if track then
         track:Stop(fadeTime or 0)
         track:Destroy()
