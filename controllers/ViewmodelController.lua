@@ -50,4 +50,8 @@ function ViewmodelController:StopAnimation(track, fadeTime)
     end
 end
 
+function ViewmodelController:isVisible()
+    return (workspace.CurrentCamera.CFrame.Position - lplr.Character.Head.Position).Magnitude < 1
+end
+
 return ViewmodelController

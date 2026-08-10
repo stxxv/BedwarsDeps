@@ -1,5 +1,7 @@
 local SwordController = {
-    lastSwing = 0
+    lastSwing = 0,
+    swingCounter = 0,
+    thirdPersonAnimPlaying = false
 }
 
 local cloneref = cloneref or function(obj)
@@ -11,7 +13,17 @@ local HttpService = cloneref(game:GetService('HttpService'))
 local CoreGui = cloneref(game:GetService('CoreGui'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
---local ItemMeta = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))():GetMeta('ItemMeta')
+
+local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
+local RandomUtil, AnimationUtil, ViewmodelController, SoundManager, AnimationType, GameSound
+do
+    ViewmodelController = Loader:GetController('RandomUtil')
+    AnimationUtil = Loader:GetController('AnimationUtil')
+    SoundManager = Loader:GetController('SoundManager')
+    AnimationType = Loader:GetMeta('AnimationType')
+    RandomUtil = Loader:GetController('RandomUtil')
+    GameSound = Loader:GetMeta('GameSound')
+end
 
 local function isAlive()
 	return (lplr.Character:FindFirstChildOfClass('Humanoid').Health > 0 and true) or false
@@ -83,14 +95,54 @@ function SwordController:swingSwordAtMouse()
     	return
     end
 
-    if getBlockingUI(Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)) then
+    --[[if getBlockingUI(Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)) then
         return
-    end
+    end]]
 
     VirtualUser:ClickButton1(Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2))
 end
 
-function SwordController:playSwordEffect()
+function SwordController:playSwordEffect(swordObj, chargedAttack)
+    if not swordObj or swordObj.sword then return end
+
+    local sword, sword2, sword3 = swordObj.sword, swordObj.sword, swordObj.sword
+    chargedAttack = chargedAttack or false
+
+    sword = sword.swingAnimations or {AnimationType.SWORD_SWING}
+    sword2 = sword2.firstPersonSwingAnimations or {AnimationType.FP_SWING_SWORD}
+    sword3 = sword3.swingSounds or {GameSound.SWORD_SWING_1, GameSound.SWORD_SWING_2}        
+
+    local randomize, animation = sword.randomizeSwingAnimations
+    animation = (randomize and RandomUtil.fromList(unpack(sword))) or sword[math.min(self.swingCounter, #sword - 1) + 1]
+
+    if not self.thirdPersonAnimPlaying then
+        self.thirdPersonAnimPlaying = true
+
+        local track = AnimationUtil:playAnimation(lplr, animation, {fadeSamePriorityTracks = false})
+        if track then
+            track.Stopped:Connect(function()
+                self.thirdPersonAnimPlaying = false
+            end)
+        else
+            self.thirdPersonAnimPlaying = false
+        end
+    end
+
+    if ViewmodelController:isVisible() then
+        local fpAnim = (Randomize and RandomUtil.fromList(unpack(sword2))) or sword2[math.min(self.swingCounter, #sword2 - 1) + 1]
+
+        ViewmodelController:playAnimation(fpAnim)
+    end
+
+    if self.swingCounter + 1 < #sword then
+        self.swingCounter += 1
+    else
+        self.swingCounter = 0
+    end
+
+    if #sword3 > 0 then
+        SoundManager:playSound(RandomUtil.fromList(unpack(sword3)))
+    end
 end
 
 return SwordController

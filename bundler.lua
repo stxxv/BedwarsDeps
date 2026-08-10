@@ -35,6 +35,7 @@ local Definitions, Controllers, Main = {
     Shop = require(ReplicatedStorage.TS.games.bedwars.shop["bedwars-shop"]).BedwarsShop.ShopItems
 }, {
     GameQuery = ReplicatedStorage.rbxts_include.node_modules["@easy-games"]["game-core"].out.shared["game-world-query"]["game-query-util"],
+    RandomUtil = ReplicatedStorage.rbxts_include.node_modules["@easy-games"]["game-core"].out.shared.util["random-util"],
     IdUtil = ReplicatedStorage.TS.util["id-util"]
 }, {
     Network = lplr.PlayerScripts.TS.lib.network
@@ -66,7 +67,7 @@ for _, v in {'compiler', 'compiler/definitions', 'compiler/controllers', 'compil
     end
 end
 
-print('[BUNDLER]: Fetching definitions.. (requires a good executor to require stuff, will error if bad!!)')
+print('[BUNDLER]: Fetching definitions.. (requires a good executor to use require and debug functions, will error if bad!!)')
 for i,v in Definitions do
     if i == 'ProdAnimations' or i == 'GameSound' then
         writefile('compiler/definitions/'..i..'.lua', decompile(v))
