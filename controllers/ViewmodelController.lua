@@ -10,7 +10,7 @@ function ViewmodelController:getViewModel()
     return workspace.CurrentCamera.Viewmodel
 end
 
-function ViewmodelController:GetAnimator()
+function ViewmodelController:getAnimator()
     local viewmodel = self:getViewModel()
 
     if not viewmodel then
@@ -26,7 +26,7 @@ function ViewmodelController:GetAnimator()
     return humanoid:FindFirstChildOfClass('Animator')
 end
 
-function ViewmodelController:PlayAnimation(animationType, config)
+function ViewmodelController:playAnimation(animationType, config)
     if not self:GetAnimator() then return nil end
     config = config or {}
 
@@ -43,7 +43,7 @@ function ViewmodelController:PlayAnimation(animationType, config)
     return track
 end
 
-function ViewmodelController:StopAnimation(track, fadeTime)
+function ViewmodelController:S=stopAnimation(track, fadeTime)
     if track then
         track:Stop(fadeTime or 0)
         track:Destroy()

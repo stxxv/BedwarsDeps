@@ -113,18 +113,18 @@ function SwordController:playSwordEffect(swordObj, chargedAttack)
     end
 
     if sword2 ~= nil then
-        sword2 = sword2.swingAnimations
+        sword2 = sword2.firstPersonSwingAnimations
     else
         sword2 = {AnimationType.FP_SWING_SWORD}
     end
 
     if sword3 ~= nil then
-        sword3 = sword3.swingAnimations
+        sword3 = sword3.swingSounds
     else
         sword3 = {GameSound.SWORD_SWING_1, GameSound.SWORD_SWING_2}
     end
 
-    local randomize, animation = sword.randomizeSwingAnimations
+    local randomize, animation = swordObj.sword and swordObj.sword.randomizeSwingAnimations
     animation = (randomize and RandomUtil.fromList(unpack(sword))) or sword[math.min(self.swingCounter, #sword - 1) + 1]
 
     if not self.thirdPersonAnimPlaying then
@@ -141,7 +141,7 @@ function SwordController:playSwordEffect(swordObj, chargedAttack)
     end
 
     if ViewmodelController:isVisible() then
-        local fpAnim = (Randomize and RandomUtil.fromList(unpack(sword2))) or sword2[math.min(self.swingCounter, #sword2 - 1) + 1]
+        local fpAnim = (randomize and RandomUtil.fromList(unpack(sword2))) or sword2[math.min(self.swingCounter, #sword2 - 1) + 1]
 
         ViewmodelController:playAnimation(fpAnim)
     end
