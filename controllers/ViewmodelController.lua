@@ -6,6 +6,12 @@ do
     AnimationUtil = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))():GetController('AnimationUtil')
 end
 
+local cloneref = cloneref or function(obj)
+    return obj
+end
+local Players = cloneref(game:GetService('Players'))
+local lplr = Players.LocalPlayer
+
 function ViewmodelController:getViewModel()
     return workspace.CurrentCamera.Viewmodel
 end
