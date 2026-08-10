@@ -9,6 +9,7 @@ local lplr = Players.LocalPlayer
 local invmanage, Cache = {}, {}
 
 invmanage.getInventory = function(plr: Player)
+    plr = plr or lplr
 	if typeof(plr) ~= 'Instance' then
 		return {}
 	end
