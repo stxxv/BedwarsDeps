@@ -34,7 +34,7 @@ local function fetchFile(name, codeext)
     return warn('[COMPILER]: Unable to fetch file: '..name)
 end
 
-function bwDeps:fetchFile(name, codeext)
+function bwDeps:getFile(name, codeext)
     return fetchFile(name, codeext)
 end
 
