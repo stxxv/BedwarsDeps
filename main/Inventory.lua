@@ -18,7 +18,7 @@ invmanage.getInventory = function(plr: Player)
 	end
 
 	if not ReplicatedStorage.Inventories:FindFirstChild(plr.Name) then
-        return
+        return {}
     end
 
 	if not Cache[plr.UserId] then
@@ -65,6 +65,7 @@ invmanage.getInventory = function(plr: Player)
 		}
 	end
 
+	print('got inv for: '..plr.Name)
 	return Cache[plr.UserId]
 end
 

@@ -34,12 +34,16 @@ local function fetchFile(name, codeext)
     return warn('[COMPILER]: Unable to fetch file: '..name)
 end
 
+function bwDeps:fetchFile(name, codeext)
+    return fetchFile(name, codeext)
+end
+
 function bwdeps:GetController(name)
     return loadstring(fetchFile('controllers/'..name, 'lua'))()
 end
 
 function bwdeps:GetMeta(name)
-    if name == 'ProdAnimations' or name == 'GameSound' then
+    if name == 'ProdAnimations' or name == 'GameSound' or name == 'ItemMeta' then
         return loadstring(fetchFile('definitions/'..name, 'lua'))()
     end
 

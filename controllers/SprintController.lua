@@ -15,8 +15,9 @@ local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
 local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
+local fovController
 do
-    local fovController = Loader:GetController('FovController')
+    fovController = Loader:GetController('FovController')
 end
 
 local function isAlive()
