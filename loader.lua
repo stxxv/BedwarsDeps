@@ -34,8 +34,8 @@ local function fetchFile(name, codeext)
     return warn('[COMPILER]: Unable to fetch file: '..name)
 end
 
-function bwdeps:getFile(name, codeext)
-    return fetchFile(name, codeext)
+function bwdeps:GetJson(name)
+    return HttpService:JSONDecode(fetchFile(name, 'json'))
 end
 
 function bwdeps:GetController(name)
