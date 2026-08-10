@@ -11,11 +11,7 @@ local HttpService = cloneref(game:GetService('HttpService'))
 local CoreGui = cloneref(game:GetService('CoreGui'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
-
-local ItemMeta = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))():GetMeta('ItemMeta')
-local function getItemMeta(item)
-	return ItemMeta.items[item]
-end
+--local ItemMeta = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))():GetMeta('ItemMeta')
 
 local function isAlive()
 	return (lplr.Character:FindFirstChildOfClass('Humanoid').Health > 0 and true) or false
