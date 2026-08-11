@@ -137,9 +137,9 @@ function SwordController:playSwordEffect(swordObj, chargedAttack)
     end
 
     if #sword3 > 0 then
-        SoundManager:playSound(RandomUtil.fromList(unpack(sword3)), {
+       --[[SoundManager:playSound(RandomUtil.fromList(unpack(sword3)), {
             category = AudioCategory.GAMEPLAY
-        })
+        })]]
     end
 end
 
