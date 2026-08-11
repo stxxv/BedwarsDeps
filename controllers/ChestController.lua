@@ -4,7 +4,7 @@ do
     AnimationUtil = bundler:GetController('AnimationUtil')
     SoundManager = bundler:GetController('SoundManager')
     AnimationType = bundler:GetMeta('AnimationType')
-    GameSound = bundler:GetMeta('GameSound')
+    GameSound = bundler:GetMeta('GameSound').GameSound
 end
 
 return {

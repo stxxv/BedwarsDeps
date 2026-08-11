@@ -22,8 +22,8 @@ do
     AnimationUtil = Loader:GetController('AnimationUtil')
     SoundManager = Loader:GetController('SoundManager')
     AnimationType = Loader:GetMeta('AnimationType')
-    RandomUtil = Loader:GetController('RandomUtil')
-    GameSound = Loader:GetMeta('GameSound')
+    RandomUtil = Loader:GetController('RandomUtil').RandomUtil
+    GameSound = Loader:GetMeta('GameSound').GameSound
 end
 
 local function isAlive()
