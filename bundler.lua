@@ -32,10 +32,12 @@ local Definitions, Controllers, Main = {
     AppIds = require(lplr.PlayerScripts.TS.ui.types["app-config"]).BedwarsAppIds,
     SummonerKitBalance = require(ReplicatedStorage.TS.games.bedwars.kit.kits.summoner["summoner-kit-balance"]).SummonerKitBalance,
     GameSound = game:GetService("ReplicatedStorage").TS.sound["game-sound"],
-    Shop = require(ReplicatedStorage.TS.games.bedwars.shop["bedwars-shop"]).BedwarsShop.ShopItems
+    Shop = require(ReplicatedStorage.TS.games.bedwars.shop["bedwars-shop"]).BedwarsShop.ShopItems,
+    AudioCategory = require(game:GetService("ReplicatedStorage").rbxts_include.node_modules["@easy-games"]["game-core"].out.shared.audio["audio-category"])
 }, {
     GameQuery = ReplicatedStorage.rbxts_include.node_modules["@easy-games"]["game-core"].out.shared["game-world-query"]["game-query-util"],
     RandomUtil = ReplicatedStorage.rbxts_include.node_modules["@easy-games"]["game-core"].out.shared.util["random-util"],
+    ObjectUtil = ReplicatedStorage.rbxts_include.node_modules["@easy-games"]["object-utils"],
     IdUtil = ReplicatedStorage.TS.util["id-util"]
 }, {
     Network = lplr.PlayerScripts.TS.lib.network

@@ -16,11 +16,12 @@ local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
 local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
-local RandomUtil, AnimationUtil, ViewmodelController, SoundManager, AnimationType, GameSound
+local RandomUtil, AnimationUtil, ViewmodelController, AudioManager, AnimationType, GameSound, AudioCategory
 do
     ViewmodelController = Loader:GetController('ViewmodelController')
     AnimationUtil = Loader:GetController('AnimationUtil')
-    SoundManager = Loader:GetController('SoundManager')
+    AudioManager = Loader:GetController('AudioManager')
+    AudioCategory = Loader:GetMeta('AudioCategory').AudioCategory
     AnimationType = Loader:GetMeta('AnimationType')
     RandomUtil = Loader:GetController('RandomUtil').RandomUtil
     GameSound = Loader:GetMeta('GameSound').GameSound
@@ -136,7 +137,9 @@ function SwordController:playSwordEffect(swordObj, chargedAttack)
     end
 
     if #sword3 > 0 then
-        SoundManager:playSound(RandomUtil.fromList(unpack(sword3)))
+        SoundManager:playSound(RandomUtil.fromList(unpack(sword3)), {
+            category = AudioCategory.GAMEPLAY
+        })
     end
 end
 

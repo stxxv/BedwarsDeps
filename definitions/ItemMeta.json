@@ -4,16 +4,16 @@
         "block": {
             "disableInventoryPickup": true,
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
+            "seeThrough": true,
+            "blastProof": true,
             "minecraftConversions": [
                 {
                     "blockId": 8023
                 }
             ],
-            "blastProof": true,
-            "seeThrough": true,
-            "hitSound": null,
-            "health": 18
+            "health": 18,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Fake Bed"
     },
@@ -21,7 +21,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991765812",
@@ -42,8 +42,8 @@
                     "blockId": 18
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884367424",
         "displayName": "Dark Green Clay"
@@ -81,10 +81,10 @@
             "breakType": "grass",
             "ignoreSwordRaycast": true,
             "seeThrough": true,
-            "canReplace": true,
+            "createHitAudioPlayers": null,
             "ignorePathfind": true,
-            "hitSound": null,
-            "placeSound": null
+            "canReplace": true,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Large Bush"
     },
@@ -110,7 +110,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991767936",
@@ -127,8 +127,8 @@
                     "blockId": 5
                 }
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884373190",
         "displayName": "Spruce Wood Plank"
@@ -192,21 +192,21 @@
     "party_cannon": {
         "block": {
             "noSuffocation": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12018
                 }
             ],
             "breakType": "stone",
-            "health": 300,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "denyPlaceOn": true,
             "collectionServiceTags": [
                 "cannon-type"
             ],
-            "hitSound": null,
-            "unbreakableByTeammates": true
+            "unbreakableByTeammates": true,
+            "health": 300
         },
         "image": "rbxassetid://11967427804",
         "description": "Now it's really a party.",
@@ -245,7 +245,7 @@
     "wool_brown": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 12,
@@ -255,7 +255,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -267,7 +267,7 @@
                     "rbxassetid://7861535961"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://15380238075",
@@ -299,7 +299,7 @@
     "royale_bed": {
         "footstepSound": 2,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12005
@@ -308,32 +308,32 @@
             "blastProof": true,
             "blastResistance": 10000000,
             "breakType": "wood",
-            "health": 18,
+            "createHitAudioPlayers": null,
+            "seeThrough": true,
             "disableInventoryPickup": true,
-            "healthType": 1,
             "collectionServiceTags": [
                 "royale-bed"
             ],
-            "hitSound": null,
-            "seeThrough": true
+            "healthType": 1,
+            "health": 18
         },
         "displayName": "Bed"
     },
     "vending_machine": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
+            "health": 20,
+            "collectionServiceTags": [
+                "VendingMachine"
+            ],
             "minecraftConversions": [
                 {
                     "blockId": 8009
                 }
             ],
-            "collectionServiceTags": [
-                "VendingMachine"
-            ],
-            "hitSound": null,
-            "health": 20
+            "createHitAudioPlayers": null
         },
         "displayName": "Vending Machine"
     },
@@ -364,7 +364,7 @@
     },
     "purple_lucky_block": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 9001
@@ -372,8 +372,18 @@
             ],
             "blastProof": true,
             "breakType": "stone",
-            "health": 30,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
+            "greedyMesh": {
+                "textures": [
+                    "rbxassetid://8105570571",
+                    "rbxassetid://8105570571",
+                    "rbxassetid://8105570571",
+                    "rbxassetid://8105570571",
+                    "rbxassetid://8105570571",
+                    "rbxassetid://8105570571"
+                ]
+            },
             "luckyBlock": {
                 "allowedPolarity": [
                     "positive",
@@ -390,17 +400,7 @@
                     }
                 ]
             },
-            "hitSound": null,
-            "greedyMesh": {
-                "textures": [
-                    "rbxassetid://8105570571",
-                    "rbxassetid://8105570571",
-                    "rbxassetid://8105570571",
-                    "rbxassetid://8105570571",
-                    "rbxassetid://8105570571",
-                    "rbxassetid://8105570571"
-                ]
-            }
+            "health": 30
         },
         "image": "rbxassetid://8105570365",
         "displayName": "Purple Lucky Block"
@@ -512,7 +512,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10859697603",
@@ -529,8 +529,8 @@
                     "blockId": 168
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://10859697544",
         "displayName": "Slate Tiles"
@@ -538,7 +538,7 @@
     "wool_pink": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 6,
@@ -548,7 +548,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -560,7 +560,7 @@
                     "rbxassetid://14549363342"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://7923578533",
@@ -569,7 +569,7 @@
     "melon": {
         "block": {
             "denyPlaceOn": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8015
@@ -579,13 +579,13 @@
                 "itemType": "melon_seeds"
             },
             "flammable": true,
-            "hideDamageTextures": true,
-            "breakType": "wood",
-            "health": 5,
             "disableInventoryPickup": true,
-            "disableFlamableByTeammates": true,
+            "breakType": "wood",
+            "createHitAudioPlayers": null,
             "seeThrough": true,
-            "hitSound": null,
+            "disableFlamableByTeammates": true,
+            "hideDamageTextures": true,
+            "health": 5,
             "flameSpreadStopChance": 0.4
         },
         "image": "rbxassetid://6915428682",
@@ -594,7 +594,7 @@
     "wool_orange": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 1,
@@ -604,7 +604,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -616,7 +616,7 @@
                     "rbxassetid://16991768271"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://7923578297",
@@ -627,18 +627,18 @@
         "block": {
             "disableEnemyInventoryPickup": true,
             "breakType": "wool",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "disableInventoryPickup": true,
+            "health": 4,
+            "collectionServiceTags": [
+                "GumBlock"
+            ],
             "minecraftConversions": [
                 {
                     "blockId": 8026
                 }
             ],
-            "collectionServiceTags": [
-                "GumBlock"
-            ],
-            "hitSound": null,
-            "health": 4
+            "createHitAudioPlayers": null
         },
         "displayName": "Gum Block"
     },
@@ -646,7 +646,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991765869",
@@ -663,8 +663,8 @@
                     "blockId": 159
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884367563",
         "displayName": "Gray Clay"
@@ -751,7 +751,7 @@
     "broken_snow_cone_machine": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12010
@@ -761,21 +761,21 @@
             "collectionServiceTags": [
                 "BrokenSnowConeMachine"
             ],
-            "hitSound": null,
-            "noSuffocation": true
+            "noSuffocation": true,
+            "createHitAudioPlayers": null
         },
         "displayName": "Broken Snow Cone Machine"
     },
     "broken_altar_block": {
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "blastProof": true,
             "collectionServiceTags": [
                 "broken-altar-block"
             ],
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Broken Altar"
     },
@@ -840,7 +840,7 @@
         "footstepSound": 0,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7852097294",
@@ -851,12 +851,12 @@
                     "rbxassetid://7852097294"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 3
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884368936",
         "displayName": "Dirt"
@@ -864,7 +864,7 @@
     "snap_trap": {
         "image": "rbxassetid://7805515071",
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8001
@@ -872,13 +872,13 @@
             ],
             "maxPlaced": 18,
             "disableEnemyInventoryPickup": true,
-            "health": 18,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
             "collectionServiceTags": [
                 "snap_trap"
             ],
-            "hitSound": null,
-            "breakType": "stone"
+            "breakType": "stone",
+            "health": 18
         },
         "displayName": "Snap Trap"
     },
@@ -886,7 +886,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10859696347",
@@ -897,12 +897,12 @@
                     "rbxassetid://10859696347"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 41
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://10859696266",
         "displayName": "Guilded Iron Block"
@@ -922,7 +922,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://12948863341",
@@ -933,12 +933,12 @@
                     "rbxassetid://12948863341"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 45
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884366460",
         "displayName": "Brick"
@@ -950,21 +950,21 @@
     },
     "camera_turret": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8019
                 }
             ],
+            "health": 50,
             "disableInventoryPickup": true,
+            "blastResistance": 2.915,
+            "createHitAudioPlayers": null,
+            "seeThrough": true,
             "collectionServiceTags": [
                 "Turret",
                 "engineer-turret"
             ],
-            "blastResistance": 2.915,
-            "health": 50,
-            "seeThrough": true,
-            "unbreakableByTeammates": true,
             "projectileSource": {
                 "relativeOverride": {
                     "relX": 0,
@@ -977,7 +977,7 @@
                 ],
                 "fireDelaySec": 0.2
             },
-            "hitSound": null,
+            "unbreakableByTeammates": true,
             "breakType": "stone"
         },
         "image": "rbxassetid://7290567966",
@@ -988,13 +988,13 @@
         "image": "rbxassetid://9557924389",
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "noSuffocation": true,
             "collectionServiceTags": [
                 "HealingTurret"
             ],
-            "hitSound": null,
-            "health": 100
+            "health": 100,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Healing Fountain"
     },
@@ -1080,7 +1080,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7861529819",
@@ -1097,8 +1097,8 @@
                     "blockId": 57
                 }
             ],
-            "hitSound": null,
-            "health": 100
+            "health": 100,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884368860",
         "displayName": "Diamond Block"
@@ -1133,7 +1133,7 @@
         "description": "A fluffy block that is weak to water.",
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "mapBlockOverride": {
@@ -1151,7 +1151,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "breakType": "wool",
-            "health": 12,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://95593168978175",
@@ -1162,9 +1162,9 @@
                     "rbxassetid://101122494419922"
                 ]
             },
+            "health": 12,
             "blastResistance": 0.65,
             "wool": true,
-            "hitSound": null,
             "disableInventoryPickup": true
         },
         "displayName": "Cotton Candy Block"
@@ -1268,7 +1268,7 @@
         "image": "rbxassetid://11403476091",
         "block": {
             "denyPlaceOn": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8015
@@ -1278,13 +1278,13 @@
                 "itemType": "pumpkin_seeds"
             },
             "flammable": true,
-            "hideDamageTextures": true,
-            "breakType": "wood",
-            "health": 5,
             "disableInventoryPickup": true,
-            "disableFlamableByTeammates": true,
+            "breakType": "wood",
+            "createHitAudioPlayers": null,
             "seeThrough": true,
-            "hitSound": null,
+            "disableFlamableByTeammates": true,
+            "hideDamageTextures": true,
+            "health": 5,
             "flameSpreadStopChance": 0.4
         },
         "displayName": "Pumpkin"
@@ -1298,7 +1298,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 0,
@@ -1315,8 +1315,8 @@
                     "rbxassetid://7861531930"
                 ]
             },
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://6594536339",
         "displayName": "Marble"
@@ -1325,7 +1325,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991767711",
@@ -1342,8 +1342,8 @@
                     "blockId": 5
                 }
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884372677",
         "displayName": "Hickory Wood Plank"
@@ -1409,7 +1409,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9072552916",
@@ -1420,13 +1420,13 @@
                     "rbxassetid://9072552916"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 6,
                     "blockId": 1
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://9072552793",
         "displayName": "Polished Andesite"
@@ -1502,7 +1502,7 @@
         "footstepSound": 7,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766460",
@@ -1524,8 +1524,8 @@
                     "blockId": 212
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884369431",
         "displayName": "Ice"
@@ -1533,20 +1533,20 @@
     "solar_panel": {
         "image": "rbxassetid://11775182157",
         "block": {
-            "noSuffocation": true,
+            "health": 30,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
+            "noSuffocation": true,
+            "collectionServiceTags": [
+                "SolarPanel"
+            ],
             "minecraftConversions": [
                 {
                     "blockId": 12017
                 }
             ],
-            "collectionServiceTags": [
-                "SolarPanel"
-            ],
-            "hitSound": null,
-            "health": 30
+            "createHitAudioPlayers": null
         },
         "displayName": "Solar Panel"
     },
@@ -1554,7 +1554,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766637",
@@ -1571,8 +1571,8 @@
                     "blockId": 155
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884370206",
         "displayName": "Marble Pillar"
@@ -1585,23 +1585,23 @@
     "void_turret": {
         "image": "rbxassetid://9942058258",
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8011
                 }
             ],
-            "blastResistance": 4,
-            "breakType": "stone",
             "health": 25,
+            "blastResistance": 4,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
-            "unbreakableByTeammates": true,
+            "seeThrough": true,
             "collectionServiceTags": [
                 "Turret",
                 "void-turret"
             ],
-            "hitSound": null,
-            "seeThrough": true
+            "unbreakableByTeammates": true,
+            "breakType": "stone"
         },
         "displayName": "Void Turret"
     },
@@ -1609,7 +1609,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766540",
@@ -1626,8 +1626,8 @@
                     "blockId": 162
                 }
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://86234279548775",
         "displayName": "Maple Log"
@@ -1636,7 +1636,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://137341028781546",
@@ -1648,8 +1648,8 @@
                 ]
             },
             "blastResistance": 0.5,
-            "hitSound": null,
-            "health": 100
+            "health": 100,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://102665467637199",
         "displayName": "Emerald Ore"
@@ -1664,7 +1664,7 @@
         "footstepSound": 4,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9839888790",
@@ -1675,12 +1675,12 @@
                     "rbxassetid://9839888790"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 112
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://9839888714",
         "displayName": "Galactite Brick"
@@ -1688,14 +1688,14 @@
     "snake_fountain": {
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "collectionServiceTags": [
                 "SnakeShrine"
             ],
             "blastProof": true,
             "isImportantBlock": true,
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Snake Shrine"
     },
@@ -1723,7 +1723,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://12938322729",
@@ -1734,12 +1734,12 @@
                     "rbxassetid://10859697821"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 202
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://10859697750",
         "displayName": "Stone Pillar"
@@ -1909,7 +1909,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991765432",
@@ -1926,8 +1926,8 @@
                     "blockId": 17
                 }
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884365859",
         "displayName": "Birch Log"
@@ -1967,6 +1967,16 @@
         "description": "Blast Proof. Attacks and projectiles phase through this magic window!",
         "footstepSound": 4,
         "block": {
+            "createBreakAudioPlayers": null,
+            "breakType": "stone",
+            "createPlaceAudioPlayers": null,
+            "minecraftConversions": [
+                {
+                    "blockId": 12024
+                }
+            ],
+            "blastProof": true,
+            "health": 20,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://121238080563616",
@@ -1977,23 +1987,13 @@
                     "rbxassetid://121238080563616"
                 ]
             },
-            "breakType": "stone",
-            "placeSound": null,
-            "minecraftConversions": [
-                {
-                    "blockId": 12024
-                }
-            ],
-            "blastProof": true,
-            "health": 20,
-            "hitSound": null,
-            "breakSound": null
+            "createHitAudioPlayers": null
         },
         "displayName": "Magic Glass"
     },
     "lucky_block": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 9000
@@ -2001,7 +2001,7 @@
             ],
             "blastProof": true,
             "breakType": "stone",
-            "health": 15,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7843804042",
@@ -2012,6 +2012,10 @@
                     "rbxassetid://7843804042"
                 ]
             },
+            "disableInventoryPickup": true,
+            "collectionServiceTags": [
+                "LuckyBlock"
+            ],
             "luckyBlock": {
                 "drops": [
                     {
@@ -2019,11 +2023,7 @@
                     }
                 ]
             },
-            "collectionServiceTags": [
-                "LuckyBlock"
-            ],
-            "hitSound": null,
-            "disableInventoryPickup": true
+            "health": 15
         },
         "image": "rbxassetid://7884369916",
         "displayName": "Lucky Block"
@@ -2047,7 +2047,7 @@
         "footstepSound": 3,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9072732694",
@@ -2058,13 +2058,13 @@
                     "rbxassetid://9072732694"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 1,
                     "blockId": 12
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://9072732616",
         "displayName": "Red Sand"
@@ -2073,7 +2073,7 @@
         "footstepSound": 6,
         "block": {
             "breakType": "wool",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766975",
@@ -2092,8 +2092,8 @@
                     "blockId": 80
                 }
             ],
-            "hitSound": null,
-            "health": 1
+            "health": 1,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884371442",
         "displayName": "Snow"
@@ -2104,10 +2104,10 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "health": 75,
-            "hitSound": null,
-            "blastResistance": 1.73
+            "blastResistance": 1.73,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Stone Wall Builder"
     },
@@ -2146,7 +2146,7 @@
     "invisible_landmine": {
         "image": "rbxassetid://9434319010",
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8011
@@ -2154,21 +2154,21 @@
             ],
             "maxPlaced": 6,
             "breakType": "stone",
-            "health": 25,
-            "seeThrough": true,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
+            "health": 25,
             "collectionServiceTags": [
                 "invisible-landmine"
             ],
-            "hitSound": null,
-            "unbreakableByTeammates": true
+            "unbreakableByTeammates": true,
+            "seeThrough": true
         },
         "displayName": "Invisible Landmine"
     },
     "carrot": {
         "block": {
             "denyPlaceOn": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8016
@@ -2178,13 +2178,13 @@
                 "itemType": "carrot_seeds"
             },
             "flammable": true,
-            "hideDamageTextures": true,
-            "breakType": "wood",
-            "health": 5,
             "disableInventoryPickup": true,
-            "disableFlamableByTeammates": true,
+            "breakType": "wood",
+            "createHitAudioPlayers": null,
             "seeThrough": true,
-            "hitSound": null,
+            "disableFlamableByTeammates": true,
+            "hideDamageTextures": true,
+            "health": 5,
             "flameSpreadStopChance": 0.4
         },
         "image": "rbxassetid://3677675280",
@@ -2222,11 +2222,11 @@
         "footstepSound": 5,
         "block": {
             "breakType": "wool",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "wool": true,
+            "createHitAudioPlayers": null,
             "health": 8,
             "blastResistance": 0.65,
-            "hitSound": null,
             "flammable": true
         },
         "removeFromCustoms": true,
@@ -2274,7 +2274,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7852098030",
@@ -2291,8 +2291,8 @@
                     "blockId": 42
                 }
             ],
-            "hitSound": null,
-            "health": 100
+            "health": 100,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884369517",
         "displayName": "Iron Block"
@@ -2321,7 +2321,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766155",
@@ -2342,8 +2342,8 @@
                     "blockId": 251
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884368246",
         "displayName": "Red Clay"
@@ -2351,21 +2351,21 @@
     "manual_cannon": {
         "block": {
             "noSuffocation": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12011
                 }
             ],
             "breakType": "stone",
-            "health": 50,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "denyPlaceOn": true,
             "collectionServiceTags": [
                 "cannon-type"
             ],
-            "hitSound": null,
-            "unbreakableByTeammates": true
+            "unbreakableByTeammates": true,
+            "health": 50
         },
         "image": "rbxassetid://10717427560",
         "description": "Shoots a single TNT at a time",
@@ -2401,7 +2401,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7872906008",
@@ -2418,8 +2418,8 @@
                     "blockId": 159
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884367872",
         "displayName": "Light Green Clay"
@@ -2465,10 +2465,10 @@
         "sharingDisabled": true,
         "footstepSound": 2,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "flammable": true,
             "breakType": "wood",
-            "health": 1,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "greedyMesh": {
                 "textures": [
@@ -2484,8 +2484,8 @@
             "collectionServiceTags": [
                 "scaffold"
             ],
-            "hitSound": null,
-            "blastResistance": 1.4
+            "blastResistance": 1.4,
+            "health": 1
         },
         "displayName": "Scaffold"
     },
@@ -2498,7 +2498,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 20
@@ -2569,8 +2569,8 @@
                 }
             ],
             "seeThrough": true,
-            "hitSound": null,
-            "health": 1
+            "health": 1,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://6909521321",
         "displayName": "Glass"
@@ -2579,7 +2579,7 @@
         "footstepSound": 1,
         "block": {
             "noSuffocation": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12023
@@ -2587,12 +2587,12 @@
             ],
             "unbreakable": true,
             "breakType": "stone",
-            "health": 30,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
             "collectionServiceTags": [
                 "CottonCandyMachine"
             ],
-            "hitSound": null,
+            "health": 30,
             "denyPlaceOn": true
         },
         "description": "A cotton candy machine prefab block for the Water Gun LTM.",
@@ -2615,8 +2615,8 @@
     "diamond_capture_block": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "removeFromCustoms": true,
         "displayName": "Diamond Capture Block"
@@ -2764,9 +2764,10 @@
         "image": "rbxassetid://17182946276",
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "disableInventoryPickup": true,
             "blastProof": true,
+            "health": 15,
             "luckyBlock": {
                 "categories": [
                     "flying"
@@ -2777,21 +2778,20 @@
                     }
                 ]
             },
-            "hitSound": null,
-            "health": 15
+            "createHitAudioPlayers": null
         },
         "displayName": "Flying Lucky Block"
     },
     "growing_halloween_lucky_block": {
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
-            "denyPlaceOn": true,
+            "createPlaceAudioPlayers": null,
             "collectionServiceTags": [
                 "GrowingHalloweenLuckyBlock"
             ],
-            "hitSound": null,
+            "denyPlaceOn": true,
             "unbreakable": true
         },
         "displayName": "Growing Halloween Lucky Block"
@@ -2819,7 +2819,7 @@
         "footstepSound": 0,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://15957915501",
@@ -2830,13 +2830,13 @@
                     "rbxassetid://15957915344"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 2,
                     "blockId": 3
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "displayName": "Kresh"
     },
@@ -2982,7 +2982,7 @@
         },
         "block": {
             "denyPlaceOn": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12009
@@ -2990,13 +2990,13 @@
             ],
             "maxPlaced": 1,
             "breakType": "stone",
-            "health": 80,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
-            "unbreakableByTeammates": true,
+            "health": 80,
             "collectionServiceTags": [
                 "flag-kit"
             ],
-            "hitSound": null,
+            "unbreakableByTeammates": true,
             "seeThrough": true
         },
         "sharingDisabled": true,
@@ -3006,18 +3006,18 @@
         "image": "rbxassetid://9369048721",
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
             "health": 100,
             "collectionServiceTags": [
                 "sacrophagus"
             ],
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 8010
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "displayName": "Sacrophagus"
     },
@@ -3035,7 +3035,7 @@
     "tesla_trap": {
         "image": "rbxassetid://7498163110",
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8022
@@ -3043,13 +3043,13 @@
             ],
             "maxPlaced": 1,
             "breakType": "stone",
-            "health": 18,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "collectionServiceTags": [
                 "tesla-trap"
             ],
-            "hitSound": null,
-            "seeThrough": true
+            "seeThrough": true,
+            "health": 18
         },
         "displayName": "Tesla Coil Trap"
     },
@@ -3077,7 +3077,7 @@
         "footstepSound": 0,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://15958116043",
@@ -3088,13 +3088,13 @@
                     "rbxassetid://15958116043"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 1,
                     "blockId": 3
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "displayName": "Void Dirt"
     },
@@ -3125,7 +3125,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991765519",
@@ -3146,8 +3146,8 @@
                     "blockId": 251
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884367004",
         "displayName": "Black Clay"
@@ -3155,7 +3155,7 @@
     "wool_black": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 15,
@@ -3165,7 +3165,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -3177,7 +3177,7 @@
                     "rbxassetid://74763325066726"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://7923576966",
@@ -3187,7 +3187,7 @@
         "footstepSound": 2,
         "block": {
             "denyPlaceOn": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12006
@@ -3200,8 +3200,8 @@
             "collectionServiceTags": [
                 "flag"
             ],
-            "hitSound": null,
-            "seeThrough": true
+            "seeThrough": true,
+            "createHitAudioPlayers": null
         },
         "displayName": "Flag"
     },
@@ -3216,7 +3216,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7843853920",
@@ -3233,8 +3233,8 @@
                     "blockId": 179
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884370687",
         "displayName": "Red Sandstone"
@@ -3273,7 +3273,7 @@
         "image": "rbxassetid://3677675280",
         "block": {
             "denyPlaceOn": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8424
@@ -3282,14 +3282,14 @@
             "unbreakable": true,
             "seeThrough": true,
             "breakType": "wood",
-            "flameSpreadStopChance": 0.4,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "disableFlamableByTeammates": true,
             "collectionServiceTags": [
                 "egg-block"
             ],
-            "hitSound": null,
-            "flammable": true
+            "flammable": true,
+            "flameSpreadStopChance": 0.4
         },
         "displayName": "Collectable Egg"
     },
@@ -3329,12 +3329,7 @@
         "block": {
             "blastResistance": 2,
             "breakType": "stone",
-            "placeSound": null,
-            "minecraftConversions": [
-                {
-                    "blockId": 98
-                }
-            ],
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991767326",
@@ -3345,16 +3340,21 @@
                     "rbxassetid://16991767326"
                 ]
             },
+            "minecraftConversions": [
+                {
+                    "blockId": 98
+                }
+            ],
             "regenSpeed": 0.1,
-            "hitSound": null,
-            "health": 75
+            "health": 75,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884372079",
         "displayName": "Stone Brick"
     },
     "rainbow_pot_of_gold": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 658
@@ -3362,12 +3362,11 @@
             ],
             "blastProof": true,
             "breakType": "stone",
-            "health": 1000,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "collectionServiceTags": [
                 "LuckyBlock"
             ],
-            "hitSound": null,
             "luckyBlock": {
                 "categories": [
                     "rainbow"
@@ -3387,7 +3386,8 @@
                         "luckMultiplier": 4
                     }
                 ]
-            }
+            },
+            "health": 1000
         },
         "displayName": "Rainbow Pot of Gold"
     },
@@ -3414,7 +3414,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991767778",
@@ -3431,8 +3431,8 @@
                     "blockId": 5
                 }
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884372787",
         "displayName": "Maple Wood Plank"
@@ -3440,7 +3440,7 @@
     "bed": {
         "footstepSound": 2,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12005
@@ -3450,14 +3450,14 @@
             "noRegen": true,
             "blastResistance": 10000000,
             "breakType": "wood",
-            "health": 24,
+            "createHitAudioPlayers": null,
+            "seeThrough": true,
             "disableInventoryPickup": true,
-            "healthType": 1,
             "collectionServiceTags": [
                 "bed"
             ],
-            "hitSound": null,
-            "seeThrough": true
+            "healthType": 1,
+            "health": 24
         },
         "displayName": "Bed"
     },
@@ -3524,7 +3524,7 @@
         "description": "Used to create a global generator above its position.",
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 9005
@@ -3533,7 +3533,7 @@
             "collectionServiceTags": [
                 "CreativeGadget"
             ],
-            "hitSound": null,
+            "createHitAudioPlayers": null,
             "breakableOnlyByHosts": true
         },
         "displayName": "Global Generator Gadget"
@@ -3554,7 +3554,7 @@
         "sharingDisabled": true,
         "footstepSound": 1,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8013
@@ -3562,12 +3562,12 @@
             ],
             "maxPlaced": 1,
             "breakType": "stone",
-            "health": 35,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "collectionServiceTags": [
                 "piggy-bank"
             ],
-            "hitSound": null,
+            "health": 35,
             "seeThrough": true
         },
         "displayName": "Piñata"
@@ -3595,7 +3595,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766313",
@@ -3612,8 +3612,8 @@
                     "blockId": 159
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884368673",
         "displayName": "Yellow Clay"
@@ -3654,7 +3654,7 @@
         "image": "rbxassetid://85312425413460",
         "block": {
             "noSuffocation": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "hideDamageTextures": true,
             "denyPlaceOnBlockTypes": [
                 "ladder",
@@ -3669,12 +3669,12 @@
                 null,
                 null
             ],
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 65
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "displayName": "Ladder"
     },
@@ -3730,7 +3730,7 @@
     "wool_gray": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 7,
@@ -3740,7 +3740,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -3752,7 +3752,7 @@
                     "rbxassetid://7861536309"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://133598038392600",
@@ -3832,16 +3832,16 @@
         "block": {
             "disableInventoryPickup": true,
             "breakType": "wood",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
             "blastProof": true,
+            "health": 20,
             "minecraftConversions": [
                 {
                     "blockId": 8017
                 }
             ],
-            "hitSound": null,
-            "health": 20
+            "createHitAudioPlayers": null
         },
         "displayName": "Zipline Base"
     },
@@ -3876,7 +3876,7 @@
         "image": "rbxassetid://10866119664",
         "pickUpOverlaySound": "rbxassetid://10859056155",
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12014
@@ -3884,7 +3884,7 @@
             ],
             "blastProof": true,
             "breakType": "stone",
-            "health": 17,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10849259593",
@@ -3895,6 +3895,10 @@
                     "rbxassetid://10849259593"
                 ]
             },
+            "disableInventoryPickup": true,
+            "collectionServiceTags": [
+                "GlitchedLuckyBlock"
+            ],
             "luckyBlock": {
                 "categories": [
                     "glitch"
@@ -3905,11 +3909,7 @@
                     }
                 ]
             },
-            "collectionServiceTags": [
-                "GlitchedLuckyBlock"
-            ],
-            "hitSound": null,
-            "disableInventoryPickup": true
+            "health": 17
         },
         "displayName": "Glitched Lucky Block"
     },
@@ -4028,14 +4028,14 @@
                 }
             ],
             "breakType": "wool",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
-            "health": 2,
+            "disableEnemyInventoryPickup": true,
             "collectionServiceTags": [
                 "launch-pad"
             ],
-            "hitSound": null,
-            "disableEnemyInventoryPickup": true
+            "health": 2,
+            "createPlaceAudioPlayers": null
         },
         "sharingDisabled": true,
         "displayName": "Gumdrop Bounce Pad"
@@ -4123,8 +4123,8 @@
     "defense_scanner_block_snapping": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "removeFromCustoms": true,
         "sharingDisabled": true,
@@ -4138,10 +4138,10 @@
     "halloween_lucky_block": {
         "image": "rbxassetid://15093670805",
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "blastProof": true,
             "breakType": "stone",
-            "health": 15,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "greedyMesh": {
                 "textures": [
@@ -4156,7 +4156,6 @@
             "collectionServiceTags": [
                 "HalloweenLuckyBlock"
             ],
-            "hitSound": null,
             "luckyBlock": {
                 "categories": [
                     "halloween"
@@ -4166,7 +4165,8 @@
                         "luckMultiplier": 2
                     }
                 ]
-            }
+            },
+            "health": 15
         },
         "displayName": "Halloween Lucky Block"
     },
@@ -4176,23 +4176,23 @@
     },
     "beehive": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8020
                 }
             ],
             "maxPlaced": 5,
-            "unbreakableByTeammates": true,
-            "rotateBasedOnPlayer": true,
-            "health": 25,
-            "seeThrough": true,
             "disableEnemyInventoryPickup": true,
+            "breakType": "stone",
+            "createHitAudioPlayers": null,
+            "seeThrough": true,
+            "rotateBasedOnPlayer": true,
             "collectionServiceTags": [
                 "beehive"
             ],
-            "hitSound": null,
-            "breakType": "stone"
+            "unbreakableByTeammates": true,
+            "health": 25
         },
         "image": "rbxassetid://7343272692",
         "sharingDisabled": true,
@@ -4208,7 +4208,7 @@
     "inflatable_bed": {
         "footstepSound": 8,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12005
@@ -4218,14 +4218,14 @@
             "noRegen": true,
             "blastResistance": 10000000,
             "breakType": "wood",
-            "health": 24,
+            "createHitAudioPlayers": null,
+            "seeThrough": true,
             "disableInventoryPickup": true,
-            "healthType": 1,
             "collectionServiceTags": [
                 "InflatableBed"
             ],
-            "hitSound": null,
-            "seeThrough": true
+            "healthType": 1,
+            "health": 24
         },
         "displayName": "Inflatable Bed"
     },
@@ -4247,10 +4247,10 @@
             "breakType": "grass",
             "ignoreSwordRaycast": true,
             "seeThrough": true,
-            "canReplace": true,
+            "createHitAudioPlayers": null,
             "ignorePathfind": true,
-            "hitSound": null,
-            "placeSound": null
+            "canReplace": true,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Purple Flower"
     },
@@ -4271,7 +4271,7 @@
         "footstepSound": 3,
         "block": {
             "breakType": "wool",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://14719641761",
@@ -4282,8 +4282,8 @@
                     "rbxassetid://14719641708"
                 ]
             },
-            "hitSound": null,
-            "health": 1
+            "health": 1,
+            "createHitAudioPlayers": null
         },
         "displayName": "Siege TNT"
     },
@@ -4403,10 +4403,10 @@
             "breakType": "grass",
             "ignoreSwordRaycast": true,
             "seeThrough": true,
-            "canReplace": true,
+            "createHitAudioPlayers": null,
             "ignorePathfind": true,
-            "hitSound": null,
-            "placeSound": null
+            "canReplace": true,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Small Bush"
     },
@@ -4414,7 +4414,7 @@
         "footstepSound": 0,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7911371279",
@@ -4425,12 +4425,12 @@
                     "rbxassetid://7911371120"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 2
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7911370722",
         "displayName": "Grass"
@@ -4444,7 +4444,8 @@
                 ]
             },
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
+            "disableInventoryPickup": true,
             "seeThrough": true,
             "health": 6,
             "minecraftConversions": [
@@ -4452,8 +4453,7 @@
                     "blockId": 8008
                 }
             ],
-            "hitSound": null,
-            "disableInventoryPickup": true
+            "createHitAudioPlayers": null
         },
         "displayName": "Stone Player Block"
     },
@@ -4504,20 +4504,20 @@
             "amount": 7
         },
         "block": {
+            "health": 1,
+            "breakType": "stone",
+            "createPlaceAudioPlayers": null,
+            "seeThrough": true,
             "minecraftConversions": [
                 {
                     "blockId": 8003
                 }
             ],
-            "breakType": "stone",
-            "placeSound": null,
-            "seeThrough": true,
-            "maxPlaced": 7,
             "collectionServiceTags": [
                 "spider_web"
             ],
-            "hitSound": null,
-            "health": 1
+            "maxPlaced": 7,
+            "createHitAudioPlayers": null
         },
         "displayName": "Spider Web"
     },
@@ -4525,7 +4525,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://12946930317",
@@ -4542,14 +4542,14 @@
                     "blockId": 169
                 }
             ],
+            "health": 10,
             "pointLight": {
                 "Color": null,
                 "Brightness": 1,
                 "Range": 27,
                 "Shadows": true
             },
-            "hitSound": null,
-            "health": 10
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://12948863284",
         "displayName": "Aquamarine Lantern"
@@ -4687,7 +4687,7 @@
     "wool_red": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 14,
@@ -4697,7 +4697,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -4709,7 +4709,7 @@
                     "rbxassetid://16991768524"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://7923579098",
@@ -4799,7 +4799,7 @@
     "pirate_flag": {
         "block": {
             "denyPlaceOn": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12022
@@ -4807,13 +4807,13 @@
             ],
             "maxPlaced": 1,
             "breakType": "stone",
-            "health": 40,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
-            "unbreakableByTeammates": true,
+            "health": 40,
             "collectionServiceTags": [
                 "pirate-flag"
             ],
-            "hitSound": null,
+            "unbreakableByTeammates": true,
             "seeThrough": true
         },
         "image": "rbxassetid://10797226392",
@@ -4905,7 +4905,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7861526072",
@@ -4921,8 +4921,8 @@
                     "blockId": 82
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884366829",
         "displayName": "Clay"
@@ -5184,22 +5184,22 @@
         "block": {
             "ignorePathfind": true,
             "disableEnemyInventoryPickup": true,
-            "requiresSupportingBlock": true,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [],
             "ignoreProjectileCollision": true,
+            "ignoreAbilityRaycast": true,
             "seeThrough": true,
             "disableInventoryPickup": true,
             "health": 1,
-            "canReplace": true,
             "breakType": "wool",
-            "ignoreSwordRaycast": true,
+            "createHitAudioPlayers": null,
             "denyPlacingOnPrefabBlocks": true,
-            "ignoreAbilityRaycast": true,
+            "ignoreSwordRaycast": true,
             "collectionServiceTags": [
                 "SnowBlock"
             ],
-            "hitSound": null,
-            "placeSound": null
+            "canReplace": true,
+            "requiresSupportingBlock": true
         },
         "displayName": "Snow Pile"
     },
@@ -5221,7 +5221,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10859697716",
@@ -5232,12 +5232,12 @@
                     "rbxassetid://10859697716"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 15
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://10859697667",
         "displayName": "Steel Block"
@@ -5271,7 +5271,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://98659207125198",
@@ -5283,8 +5283,8 @@
                 ]
             },
             "blastResistance": 0.5,
-            "hitSound": null,
-            "health": 100
+            "health": 100,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://88425197437530",
         "displayName": "Iron Ore"
@@ -5323,7 +5323,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://14968393691",
@@ -5334,12 +5334,12 @@
                     "rbxassetid://14968393626"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 84
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://14968393558",
         "displayName": "Barrel"
@@ -5356,7 +5356,7 @@
     "wool_blue": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 11,
@@ -5370,7 +5370,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -5382,7 +5382,7 @@
                     "rbxassetid://16991767991"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://7923577182",
@@ -5405,21 +5405,21 @@
     "grave_trap_block": {
         "footstepSound": 8,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8026
                 }
             ],
             "unbreakable": true,
-            "breakType": "stone",
+            "disableEnemyInventoryPickup": true,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
-            "breakSound": null,
             "collectionServiceTags": [
                 "GraveTrapFloor"
             ],
-            "hitSound": null,
-            "disableEnemyInventoryPickup": true
+            "breakType": "stone",
+            "createBreakAudioPlayers": null
         },
         "displayName": "Grave Trap Block"
     },
@@ -5427,7 +5427,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10866360672",
@@ -5443,25 +5443,25 @@
                     "blockId": 47
                 }
             ],
-            "hitSound": null,
-            "health": 15
+            "health": 15,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://10866360547",
         "displayName": "Bookshelf"
     },
     "styx_exit_portal": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
-            "disableEnemyInventoryPickup": true,
+            "breakType": "stone",
             "health": 30,
             "disableInventoryPickup": true,
-            "unbreakableByTeammates": true,
+            "disableEnemyInventoryPickup": true,
             "collectionServiceTags": [
                 "styx-exit-portal"
             ],
-            "hitSound": null,
-            "breakType": "stone"
+            "unbreakableByTeammates": true,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://17009847852",
         "sharingDisabled": true,
@@ -5498,10 +5498,10 @@
         "image": "rbxassetid://17858940835",
         "block": {
             "noSuffocation": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "breakType": "stone",
             "health": 8,
-            "seeThrough": true,
+            "disableInventoryPickup": false,
             "projectileSource": {
                 "relativeOverride": {
                     "relX": 0,
@@ -5520,8 +5520,8 @@
             "collectionServiceTags": [
                 "Ballista"
             ],
-            "hitSound": null,
-            "disableInventoryPickup": false
+            "seeThrough": true,
+            "createHitAudioPlayers": null
         },
         "displayName": "Ballista"
     },
@@ -5543,10 +5543,10 @@
         },
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "blastProof": true,
-            "hitSound": null,
-            "health": 50
+            "health": 50,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Explosive Tank"
     },
@@ -5613,7 +5613,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9072525939",
@@ -5624,13 +5624,13 @@
                     "rbxassetid://9072525939"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 1,
                     "blockId": 1
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://9072553261",
         "displayName": "Granite"
@@ -5767,13 +5767,13 @@
         "footstepSound": 4,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "disableInventoryPickup": true,
             "collectionServiceTags": [
                 "scarab_spawner"
             ],
-            "hitSound": null,
-            "health": 25
+            "health": 25,
+            "createHitAudioPlayers": null
         },
         "keepOnDeath": true,
         "displayName": "Hive"
@@ -5781,7 +5781,7 @@
     "magma_block": {
         "footstepSound": 1,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 213
@@ -5789,7 +5789,7 @@
             ],
             "blastProof": true,
             "breakType": "stone",
-            "health": 10,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9439108691",
@@ -5801,16 +5801,16 @@
                 ],
                 "material": null
             },
+            "health": 10,
+            "collectionServiceTags": [
+                "MagmaBlock"
+            ],
             "pointLight": {
                 "Color": null,
                 "Brightness": 4,
                 "Range": 8,
                 "Shadows": true
             },
-            "collectionServiceTags": [
-                "MagmaBlock"
-            ],
-            "hitSound": null,
             "breakableOnlyByHosts": true
         },
         "image": "rbxassetid://9439108582",
@@ -5913,15 +5913,15 @@
         "footstepSound": 3,
         "block": {
             "breakType": "wool",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "disableInventoryPickup": true,
+            "health": 1,
             "minecraftConversions": [
                 {
                     "blockId": 8005
                 }
             ],
-            "hitSound": null,
-            "health": 1
+            "createHitAudioPlayers": null
         },
         "displayName": "Firework Crate"
     },
@@ -6017,21 +6017,21 @@
         "image": "rbxassetid://8562772907",
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
             "blastProof": true,
             "collectionServiceTags": [
                 "chest"
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Smelter"
     },
     "wool_yellow": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 4,
@@ -6041,7 +6041,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -6053,7 +6053,7 @@
                     "rbxassetid://16991768659"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://7923579520",
@@ -6063,7 +6063,7 @@
         "footstepSound": 3,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7843856590",
@@ -6080,8 +6080,8 @@
                     "blockId": 12
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884370902",
         "displayName": "Sand"
@@ -6129,14 +6129,13 @@
         "description": "A fluffy block that is weak to water.",
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "flammable": true,
             "breakType": "wool",
-            "health": 12,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
+            "health": 12,
             "blastResistance": 0.65,
-            "wool": true,
-            "hitSound": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://82941186384332",
@@ -6146,7 +6145,8 @@
                     "rbxassetid://133145847496637",
                     "rbxassetid://133145847496637"
                 ]
-            }
+            },
+            "wool": true
         },
         "displayName": "Orange Cotton Candy Block"
     },
@@ -6155,14 +6155,13 @@
         "description": "A fluffy block that is weak to water.",
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "flammable": true,
             "breakType": "wool",
-            "health": 12,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
+            "health": 12,
             "blastResistance": 0.65,
-            "wool": true,
-            "hitSound": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://95593168978175",
@@ -6172,7 +6171,8 @@
                     "rbxassetid://101122494419922",
                     "rbxassetid://101122494419922"
                 ]
-            }
+            },
+            "wool": true
         },
         "displayName": "Pink Cotton Candy Block"
     },
@@ -6184,7 +6184,7 @@
         },
         "block": {
             "denyPlaceOn": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12008
@@ -6192,13 +6192,13 @@
             ],
             "maxPlaced": 1,
             "breakType": "stone",
-            "health": 80,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
-            "unbreakableByTeammates": true,
+            "health": 80,
             "collectionServiceTags": [
                 "flag-kit"
             ],
-            "hitSound": null,
+            "unbreakableByTeammates": true,
             "seeThrough": true
         },
         "sharingDisabled": true,
@@ -6209,14 +6209,13 @@
         "description": "A fluffy block that is weak to water.",
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "flammable": true,
             "breakType": "wool",
-            "health": 12,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
+            "health": 12,
             "blastResistance": 0.65,
-            "wool": true,
-            "hitSound": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://95793271745979",
@@ -6226,7 +6225,8 @@
                     "rbxassetid://91190603706530",
                     "rbxassetid://91190603706530"
                 ]
-            }
+            },
+            "wool": true
         },
         "displayName": "Blue Cotton Candy Block"
     },
@@ -6331,25 +6331,25 @@
         "image": "rbxassetid://137237979407187",
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "hideDamageTextures": true,
             "health": 5,
-            "hitSound": null,
-            "noSuffocation": true
+            "noSuffocation": true,
+            "createHitAudioPlayers": null
         },
         "displayName": "Vine Ladder"
     },
     "snake_shrine": {
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "collectionServiceTags": [
                 "SnakeShrine"
             ],
             "blastProof": true,
             "isImportantBlock": true,
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Snake Shrine"
     },
@@ -6380,8 +6380,8 @@
                 "scarab_portal"
             ],
             "breakType": "stone",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "displayName": "Scarab Portal"
     },
@@ -6392,60 +6392,60 @@
                 "void_bait"
             ],
             "breakType": "stone",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "displayName": "Void Rock"
     },
     "crystalheart_flower": {
         "block": {
             "denyPlaceOn": true,
+            "createPlaceAudioPlayers": null,
             "noRegen": true,
             "flammable": true,
             "seeThrough": true,
             "healthType": 1,
-            "hitSound": null,
             "placedBy": {
                 "itemType": "crystalheart_seed"
             },
-            "placeSound": null,
             "hideDamageTextures": true,
             "noSuffocation": true,
+            "flameSpreadStopChance": 0.4,
             "breakType": "grass",
-            "health": 10,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "disableFlamableByTeammates": true,
             "collectionServiceTags": [
                 "SpiritGardenerFlower"
             ],
             "unbreakableByTeammates": true,
-            "flameSpreadStopChance": 0.4
+            "health": 10
         },
         "displayName": "Crystalheart Flower"
     },
     "soulvine_flower": {
         "block": {
             "denyPlaceOn": true,
+            "createPlaceAudioPlayers": null,
             "noRegen": true,
             "flammable": true,
             "seeThrough": true,
             "healthType": 1,
-            "hitSound": null,
             "placedBy": {
                 "itemType": "soulvine_seed"
             },
-            "placeSound": null,
             "hideDamageTextures": true,
             "noSuffocation": true,
+            "flameSpreadStopChance": 0.4,
             "breakType": "grass",
-            "health": 10,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "disableFlamableByTeammates": true,
             "collectionServiceTags": [
                 "SpiritGardenerFlower"
             ],
             "unbreakableByTeammates": true,
-            "flameSpreadStopChance": 0.4
+            "health": 10
         },
         "image": "rbxassetid://115936053361895",
         "displayName": "Soulvine Flower"
@@ -6466,26 +6466,26 @@
     "tearbloom_flower": {
         "block": {
             "denyPlaceOn": true,
+            "createPlaceAudioPlayers": null,
             "noRegen": true,
             "flammable": true,
             "seeThrough": true,
             "healthType": 1,
-            "hitSound": null,
             "placedBy": {
                 "itemType": "tearbloom_seed"
             },
-            "placeSound": null,
             "hideDamageTextures": true,
             "noSuffocation": true,
+            "flameSpreadStopChance": 0.4,
             "breakType": "wood",
-            "health": 10,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "disableFlamableByTeammates": true,
             "collectionServiceTags": [
                 "SpiritGardenerFlower"
             ],
             "unbreakableByTeammates": true,
-            "flameSpreadStopChance": 0.4
+            "health": 10
         },
         "image": "rbxassetid://127974458998118",
         "displayName": "Tearbloom Flower"
@@ -6558,7 +6558,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766060",
@@ -6583,19 +6583,32 @@
                     "blockId": 251
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884368035",
         "displayName": "Pink Clay"
     },
     "forge_lucky_block": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "blastProof": true,
             "breakType": "stone",
             "health": 15,
             "disableInventoryPickup": true,
+            "greedyMesh": {
+                "textures": [
+                    "rbxassetid://15644713593",
+                    "rbxassetid://15644713593",
+                    "rbxassetid://15644713480",
+                    "rbxassetid://15644713480",
+                    "rbxassetid://15644713480",
+                    "rbxassetid://15644713480"
+                ]
+            },
+            "collectionServiceTags": [
+                "ForgeLuckyBlock"
+            ],
             "luckyBlock": {
                 "categories": [
                     "forge"
@@ -6606,20 +6619,7 @@
                     }
                 ]
             },
-            "collectionServiceTags": [
-                "ForgeLuckyBlock"
-            ],
-            "hitSound": null,
-            "greedyMesh": {
-                "textures": [
-                    "rbxassetid://15644713593",
-                    "rbxassetid://15644713593",
-                    "rbxassetid://15644713480",
-                    "rbxassetid://15644713480",
-                    "rbxassetid://15644713480",
-                    "rbxassetid://15644713480"
-                ]
-            }
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://15644713419",
         "displayName": "Forge Lucky Block"
@@ -6628,7 +6628,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9072525496",
@@ -6639,13 +6639,13 @@
                     "rbxassetid://9072525496"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 3,
                     "blockId": 1
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://9072525407",
         "displayName": "Diorite"
@@ -6669,18 +6669,18 @@
     "void_portal": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
+            "health": 20,
+            "collectionServiceTags": [
+                "VoidPortal"
+            ],
             "minecraftConversions": [
                 {
                     "blockId": 8010
                 }
             ],
-            "collectionServiceTags": [
-                "VoidPortal"
-            ],
-            "hitSound": null,
-            "health": 20
+            "createHitAudioPlayers": null
         },
         "displayName": "Void Portal"
     },
@@ -6810,7 +6810,7 @@
         "sharingDisabled": true,
         "footstepSound": 0,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8006
@@ -6818,12 +6818,11 @@
             ],
             "maxPlaced": 20,
             "breakType": "grass",
-            "health": 6,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
             "collectionServiceTags": [
                 "smoke_block"
             ],
-            "hitSound": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://8538034808",
@@ -6833,7 +6832,8 @@
                     "rbxassetid://8538034808",
                     "rbxassetid://8538034808"
                 ]
-            }
+            },
+            "health": 6
         },
         "displayName": "Smoke Block"
     },
@@ -6952,7 +6952,7 @@
     "spider_queen_web": {
         "block": {
             "noSuffocation": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8033
@@ -6960,13 +6960,13 @@
             ],
             "disableInCreative": true,
             "flammable": true,
-            "disableInventoryPickup": true,
-            "breakType": "wool",
             "health": 1,
+            "breakType": "wool",
+            "createHitAudioPlayers": null,
             "seeThrough": true,
-            "flameSpreadStopChance": 0.1,
+            "disableInventoryPickup": true,
             "cannotPathfindOn": true,
-            "hitSound": null,
+            "flameSpreadStopChance": 0.1,
             "blastResistance": 0.3
         },
         "image": "rbxassetid://15056224013",
@@ -7054,9 +7054,9 @@
     "spike_trap": {
         "image": "rbxassetid://10322206238",
         "block": {
-            "maxPlaced": 14,
+            "health": 20,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
             "minecraftConversions": [
                 {
@@ -7066,8 +7066,8 @@
             "collectionServiceTags": [
                 "spike_trap"
             ],
-            "hitSound": null,
-            "health": 20
+            "maxPlaced": 14,
+            "createHitAudioPlayers": null
         },
         "displayName": "Spike Trap"
     },
@@ -7190,7 +7190,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "minecraftConversions": [
                 {
@@ -7200,8 +7200,8 @@
             "collectionServiceTags": [
                 "ExplosiveBarrel"
             ],
-            "hitSound": null,
-            "health": 1
+            "health": 1,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Gunpowder Barrel"
     },
@@ -7242,7 +7242,7 @@
         "block": {
             "seeThrough": true,
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 130
@@ -7253,8 +7253,8 @@
                 "chest",
                 "personal-chest"
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Personal Chest"
     },
@@ -7372,15 +7372,9 @@
     "bedrock": {
         "footstepSound": 1,
         "block": {
-            "health": 10,
+            "createPlaceAudioPlayers": null,
             "breakType": "stone",
-            "placeSound": null,
-            "minecraftConversions": [
-                {
-                    "blockId": 7
-                }
-            ],
-            "blastProof": true,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9207284200",
@@ -7391,7 +7385,13 @@
                     "rbxassetid://9207284200"
                 ]
             },
-            "hitSound": null,
+            "blastProof": true,
+            "minecraftConversions": [
+                {
+                    "blockId": 7
+                }
+            ],
+            "health": 10,
             "breakableOnlyByHosts": true
         },
         "image": "rbxassetid://9207283973",
@@ -7683,7 +7683,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://18880491571",
@@ -7694,12 +7694,12 @@
                     "rbxassetid://18880491571"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 121
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "displayName": "Limestone"
     },
@@ -7864,7 +7864,7 @@
         "footstepSound": 3,
         "block": {
             "breakType": "wool",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://115645221221752",
@@ -7875,8 +7875,8 @@
                     "rbxassetid://16991767398"
                 ]
             },
-            "hitSound": null,
-            "health": 1
+            "health": 1,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884372237",
         "displayName": "TNT"
@@ -7889,14 +7889,14 @@
                 }
             ],
             "breakType": "wool",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
-            "health": 2,
+            "disableEnemyInventoryPickup": true,
             "collectionServiceTags": [
                 "launch-pad"
             ],
-            "hitSound": null,
-            "disableEnemyInventoryPickup": true
+            "health": 2,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://9414655737",
         "displayName": "Jump Pad"
@@ -7904,7 +7904,7 @@
     "barrier": {
         "footstepSound": 1,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 166
@@ -7912,12 +7912,12 @@
             ],
             "blastProof": true,
             "breakType": "stone",
-            "health": 1,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
             "collectionServiceTags": [
                 "BARRIER_BLOCK"
             ],
-            "hitSound": null,
+            "health": 1,
             "breakableOnlyByHosts": true
         },
         "image": "rbxassetid://10569969807",
@@ -7927,13 +7927,13 @@
         "image": "rbxassetid://8270942991",
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "blastProof": true,
             "collectionServiceTags": [
                 "altar-block"
             ],
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Altar"
     },
@@ -7974,7 +7974,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766106",
@@ -7995,8 +7995,8 @@
                     "blockId": 251
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884368099",
         "displayName": "Purple Clay"
@@ -8004,7 +8004,7 @@
     "juggernaut_crate": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8007
@@ -8013,8 +8013,8 @@
             "collectionServiceTags": [
                 "juggernaut-crate"
             ],
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Juggernaut Crate"
     },
@@ -8022,7 +8022,7 @@
         "image": "rbxassetid://8270942991",
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8004
@@ -8032,8 +8032,8 @@
             "collectionServiceTags": [
                 "enchant-table"
             ],
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Enchant Table"
     },
@@ -8064,18 +8064,18 @@
         "image": "rbxassetid://9369048721",
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
             "health": 8,
             "collectionServiceTags": [
                 "teleport_block"
             ],
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 8002
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "displayName": "Teleport Block"
     },
@@ -8093,10 +8093,10 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "health": 30,
-            "hitSound": null,
-            "blastResistance": 1.4
+            "blastResistance": 1.4,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Oak Plank Wall"
     },
@@ -8182,12 +8182,7 @@
         "block": {
             "blastResistance": 5,
             "breakType": "stone",
-            "placeSound": null,
-            "minecraftConversions": [
-                {
-                    "blockId": 8012
-                }
-            ],
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7843775572",
@@ -8198,9 +8193,14 @@
                     "rbxassetid://7843775572"
                 ]
             },
+            "minecraftConversions": [
+                {
+                    "blockId": 8012
+                }
+            ],
             "regenSpeed": 0.2,
-            "hitSound": null,
-            "health": 210
+            "health": 210,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884369108",
         "displayName": "Coral"
@@ -8246,8 +8246,8 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "displayName": "Heal Totem"
     },
@@ -8295,8 +8295,8 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "displayName": "Crate"
     },
@@ -8325,15 +8325,15 @@
     "lasso_hook": {
         "image": "rbxassetid://17009847852",
         "block": {
-            "disableEnemyInventoryPickup": true,
+            "createPlaceAudioPlayers": null,
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
-            "health": 50,
+            "disableEnemyInventoryPickup": true,
             "collectionServiceTags": [
                 "lasso-hook-block"
             ],
-            "hitSound": null,
+            "health": 50,
             "unbreakable": true
         },
         "displayName": "Lasso Hook"
@@ -8365,7 +8365,7 @@
                 }
             ],
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766822",
@@ -8376,10 +8376,10 @@
                     "rbxassetid://16991766822"
                 ]
             },
-            "health": 150,
+            "blastResistance": 10,
             "regenSpeed": 0.2,
-            "hitSound": null,
-            "blastResistance": 10
+            "health": 150,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://8105569883",
         "displayName": "Obsidian"
@@ -8440,13 +8440,13 @@
         "image": "rbxassetid://8270942991",
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "blastProof": true,
             "collectionServiceTags": [
                 "altar-block"
             ],
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Altar"
     },
@@ -8454,13 +8454,13 @@
         "image": "rbxassetid://8270942991",
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "blastProof": true,
             "collectionServiceTags": [
                 "altar-block"
             ],
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Altar"
     },
@@ -8483,23 +8483,23 @@
     "classic_auto_turret": {
         "image": "rbxassetid://7290567966",
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12002
                 }
             ],
             "maxPlaced": 10,
+            "health": 25,
+            "blastResistance": 4,
+            "breakType": "stone",
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "collectionServiceTags": [
                 "Turret",
                 "void-turret",
                 "auto-turret"
             ],
-            "breakType": "stone",
-            "health": 25,
-            "seeThrough": true,
-            "blastResistance": 4,
             "projectileSource": {
                 "relativeOverride": {
                     "relX": 0,
@@ -8512,8 +8512,8 @@
                 ],
                 "fireDelaySec": 0.3
             },
-            "hitSound": null,
-            "unbreakableByTeammates": true
+            "unbreakableByTeammates": true,
+            "seeThrough": true
         },
         "displayName": "Auto Turret"
     },
@@ -8549,7 +8549,7 @@
         "block": {
             "seeThrough": true,
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 130
@@ -8560,8 +8560,8 @@
                 "chest",
                 "personal-chest"
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Personal Chest"
     },
@@ -8603,21 +8603,21 @@
     "team_door": {
         "image": "rbxassetid://10322205747",
         "block": {
-            "saveCustomMapBlockData": true,
+            "health": 20,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
+            "saveCustomMapBlockData": true,
+            "collectionServiceTags": [
+                "CanNoclip",
+                "TeamDoor"
+            ],
             "minecraftConversions": [
                 {
                     "blockId": 12004
                 }
             ],
-            "collectionServiceTags": [
-                "CanNoclip",
-                "TeamDoor"
-            ],
-            "hitSound": null,
-            "health": 20
+            "createHitAudioPlayers": null
         },
         "displayName": "Team Door"
     },
@@ -8678,20 +8678,20 @@
     "cannon": {
         "image": "rbxassetid://7121221753",
         "block": {
-            "disableInventoryPickup": true,
+            "health": 8,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
+            "disableInventoryPickup": true,
+            "collectionServiceTags": [
+                "cannon"
+            ],
             "minecraftConversions": [
                 {
                     "blockId": 8018
                 }
             ],
-            "collectionServiceTags": [
-                "cannon"
-            ],
-            "hitSound": null,
-            "health": 8
+            "createHitAudioPlayers": null
         },
         "displayName": "Cannon"
     },
@@ -8719,7 +8719,7 @@
     "classic_shock_wave_turret": {
         "image": "rbxassetid://10322206511",
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12001
@@ -8727,13 +8727,13 @@
             ],
             "maxPlaced": 2,
             "breakType": "stone",
-            "health": 18,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "collectionServiceTags": [
                 "shock-wave-turret"
             ],
-            "hitSound": null,
-            "seeThrough": true
+            "seeThrough": true,
+            "health": 18
         },
         "displayName": "Shock Wave Turret"
     },
@@ -8743,14 +8743,14 @@
         "block": {
             "noSuffocation": true,
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
             "blastProof": true,
             "collectionServiceTags": [
                 "squad-launcher"
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Squad Launcher"
     },
@@ -8772,18 +8772,18 @@
         "image": "rbxassetid://17009847852",
         "keepOnDeath": true,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "maxPlaced": 1,
             "unbreakableByTeammates": true,
             "disableEnemyInventoryPickup": true,
             "health": 30,
             "seeThrough": true,
-            "instantBreakByOwner": true,
+            "breakType": "stone",
             "collectionServiceTags": [
                 "styx-entrance-portal"
             ],
-            "hitSound": null,
-            "breakType": "stone"
+            "instantBreakByOwner": true,
+            "createHitAudioPlayers": null
         },
         "sharingDisabled": true,
         "displayName": "Confluence Portal"
@@ -8823,7 +8823,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766219",
@@ -8840,8 +8840,8 @@
                     "blockId": 172
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884368312",
         "displayName": "Tan Clay"
@@ -8854,7 +8854,7 @@
         "block": {
             "blastResistance": 1.4,
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://12210620676",
@@ -8866,10 +8866,10 @@
                 ],
                 "rotation": []
             },
-            "maxPlaced": 24,
+            "health": 10,
             "disableInventoryPickup": true,
-            "hitSound": null,
-            "health": 10
+            "maxPlaced": 24,
+            "createPlaceAudioPlayers": null
         },
         "sharingDisabled": true,
         "displayName": "Bridge Printer"
@@ -8888,7 +8888,17 @@
         "block": {
             "blastResistance": 2,
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
+            "greedyMesh": {
+                "textures": [
+                    "rbxassetid://16991767248",
+                    "rbxassetid://16991767248",
+                    "rbxassetid://16991767248",
+                    "rbxassetid://16991767248",
+                    "rbxassetid://16991767248",
+                    "rbxassetid://16991767248"
+                ]
+            },
             "minecraftConversions": [
                 {
                     "blockData": 0,
@@ -8907,19 +8917,9 @@
                     "blockId": 152
                 }
             ],
-            "greedyMesh": {
-                "textures": [
-                    "rbxassetid://16991767248",
-                    "rbxassetid://16991767248",
-                    "rbxassetid://16991767248",
-                    "rbxassetid://16991767248",
-                    "rbxassetid://16991767248",
-                    "rbxassetid://16991767248"
-                ]
-            },
             "regenSpeed": 0.1,
-            "hitSound": null,
-            "health": 50
+            "health": 50,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884371892",
         "displayName": "Stone"
@@ -8956,7 +8956,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9072526507",
@@ -8973,8 +8973,8 @@
                     "blockId": 159
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://9072553631",
         "displayName": "Slate Brick"
@@ -8984,14 +8984,13 @@
         "description": "A fluffy block that is weak to water.",
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "flammable": true,
             "breakType": "wool",
-            "health": 12,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
+            "health": 12,
             "blastResistance": 0.65,
-            "wool": true,
-            "hitSound": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://98235269566126",
@@ -9001,7 +9000,8 @@
                     "rbxassetid://73149623238497",
                     "rbxassetid://73149623238497"
                 ]
-            }
+            },
+            "wool": true
         },
         "displayName": "Yellow Cotton Candy Block"
     },
@@ -9028,7 +9028,7 @@
     },
     "magical_hero_lucky_block": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12117
@@ -9036,12 +9036,11 @@
             ],
             "blastProof": true,
             "breakType": "stone",
-            "health": 15,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "collectionServiceTags": [
                 "MagicalHeroLuckyBlock"
             ],
-            "hitSound": null,
             "luckyBlock": {
                 "categories": [
                     "magical_hero",
@@ -9052,7 +9051,8 @@
                         "luckMultiplier": 2
                     }
                 ]
-            }
+            },
+            "health": 15
         },
         "image": "rbxassetid://16114559103",
         "displayName": "Magical Hero Lucky Block"
@@ -9136,7 +9136,7 @@
     "snow_cone_machine": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 2,
@@ -9147,8 +9147,8 @@
             "collectionServiceTags": [
                 "SnowConeMachine"
             ],
-            "hitSound": null,
-            "noSuffocation": true
+            "noSuffocation": true,
+            "createHitAudioPlayers": null
         },
         "displayName": "Snow Cone Machine"
     },
@@ -9213,7 +9213,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991765574",
@@ -9230,8 +9230,8 @@
                     "blockId": 251
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884367119",
         "displayName": "Blue Clay"
@@ -9254,7 +9254,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16238617352",
@@ -9265,13 +9265,13 @@
                     "rbxassetid://16238617352"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 0,
                     "blockId": 22
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "displayName": "Blue Tile"
     },
@@ -9287,15 +9287,15 @@
     },
     "healing_fountain": {
         "block": {
-            "noSuffocation": true,
+            "createPlaceAudioPlayers": null,
             "breakType": "stone",
-            "placeSound": null,
-            "health": 9999,
+            "createHitAudioPlayers": null,
+            "noSuffocation": true,
             "blastProof": true,
             "collectionServiceTags": [
                 "HealingFountain"
             ],
-            "hitSound": null,
+            "health": 9999,
             "unbreakable": true
         },
         "displayName": "Healing Fountain"
@@ -9329,7 +9329,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7843773857",
@@ -9346,8 +9346,8 @@
                     "blockId": 133
                 }
             ],
-            "hitSound": null,
-            "health": 100
+            "health": 100,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884369019",
         "displayName": "Emerald Block"
@@ -9525,7 +9525,7 @@
     "wool_cyan": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 9,
@@ -9535,7 +9535,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -9547,7 +9547,7 @@
                     "rbxassetid://16991768048"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://7923577311",
@@ -9633,7 +9633,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9072553427",
@@ -9644,13 +9644,13 @@
                     "rbxassetid://9072553427"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 2,
                     "blockId": 1
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://9072553350",
         "displayName": "Polished Granite"
@@ -9770,7 +9770,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991767611",
@@ -9787,8 +9787,8 @@
                     "blockId": 5
                 }
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884372418",
         "displayName": "Birch Wood Plank"
@@ -9797,7 +9797,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10859697352",
@@ -9814,8 +9814,8 @@
                     "blockId": 98
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://10859697278",
         "displayName": "Sandstone Polished"
@@ -9830,7 +9830,7 @@
     },
     "new_years_lucky_block_2024": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12116
@@ -9838,7 +9838,7 @@
             ],
             "blastProof": true,
             "breakType": "stone",
-            "health": 15,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://15800004825",
@@ -9849,6 +9849,10 @@
                     "rbxassetid://15800004825"
                 ]
             },
+            "disableInventoryPickup": true,
+            "collectionServiceTags": [
+                "NewYearsLuckyBlock"
+            ],
             "luckyBlock": {
                 "categories": [
                     "new_years"
@@ -9859,11 +9863,7 @@
                     }
                 ]
             },
-            "collectionServiceTags": [
-                "NewYearsLuckyBlock"
-            ],
-            "hitSound": null,
-            "disableInventoryPickup": true
+            "health": 15
         },
         "image": "rbxassetid://15800004718",
         "displayName": "New Years Lucky Block"
@@ -9982,7 +9982,7 @@
         "block": {
             "disableInventoryPickup": true,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
             "minecraftConversions": [
                 {
@@ -9992,8 +9992,8 @@
             "collectionServiceTags": [
                 "target-dummy-block"
             ],
-            "hitSound": null,
-            "health": 350
+            "health": 350,
+            "createHitAudioPlayers": null
         },
         "sharingDisabled": true,
         "displayName": "Enlightened Defender"
@@ -10114,7 +10114,7 @@
         "block": {
             "disableInventoryPickup": true,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
             "minecraftConversions": [
                 {
@@ -10124,8 +10124,8 @@
             "collectionServiceTags": [
                 "target-dummy-block"
             ],
-            "hitSound": null,
-            "health": 300
+            "health": 300,
+            "createHitAudioPlayers": null
         },
         "sharingDisabled": true,
         "displayName": "Emerald Defender"
@@ -10139,7 +10139,7 @@
         "block": {
             "disableInventoryPickup": true,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
             "minecraftConversions": [
                 {
@@ -10149,8 +10149,8 @@
             "collectionServiceTags": [
                 "target-dummy-block"
             ],
-            "hitSound": null,
-            "health": 250
+            "health": 250,
+            "createHitAudioPlayers": null
         },
         "sharingDisabled": true,
         "displayName": "Diamond Defender"
@@ -10185,10 +10185,10 @@
         "sharingDisabled": true,
         "footstepSound": 2,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "flammable": true,
             "breakType": "wood",
-            "health": 1,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "greedyMesh": {
                 "textures": [
@@ -10204,8 +10204,8 @@
             "collectionServiceTags": [
                 "scaffold"
             ],
-            "hitSound": null,
-            "blastResistance": 1.4
+            "blastResistance": 1.4,
+            "health": 1
         },
         "displayName": "Scaffold"
     },
@@ -10224,7 +10224,7 @@
     "wool_green": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 5,
@@ -10234,7 +10234,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -10246,7 +10246,7 @@
                     "rbxassetid://16991768151"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://7923577655",
@@ -10269,7 +10269,7 @@
         "description": "Used to set a team spawn location at its position.",
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 9004
@@ -10278,7 +10278,7 @@
             "collectionServiceTags": [
                 "CreativeGadget"
             ],
-            "hitSound": null,
+            "createHitAudioPlayers": null,
             "breakableOnlyByHosts": true
         },
         "displayName": "Team Spawn Gadget"
@@ -10332,7 +10332,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10859697202",
@@ -10349,8 +10349,8 @@
                     "blockId": 168
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://10859697143",
         "displayName": "Red Sandstone Smooth"
@@ -10453,21 +10453,21 @@
     "spread_cannon": {
         "block": {
             "noSuffocation": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12013
                 }
             ],
             "breakType": "stone",
-            "health": 150,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "denyPlaceOn": true,
             "collectionServiceTags": [
                 "cannon-type"
             ],
-            "hitSound": null,
-            "unbreakableByTeammates": true
+            "unbreakableByTeammates": true,
+            "health": 150
         },
         "image": "rbxassetid://10717427375",
         "description": "Rapidly fires three TNT at a time",
@@ -10477,7 +10477,7 @@
         "footstepSound": 0,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://130953834660587",
@@ -10488,12 +10488,12 @@
                     "rbxassetid://139037931843335"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 110
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://102285628641008",
         "displayName": "Spirit Grass"
@@ -10578,14 +10578,14 @@
         "block": {
             "noSuffocation": true,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "disableInventoryPickup": true,
             "maxPlaced": 1,
             "collectionServiceTags": [
                 "single-space-block"
             ],
-            "hitSound": null,
-            "unbreakableByTeammates": true
+            "unbreakableByTeammates": true,
+            "createHitAudioPlayers": null
         },
         "sharingDisabled": true,
         "displayName": "BLACK_MARKET_SHOP"
@@ -10618,7 +10618,7 @@
     "wool_white": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 0,
@@ -10628,7 +10628,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -10640,7 +10640,7 @@
                     "rbxassetid://16991768606"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://7923579263",
@@ -10683,7 +10683,7 @@
     "broken_enchant_table": {
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 1,
@@ -10694,8 +10694,8 @@
             "collectionServiceTags": [
                 "broken-enchant-table"
             ],
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Broken Enchant Table"
     },
@@ -10749,7 +10749,7 @@
     "cake_three": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8025
@@ -10759,8 +10759,8 @@
             "collectionServiceTags": [
                 "cake"
             ],
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Cake"
     },
@@ -10832,7 +10832,7 @@
         "footstepSound": 0,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://14969029474",
@@ -10843,12 +10843,12 @@
                     "rbxassetid://14969029405"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 170
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://14968393791",
         "displayName": "Haybale"
@@ -10884,7 +10884,7 @@
         "description": "Used to create a team generator above its position.",
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 9006
@@ -10893,7 +10893,7 @@
             "collectionServiceTags": [
                 "CreativeGadget"
             ],
-            "hitSound": null,
+            "createHitAudioPlayers": null,
             "breakableOnlyByHosts": true
         },
         "displayName": "Team Generator Gadget"
@@ -10939,8 +10939,8 @@
                 "ArrowBoard"
             ],
             "breakType": "wool",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "displayName": "Arrow Board"
     },
@@ -10989,8 +10989,8 @@
                 "ArrowBoard"
             ],
             "breakType": "wool",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "displayName": "Broken Arrow Board"
     },
@@ -11038,14 +11038,14 @@
     "nest": {
         "block": {
             "breakType": "wool",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "displayName": "Nest"
     },
     "radioactive_plant": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8027
@@ -11053,13 +11053,13 @@
             ],
             "maxPlaced": 2,
             "breakType": "stone",
-            "health": 18,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "collectionServiceTags": [
                 "radioactive-plant"
             ],
-            "hitSound": null,
-            "seeThrough": true
+            "seeThrough": true,
+            "health": 18
         },
         "image": "rbxassetid://14399105222",
         "description": "Consumes Iron and Diamonds to deal radiation damage to nearby enemy players and blocks.",
@@ -11119,7 +11119,7 @@
                 "bounceSound": "rbxassetid://6857999096"
             },
             "breakType": "wool",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766905",
@@ -11132,12 +11132,12 @@
             },
             "health": 1,
             "fallDamageMultiplier": 0,
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 165
                 }
-            ]
+            ],
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Slime Block"
     },
@@ -11146,7 +11146,7 @@
         "description": "Send signals to disrupt your foes, earning resources on their shop purchases.",
         "footstepSound": 1,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12016
@@ -11155,13 +11155,13 @@
             "blastProof": true,
             "maxPlaced": 1,
             "breakType": "stone",
-            "health": 20,
+            "createHitAudioPlayers": null,
             "disableEnemyInventoryPickup": true,
             "collectionServiceTags": [
                 "satellite-dish"
             ],
-            "hitSound": null,
-            "unbreakableByTeammates": true
+            "unbreakableByTeammates": true,
+            "health": 20
         },
         "sharingDisabled": true,
         "displayName": "Satellite Dish"
@@ -11214,7 +11214,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991765938",
@@ -11231,8 +11231,8 @@
                     "blockId": 251
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884367698",
         "displayName": "Green Clay"
@@ -11242,15 +11242,15 @@
         "image": "rbxassetid://14146743816",
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
             "blastProof": true,
             "collectionServiceTags": [
                 "chest",
                 "team-crate"
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Team Crate"
     },
@@ -11266,7 +11266,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://12946930661",
@@ -11283,14 +11283,14 @@
                     "blockId": 123
                 }
             ],
+            "health": 10,
             "pointLight": {
                 "Color": null,
                 "Brightness": 1,
                 "Range": 27,
                 "Shadows": true
             },
-            "hitSound": null,
-            "health": 10
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://12948863466",
         "displayName": "Lantern Block"
@@ -11325,7 +11325,7 @@
         "footstepSound": 2,
         "block": {
             "flameSpreadStopChance": 0.4,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 5
@@ -11334,7 +11334,7 @@
             "regenSpeed": 0.15,
             "flammable": true,
             "breakType": "wood",
-            "health": 35,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10866360672",
@@ -11345,8 +11345,8 @@
                     "rbxassetid://10866360672"
                 ]
             },
-            "hitSound": null,
-            "blastResistance": 1.4
+            "blastResistance": 1.4,
+            "health": 35
         },
         "image": "rbxassetid://7884372987",
         "displayName": "Oak Plank"
@@ -11395,7 +11395,7 @@
         "footstepSound": 4,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9859003198",
@@ -11406,12 +11406,12 @@
                     "rbxassetid://9859003106"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 216
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://9859002988",
         "displayName": "Kobblak"
@@ -11420,7 +11420,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9072553173",
@@ -11431,13 +11431,13 @@
                     "rbxassetid://9072553173"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 4,
                     "blockId": 1
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://9072553104",
         "displayName": "Polished Diorite"
@@ -11495,16 +11495,16 @@
         "description": "Shocking for all players!",
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "disableInventoryPickup": true,
             "blastProof": true,
+            "health": 60,
             "minecraftConversions": [
                 {
                     "blockId": 8028
                 }
             ],
-            "hitSound": null,
-            "health": 60
+            "createHitAudioPlayers": null
         },
         "itemCatalog": {
             "collection": 2
@@ -11514,7 +11514,7 @@
     "cake_one": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8025
@@ -11524,15 +11524,15 @@
             "collectionServiceTags": [
                 "cake"
             ],
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Cake"
     },
     "forge": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8025
@@ -11542,8 +11542,8 @@
             "collectionServiceTags": [
                 "forge-block"
             ],
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Forge"
     },
@@ -11578,7 +11578,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766405",
@@ -11595,8 +11595,8 @@
                     "blockId": 17
                 }
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884369330",
         "displayName": "Hickory Log"
@@ -11605,7 +11605,7 @@
         "footstepSound": 0,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://76963117570287",
@@ -11616,13 +11616,13 @@
                     "rbxassetid://76963117570287"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 3,
                     "blockId": 251
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://133699022252191",
         "displayName": "Spirit Foliage"
@@ -11631,7 +11631,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10859697497",
@@ -11648,8 +11648,8 @@
                     "blockId": 98
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://10859697439",
         "displayName": "Sandstone Smooth"
@@ -11667,8 +11667,8 @@
     "merchant_region_block": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "displayName": "Merchant Region Block"
     },
@@ -11748,7 +11748,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10859697059",
@@ -11764,8 +11764,8 @@
                     "blockId": 168
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://10859696978",
         "displayName": "Red Sandstone Polished"
@@ -11814,7 +11814,7 @@
         "block": {
             "seeThrough": true,
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 54
@@ -11827,8 +11827,8 @@
             "collectionServiceTags": [
                 "chest"
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Chest"
     },
@@ -11924,26 +11924,21 @@
     },
     "cosmic_lucky_block": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12015
                 }
             ],
             "blastProof": true,
-            "disableInventoryPickup": true,
+            "createBreakAudioPlayers": null,
             "breakType": "stone",
+            "createHitAudioPlayers": null,
+            "disableInventoryPickup": true,
             "health": 15,
-            "greedyMesh": {
-                "textures": [
-                    "rbxassetid://11773163645",
-                    "rbxassetid://11773163645",
-                    "rbxassetid://11773163645",
-                    "rbxassetid://11773163645",
-                    "rbxassetid://11773163645",
-                    "rbxassetid://11773163645"
-                ]
-            },
+            "collectionServiceTags": [
+                "LuckyBlock"
+            ],
             "luckyBlock": {
                 "categories": [
                     "cosmic"
@@ -11954,11 +11949,16 @@
                     }
                 ]
             },
-            "collectionServiceTags": [
-                "LuckyBlock"
-            ],
-            "hitSound": null,
-            "breakSound": null
+            "greedyMesh": {
+                "textures": [
+                    "rbxassetid://11773163645",
+                    "rbxassetid://11773163645",
+                    "rbxassetid://11773163645",
+                    "rbxassetid://11773163645",
+                    "rbxassetid://11773163645",
+                    "rbxassetid://11773163645"
+                ]
+            }
         },
         "image": "rbxassetid://11773163557",
         "displayName": "Cosmic Lucky Block"
@@ -11967,7 +11967,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://12946930610",
@@ -11984,14 +11984,14 @@
                     "blockId": 89
                 }
             ],
+            "health": 10,
             "pointLight": {
                 "Color": null,
                 "Brightness": 1,
                 "Range": 27,
                 "Shadows": true
             },
-            "hitSound": null,
-            "health": 10
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://12948863407",
         "displayName": "Glowstone"
@@ -12000,7 +12000,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://8537949581",
@@ -12017,8 +12017,8 @@
                     "blockId": 251
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://8537949134",
         "displayName": "Green Concrete"
@@ -12054,8 +12054,8 @@
     "jellyfish_block_snapping": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "removeFromCustoms": true,
         "sharingDisabled": true,
@@ -12075,8 +12075,8 @@
                 "NestDepositBlock"
             ],
             "breakType": "wool",
-            "placeSound": null,
-            "hitSound": null
+            "createPlaceAudioPlayers": null,
+            "createHitAudioPlayers": null
         },
         "displayName": "Nest Deposit Zone"
     },
@@ -12150,7 +12150,7 @@
         "image": "rbxassetid://17208701108",
         "block": {
             "denyPlaceOn": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8002
@@ -12163,8 +12163,8 @@
             "collectionServiceTags": [
                 "void_teleport_portal"
             ],
-            "hitSound": null,
-            "disableInventoryPickup": true
+            "disableInventoryPickup": true,
+            "createHitAudioPlayers": null
         },
         "displayName": "Teleport Block"
     },
@@ -12172,7 +12172,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7872908360",
@@ -12189,8 +12189,8 @@
                     "blockId": 24
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884371048",
         "displayName": "Sandstone"
@@ -12282,7 +12282,7 @@
         "footstepSound": 0,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://15957915625",
@@ -12293,12 +12293,12 @@
                     "rbxassetid://15957915625"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 214
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "displayName": "Void Growth"
     },
@@ -12306,7 +12306,7 @@
         "image": "rbxassetid://12291381909",
         "block": {
             "noSuffocation": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 656
@@ -12314,12 +12314,12 @@
             ],
             "maxPlaced": 1,
             "breakType": "stone",
-            "health": 100000,
+            "createHitAudioPlayers": null,
             "seeThrough": true,
-            "unbreakableByTeammates": true,
+            "disableInventoryPickup": true,
             "collectionServiceTags": [],
-            "hitSound": null,
-            "disableInventoryPickup": true
+            "unbreakableByTeammates": true,
+            "health": 100000
         },
         "displayName": "Fire Sheep Statue"
     },
@@ -12327,7 +12327,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9072525162",
@@ -12338,13 +12338,13 @@
                     "rbxassetid://9072525162"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 5,
                     "blockId": 1
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://9072552631",
         "displayName": "ANDESITE"
@@ -12425,7 +12425,7 @@
         "description": "Used to create a bed at its position.",
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 9003
@@ -12434,7 +12434,7 @@
             "collectionServiceTags": [
                 "CreativeGadget"
             ],
-            "hitSound": null,
+            "createHitAudioPlayers": null,
             "breakableOnlyByHosts": true
         },
         "displayName": "Bed Gadget"
@@ -12443,7 +12443,7 @@
         "footstepSound": 0,
         "block": {
             "breakType": "grass",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10866261237",
@@ -12461,12 +12461,12 @@
                     null
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 48
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://10866497548",
         "displayName": "Moss Block"
@@ -12475,7 +12475,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766755",
@@ -12498,8 +12498,8 @@
                     "blockId": 159
                 }
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884370279",
         "displayName": "Oak Log"
@@ -12533,7 +12533,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://8105570960",
@@ -12544,7 +12544,6 @@
                     "rbxassetid://8105570960"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 8,
@@ -12558,7 +12557,8 @@
                     "blockData": 0,
                     "blockId": 44
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://8105570787",
         "displayName": "Stone Slab"
@@ -12581,7 +12581,7 @@
     },
     "rainbow_lucky_block": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 657
@@ -12589,12 +12589,11 @@
             ],
             "blastProof": true,
             "breakType": "stone",
-            "health": 30,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "collectionServiceTags": [
                 "LuckyBlock"
             ],
-            "hitSound": null,
             "luckyBlock": {
                 "categories": [
                     "rainbow"
@@ -12607,7 +12606,8 @@
                         "luckMultiplier": 2
                     }
                 ]
-            }
+            },
+            "health": 30
         },
         "image": "rbxassetid://12813794908",
         "displayName": "Rainbow Lucky Block"
@@ -12676,21 +12676,21 @@
             ]
         },
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8021
                 }
             ],
             "breakType": "stone",
-            "health": 25,
+            "createHitAudioPlayers": null,
+            "disableInventoryPickup": true,
             "seeThrough": true,
-            "unbreakableByTeammates": true,
             "collectionServiceTags": [
                 "brewing_cauldron"
             ],
-            "hitSound": null,
-            "disableInventoryPickup": true
+            "unbreakableByTeammates": true,
+            "health": 25
         },
         "displayName": "Brewing Cauldron"
     },
@@ -12709,7 +12709,7 @@
     "chicken_egg_block": {
         "block": {
             "denyPlaceOn": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8016
@@ -12719,13 +12719,13 @@
                 "itemType": "chicken_egg"
             },
             "flammable": true,
-            "unbreakableByTeammates": true,
-            "breakType": "wood",
             "health": 1,
+            "breakType": "wood",
+            "createHitAudioPlayers": null,
             "seeThrough": true,
             "disableFlamableByTeammates": true,
             "disableEnemyInventoryPickup": true,
-            "hitSound": null,
+            "unbreakableByTeammates": true,
             "flameSpreadStopChance": 0.4
         },
         "image": "rbxassetid://3677675280",
@@ -12854,7 +12854,7 @@
         "block": {
             "disableInventoryPickup": true,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://14192272804",
@@ -12866,6 +12866,7 @@
                 ]
             },
             "blastProof": true,
+            "health": 15,
             "luckyBlock": {
                 "categories": [
                     "food"
@@ -12876,8 +12877,7 @@
                     }
                 ]
             },
-            "hitSound": null,
-            "health": 15
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://14192272584",
         "displayName": "Food Lucky Block"
@@ -12897,22 +12897,22 @@
     "grave_trap": {
         "image": "rbxassetid://7498163110",
         "block": {
-            "placeSound": null,
-            "breakSound": null,
-            "maxPlaced": 1,
-            "breakType": "stone",
-            "health": 18,
-            "seeThrough": true,
-            "disableInventoryPickup": true,
-            "collectionServiceTags": [
-                "GraveTrap"
-            ],
-            "hitSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8022
                 }
-            ]
+            ],
+            "maxPlaced": 1,
+            "breakType": "stone",
+            "createHitAudioPlayers": null,
+            "disableInventoryPickup": true,
+            "seeThrough": true,
+            "collectionServiceTags": [
+                "GraveTrap"
+            ],
+            "createBreakAudioPlayers": null,
+            "health": 18
         },
         "displayName": "Grave Trap"
     },
@@ -13052,7 +13052,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://117384798039734",
@@ -13064,8 +13064,8 @@
                 ]
             },
             "blastResistance": 0.5,
-            "hitSound": null,
-            "health": 100
+            "health": 100,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://105644572237110",
         "displayName": "Diamond Ore"
@@ -13127,7 +13127,7 @@
         "block": {
             "blastResistance": 1.4,
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://97798420366864",
@@ -13139,10 +13139,10 @@
                 ],
                 "rotation": []
             },
-            "maxPlaced": 24,
+            "health": 10,
             "disableInventoryPickup": true,
-            "hitSound": null,
-            "health": 10
+            "maxPlaced": 24,
+            "createPlaceAudioPlayers": null
         },
         "sharingDisabled": true,
         "displayName": "Bridge Printer"
@@ -13158,7 +13158,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://15380237968",
@@ -13176,12 +13176,12 @@
                 "Range": 12,
                 "Shadows": true
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 12020
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://15380237898",
         "displayName": "Volatile Stone"
@@ -13190,7 +13190,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991765722",
@@ -13207,8 +13207,8 @@
                     "blockId": 159
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884367299",
         "displayName": "Dark Brown Clay"
@@ -13222,7 +13222,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991767140",
@@ -13239,8 +13239,8 @@
                     "blockId": 17
                 }
             ],
-            "hitSound": null,
-            "health": 30
+            "health": 30,
+            "createPlaceAudioPlayers": null
         },
         "image": "rbxassetid://7884371618",
         "displayName": "Spruce Log"
@@ -13248,21 +13248,21 @@
     "auto_cannon": {
         "block": {
             "noSuffocation": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12012
                 }
             ],
             "breakType": "stone",
-            "health": 100,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
             "denyPlaceOn": true,
             "collectionServiceTags": [
                 "cannon-type"
             ],
-            "hitSound": null,
-            "unbreakableByTeammates": true
+            "unbreakableByTeammates": true,
+            "health": 100
         },
         "image": "rbxassetid://10717427845",
         "description": "Automatically fires TNT on an interval",
@@ -13272,16 +13272,16 @@
         "image": "",
         "block": {
             "noSuffocation": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "unbreakable": true,
             "breakType": "stone",
-            "health": 8,
-            "seeThrough": true,
+            "createHitAudioPlayers": null,
+            "disableInventoryPickup": true,
             "collectionServiceTags": [
                 "Excalibur"
             ],
-            "hitSound": null,
-            "disableInventoryPickup": true
+            "seeThrough": true,
+            "health": 8
         },
         "displayName": "Excalibur"
     },
@@ -13289,7 +13289,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766008",
@@ -13310,8 +13310,8 @@
                     "blockId": 251
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884367973",
         "displayName": "Orange Clay"
@@ -13325,7 +13325,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10859696172",
@@ -13336,12 +13336,12 @@
                     "rbxassetid://10859696172"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 14
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://10859696115",
         "displayName": "Copper Block"
@@ -13393,20 +13393,20 @@
     "iron_ore_mesh_block": {
         "footstepSound": 1,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12021
                 }
             ],
             "noRegen": true,
-            "breakType": "stone",
-            "health": 100,
+            "blastResistance": 0.25,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
-            "unbreakableByTeammates": true,
+            "health": 100,
             "seeThrough": true,
-            "hitSound": null,
-            "blastResistance": 0.25
+            "unbreakableByTeammates": true,
+            "breakType": "stone"
         },
         "displayName": "Iron Ore"
     },
@@ -13414,7 +13414,7 @@
         "footstepSound": 2,
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://14968394203",
@@ -13425,12 +13425,12 @@
                     "rbxassetid://14968394120"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 86
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://14968393998",
         "displayName": "Pumpkin Block"
@@ -13519,7 +13519,7 @@
     },
     "new_years_lucky_block": {
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12016
@@ -13527,7 +13527,8 @@
             ],
             "blastProof": true,
             "breakType": "stone",
-            "health": 15,
+            "createHitAudioPlayers": null,
+            "disableInventoryPickup": true,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://11958841720",
@@ -13548,8 +13549,7 @@
                     }
                 ]
             },
-            "hitSound": null,
-            "disableInventoryPickup": true
+            "health": 15
         },
         "image": "rbxassetid://11958841642",
         "displayName": "New Years Lucky Block"
@@ -13566,19 +13566,19 @@
         "description": "A chilling chest. Place it down to embrace the night...and become a vampire.",
         "footstepSound": 2,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "blastProof": true,
             "maxPlaced": 1,
             "blastResistance": 10000000,
             "breakType": "wood",
+            "createHitAudioPlayers": null,
+            "seeThrough": true,
             "health": 25,
-            "disableInventoryPickup": true,
-            "unbreakableByTeammates": true,
             "collectionServiceTags": [
                 "cursed-coffin"
             ],
-            "hitSound": null,
-            "seeThrough": true
+            "unbreakableByTeammates": true,
+            "disableInventoryPickup": true
         },
         "itemCatalog": {
             "collection": 2
@@ -13611,9 +13611,9 @@
     "desert_pot": {
         "footstepSound": 1,
         "block": {
-            "hitSound": null,
+            "createHitAudioPlayers": null,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 8023
@@ -13632,7 +13632,7 @@
     "wool_purple": {
         "footstepSound": 5,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 10,
@@ -13642,7 +13642,7 @@
             "regenSpeed": 0.05,
             "flammable": true,
             "blastResistance": 0.65,
-            "health": 8,
+            "createHitAudioPlayers": null,
             "wool": true,
             "greedyMesh": {
                 "textures": [
@@ -13654,7 +13654,7 @@
                     "rbxassetid://7923578873"
                 ]
             },
-            "hitSound": null,
+            "health": 8,
             "breakType": "wool"
         },
         "image": "rbxassetid://7923578762",
@@ -13663,7 +13663,7 @@
     "water_tank": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 2,
@@ -13674,8 +13674,8 @@
             "collectionServiceTags": [
                 "WaterTank"
             ],
-            "hitSound": null,
-            "noSuffocation": true
+            "noSuffocation": true,
+            "createHitAudioPlayers": null
         },
         "displayName": "Water Tank"
     },
@@ -13699,15 +13699,7 @@
         "block": {
             "health": 20,
             "breakType": "stone",
-            "placeSound": null,
-            "minecraftConversions": [
-                {
-                    "blockId": 8014
-                }
-            ],
-            "blastProof": true,
-            "regenSpeed": 0.1,
-            "hitSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991765474",
@@ -13717,7 +13709,15 @@
                     "rbxassetid://16991765474",
                     "rbxassetid://16991765474"
                 ]
-            }
+            },
+            "blastProof": true,
+            "regenSpeed": 0.1,
+            "minecraftConversions": [
+                {
+                    "blockId": 8014
+                }
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884366622",
         "displayName": "Blastproof Ceramic"
@@ -13726,7 +13726,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://8296848659",
@@ -13737,18 +13737,28 @@
                     "rbxassetid://8296848659"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 4
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://8296848529",
         "displayName": "Cobblestone"
     },
     "huge_lucky_block": {
         "block": {
+            "health": 150,
+            "breakType": "stone",
+            "createPlaceAudioPlayers": null,
+            "disableInventoryPickup": true,
+            "blastProof": true,
+            "minecraftConversions": [
+                {
+                    "blockId": 9010
+                }
+            ],
             "luckyBlock": {
                 "allowedPolarity": [
                     "neutral",
@@ -13779,26 +13789,16 @@
                     }
                 ]
             },
-            "breakType": "stone",
-            "placeSound": null,
-            "disableInventoryPickup": true,
-            "blastProof": true,
-            "minecraftConversions": [
-                {
-                    "blockId": 9010
-                }
-            ],
-            "hitSound": null,
-            "health": 150
+            "createHitAudioPlayers": null
         },
         "displayName": "Huge Lucky Block"
     },
     "dragon_egg": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
+            "createPlaceAudioPlayers": null,
             "health": 500,
-            "hitSound": null,
             "unbreakable": true
         },
         "displayName": "Dragon Egg"
@@ -13807,7 +13807,7 @@
         "footstepSound": 4,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://9871962653",
@@ -13821,7 +13821,7 @@
             "collectionServiceTags": [
                 "void_block"
             ],
-            "hitSound": null
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://9871961934",
         "displayName": "Void Rock"
@@ -13875,7 +13875,7 @@
     "enchant_table_glitched": {
         "block": {
             "breakType": "wood",
-            "placeSound": null,
+            "createHitAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockData": 2,
@@ -13886,8 +13886,8 @@
             "collectionServiceTags": [
                 "enchant-table"
             ],
-            "hitSound": null,
-            "health": 20
+            "health": 20,
+            "createPlaceAudioPlayers": null
         },
         "displayName": "Glitched Enchant Table"
     },
@@ -13937,7 +13937,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://13456088345",
@@ -13948,13 +13948,13 @@
                     "rbxassetid://13456088345"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockData": 4,
                     "blockId": 251
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://13465465532",
         "displayName": "Gold Block"
@@ -14036,9 +14036,9 @@
     "invisible_block": {
         "footstepSound": 4,
         "block": {
-            "hitSound": null,
+            "createHitAudioPlayers": null,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "disableInventoryPickup": true
         },
         "removeFromCustoms": true,
@@ -14103,7 +14103,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://16991766265",
@@ -14124,8 +14124,8 @@
                     "blockId": 159
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884368439",
         "displayName": "White Clay"
@@ -14134,7 +14134,7 @@
         "block": {
             "disableInventoryPickup": true,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7843813175",
@@ -14146,13 +14146,13 @@
                 ]
             },
             "blastProof": true,
+            "health": 15,
             "minecraftConversions": [
                 {
                     "blockId": 9002
                 }
             ],
-            "hitSound": null,
-            "health": 15
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884370012",
         "displayName": "Lucky Block Trap"
@@ -14161,7 +14161,7 @@
         "footstepSound": 4,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://15957915204",
@@ -14172,12 +14172,12 @@
                     "rbxassetid://15957915204"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 87
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://15966082316",
         "displayName": "Galactite"
@@ -14198,7 +14198,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://10859698016",
@@ -14209,12 +14209,12 @@
                     "rbxassetid://10859698016"
                 ]
             },
-            "hitSound": null,
             "minecraftConversions": [
                 {
                     "blockId": 201
                 }
-            ]
+            ],
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://10859697942",
         "displayName": "Stone Tiles"
@@ -14256,7 +14256,7 @@
         "block": {
             "disableInventoryPickup": true,
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "seeThrough": true,
             "minecraftConversions": [
                 {
@@ -14266,8 +14266,8 @@
             "collectionServiceTags": [
                 "target-dummy-block"
             ],
-            "hitSound": null,
-            "health": 100
+            "health": 100,
+            "createHitAudioPlayers": null
         },
         "sharingDisabled": true,
         "displayName": "Iron Defender"
@@ -14281,13 +14281,13 @@
     "flying_monster_block": {
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "disableInventoryPickup": true,
             "collectionServiceTags": [
                 "no-query-block"
             ],
-            "hitSound": null,
-            "denyPlaceOn": true
+            "denyPlaceOn": true,
+            "createHitAudioPlayers": null
         },
         "removeFromCustoms": true,
         "displayName": "Air"
@@ -14305,7 +14305,7 @@
         "footstepSound": 1,
         "block": {
             "breakType": "stone",
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "greedyMesh": {
                 "textures": [
                     "rbxassetid://7872905675",
@@ -14326,8 +14326,8 @@
                     "blockId": 251
                 }
             ],
-            "hitSound": null,
-            "health": 8
+            "health": 8,
+            "createHitAudioPlayers": null
         },
         "image": "rbxassetid://7884367792",
         "displayName": "Light Brown Clay"
@@ -14355,19 +14355,19 @@
     "og_bed": {
         "footstepSound": 2,
         "block": {
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "blastProof": true,
             "noRegen": true,
             "blastResistance": 10000000,
             "breakType": "wood",
             "health": 24,
+            "seeThrough": true,
             "disableInventoryPickup": true,
-            "healthType": 1,
             "collectionServiceTags": [
                 "bed"
             ],
-            "hitSound": null,
-            "seeThrough": true
+            "healthType": 1,
+            "createHitAudioPlayers": null
         },
         "displayName": "Bed"
     },
@@ -14379,7 +14379,7 @@
         },
         "block": {
             "denyPlaceOn": true,
-            "placeSound": null,
+            "createPlaceAudioPlayers": null,
             "minecraftConversions": [
                 {
                     "blockId": 12007
@@ -14387,13 +14387,13 @@
             ],
             "maxPlaced": 1,
             "breakType": "stone",
-            "health": 80,
+            "createHitAudioPlayers": null,
             "disableInventoryPickup": true,
-            "unbreakableByTeammates": true,
+            "health": 80,
             "collectionServiceTags": [
                 "flag-kit"
             ],
-            "hitSound": null,
+            "unbreakableByTeammates": true,
             "seeThrough": true
         },
         "sharingDisabled": true,

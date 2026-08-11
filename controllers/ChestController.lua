@@ -1,10 +1,11 @@
 local bundler = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
-local AnimationUtil, SoundManager, AnimationType, GameSound
+local AnimationUtil, SoundManager, AnimationType, GameSound, AudioCategory
 do
     AnimationUtil = bundler:GetController('AnimationUtil')
-    SoundManager = bundler:GetController('SoundManager')
+    AudioManager = bundler:GetController('AudioManager')
     AnimationType = bundler:GetMeta('AnimationType')
     GameSound = bundler:GetMeta('GameSound').GameSound
+    AudioCategory = bundler:GetMeta('AudioCategory')
 end
 
 return {
@@ -23,8 +24,8 @@ return {
             track:AdjustSpeed(0)
         end)
 
-        SoundManager:playSound(GameSound.TREASURE_CHEST_UNLOCK, {
-            position = chest.Position
+        AudioManager:playSound(GameSound.TREASURE_CHEST_UNLOCK, {
+            category = AudioCategory.UI
         })
 
         return track
