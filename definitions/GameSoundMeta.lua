@@ -12,6 +12,15 @@ do
     ObjectUtil = Loader:GetController('ObjectUtil')
 end
 
+local BedWars = {
+	LobbyMusic = {},
+	MatchMusic = {},
+	EmoteMusic = {},
+	Rain = {},
+	WinterAmbience = {},
+	WinterMusic = {}
+}
+
 local Lobby, Match = AudioManager:createChildBus(BedWars.LobbyMusic, AudioCategory.MUSIC), AudioManager:createChildBus(BedWars.MatchMusic, AudioCategory.MUSIC)
 local BedWarsAudioBuses = {
     LOBBY_MUSIC = Lobby,
@@ -21,10 +30,6 @@ local BedWarsAudioBuses = {
     WINTER_AMBIENCE = AudioManager:createChildBus(BedWars.WinterAmbience, AudioCategory.AMBIENCE),
     WINTER_MUSIC = AudioManager:createChildBus(BedWars.WinterMusic, Match)
 }
-
-local function getTable(p1) --[[ getTable | Line: 8 ]]
-    return p1
-end
 
 local t = {
     QUEUE_JOIN = {
@@ -8315,7 +8320,7 @@ return {
             local v3 = v22[1]
             local v4 = v22[2]
 
-            if v4 ~=  then
+            if v4 ~= '' then
                 local t3 = {
                     preload = false
                 }
