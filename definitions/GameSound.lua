@@ -3,7 +3,7 @@
 local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
 local GameSoundMeta, AudioManager
 do
-	GameSoundMeta = Loader:GetMeta('GameSoundMeta').GameSoundMeta
+	GameSoundMeta = Loader:GetMeta('GameSoundMeta')
 	AudioManager = Loader:GetController('AudioManager')
 end
 
