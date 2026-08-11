@@ -101,18 +101,18 @@ function AudioManager:playAudio(assetId, options)
 	options = options or {}
 
 	local config = self.audioAssetConfigs[assetId] or {}
-	local player = Instance.new('AudioPlayer')
 
+	local player = Instance.new('AudioPlayer')
 	player.Asset = assetId
 	player.Volume = options.volume or config.volume or 0.5
 	player.PlaybackSpeed = options.playbackSpeed or config.playbackSpeed or 1
-
 	player.Looping = options.looping or config.looping or false
-    player:SetAttribute('AudioRollOffMaxDistance', (options.rollOffMaxDistance or config.rollOffMaxDistance) or 1)
-    player:SetAttribute('AudioRollOffMinDistance', (options.rollOffMinDistance or config.rollOffMinDistance) or 1)
 
-	local category, bus = options.category or config.category or AudioCategory.GAMEPLAY
+	player:SetAttribute('AudioRollOffMaxDistance', options.rollOffMaxDistance or config.rollOffMaxDistance or 1)
+	player:SetAttribute('AudioRollOffMinDistance', options.rollOffMinDistance or config.rollOffMinDistance or 1)
 
+	local category = options.category or config.category or AudioCategory.GAMEPLAY
+	local bus
 	if type(options.bus) == 'string' then
 		bus = self:getBusById(options.bus)
 	elseif options.bus then
@@ -128,11 +128,34 @@ function AudioManager:playAudio(assetId, options)
 	local parent = options.parent or SoundService
 	player.Parent = parent
 
-	self.audioPlayers[player] = true
+	local output = Instance.new('AudioDeviceOutput')
+	output.Parent = parent
+
+	local wire = Instance.new('Wire')
+	wire.SourceInstance = player
+	wire.TargetInstance = output
+	wire.SourceName = 'AudioPlayerOutput'
+	wire.TargetName = 'Input'
+	wire.Parent = player
+
+	self.audioPlayers[player] = {
+		player = player,
+		output = output,
+		wire = wire
+	}
+
 	player.Ended:Once(function()
 		self.audioPlayers[player] = nil
 
-		if player.Parent then
+		if wire then
+			wire:Destroy()
+		end
+
+		if output then
+			output:Destroy()
+		end
+
+		if player then
 			player:Destroy()
 		end
 	end)
