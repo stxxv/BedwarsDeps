@@ -12,13 +12,14 @@ do
     ObjectUtil = Loader:GetController('ObjectUtil')
 end
 
+local Lobby, Match = AudioManager:createChildBus(BedWars.LobbyMusic, AudioCategory.MUSIC), AudioManager:createChildBus(BedWars.MatchMusic, AudioCategory.MUSIC)
 local BedWarsAudioBuses = {
-    LOBBY_MUSIC = AudioManager:createChildBus(BedWars.LobbyMusic, AudioCategory.MUSIC),
-    MATCH_MUSIC = AudioManager:createChildBus(BedWars.MatchMusic, AudioCategory.MUSIC),
+    LOBBY_MUSIC = Lobby,
+    MATCH_MUSIC = Match,
     EMOTE_MUSIC = AudioManager:createChildBus(BedWars.EmoteMusic, AudioCategory.COSMETICS),
     RAIN = AudioManager:createChildBus(BedWars.Rain, AudioCategory.AMBIENCE),
     WINTER_AMBIENCE = AudioManager:createChildBus(BedWars.WinterAmbience, AudioCategory.AMBIENCE),
-    WINTER_MUSIC = AudioManager:createChildBus(BedWars.WinterMusic, v3)
+    WINTER_MUSIC = AudioManager:createChildBus(BedWars.WinterMusic, Match)
 }
 
 local function getTable(p1) --[[ getTable | Line: 8 ]]
