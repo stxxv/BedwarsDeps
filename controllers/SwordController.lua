@@ -107,7 +107,7 @@ function SwordController:playSwordEffect(swordObj, chargedAttack)
     local sword, sword2, sword3 = {AnimationType.SWORD_SWING}, {AnimationType.FP_SWING_SWORD}, {GameSound.SWORD_SWING_1, GameSound.SWORD_SWING_2}
     chargedAttack = chargedAttack or false
 
-    local randomize, animation = swordObj.sword and swordObj.sword.randomizeSwingAnimations
+    local randomize, animation = true
     animation = (randomize and RandomUtil.fromList(unpack(sword))) or sword[math.min(self.swingCounter, #sword - 1) + 1]
 
     if not self.thirdPersonAnimPlaying then
