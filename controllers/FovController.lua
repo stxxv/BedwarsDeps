@@ -16,7 +16,7 @@ function FOV:setFOV(fov)
     self.fov = fov
     workspace.CurrentCamera.FieldOfView = fov
 
-    Store:getState().Settings.fov = math.min(360, self.fov * 3)
+    Store:getState().Settings.fov = math.min(130, workspace.CurrentCamera.FieldOfView + 10)
 end
 
 return FOV
