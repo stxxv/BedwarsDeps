@@ -4,7 +4,12 @@ end
 
 local SoundService = cloneref(game:GetService('SoundService'))
 
-local AudioManager = {}
+local AudioManager = {
+	audioAssetConfigs = {},
+	busesById = {},
+	categoryBuses = {},
+	audioPlayers = {}
+}
 AudioManager.__index = AudioManager
 
 local Master = {
