@@ -19,4 +19,10 @@ function FOV:setFOV(fov)
     Store:getState().Settings.fov = math.min(130, workspace.CurrentCamera.FieldOfView + 10)
 end
 
+workspace.CurrentCamera:GetPropertyChangedSignal('FieldOfView'):Connect(function()
+    if FOV.fov ~= workspace.CurrentCamera.FieldOfView then
+        FOV:setFOV(FOV.fov)
+    end
+end)
+
 return FOV
