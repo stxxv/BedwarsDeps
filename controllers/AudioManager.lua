@@ -141,7 +141,10 @@ function AudioManager:playAudio(assetId, options)
 	return player
 end
 
-AudioManager.playSound = AudioManager.playAudio
+function AudioManager:playSound(assetId, options)
+    return AudioManager:playAudio(assetId, options)
+end
+
 function AudioManager:preload() end
 
 return AudioManager
