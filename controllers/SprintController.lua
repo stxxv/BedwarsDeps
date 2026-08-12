@@ -57,29 +57,51 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
 
     do
         SprintController.sprinting = val
-        if Connections.SpeedHook then
-            Connections.SpeedHook:Disconnect()
-            Connections.SpeedHook = nil
+        for i,v in Connections do
+            v:Disconnect()
+            v = nil
         end
     end
 
     if val then
         lplr.Character.Humanoid.WalkSpeed = 20
 
-        Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
-            if lplr.Character.Humanoid.WalkSpeed ~= 20 then
-                lplr.Character.Humanoid.WalkSpeed = 20
+        Connections.isAliveHook = lplr.CharacterAdded:Connect(function(char)
+            repeat task.wait() until char ~= nil
+
+            for i,v in Connections do
+                if i == 'SpeedHook' then
+                    v:Disconnect()
+                    v = nil
+                end
             end
+
+            Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
+                if lplr.Character.Humanoid.WalkSpeed ~= 20 then
+                    lplr.Character.Humanoid.WalkSpeed = 20
+                end
+            end)
         end)
 
         TweenService:Create(Workspace.CurrentCamera, TweenInfo.new(0.1, Enum.EasingStyle.Linear), {
             FieldOfView = (fovController:getFOV() <= 100 and fovController:getFOV() * 1.1) or fovController:getFOV()
         }):Play()
     else
-        Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
-            if lplr.Character.Humanoid.WalkSpeed ~= 14 then
-                lplr.Character.Humanoid.WalkSpeed = 14
+        Connections.isAliveHook = lplr.CharacterAdded:Connect(function(char)
+            repeat task.wait() until char ~= nil
+
+            for i,v in Connections do
+                if i == 'SpeedHook' then
+                    v:Disconnect()
+                    v = nil
+                end
             end
+
+            Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
+                if lplr.Character.Humanoid.WalkSpeed ~= 14 then
+                    lplr.Character.Humanoid.WalkSpeed = 14
+                end
+            end)
         end)
 
         TweenService:Create(Workspace.CurrentCamera, TweenInfo.new(0.1, Enum.EasingStyle.Linear), {

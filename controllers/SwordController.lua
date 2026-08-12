@@ -123,12 +123,17 @@ function SwordController:playSwordEffect(swordObj, chargedAttack)
         end
     end
 
+    local fpAnimCheck
     if ViewmodelController:isVisible() then
         local fpAnim = (randomize and RandomUtil.fromList(unpack(sword2))) or sword2[math.min(self.swingCounter, #sword2 - 1) + 1]
 
-        ViewmodelController:playAnimation(fpAnim)
+        fpAnimCheck = ViewmodelController:playAnimation(fpAnim)
     end
 
+    if ViewmodelController:isVisible() then
+        repeat task.wait() until fpAnimCheck ~= nil
+    end
+    
     if self.swingCounter + 1 < #sword then
         self.swingCounter += 1
     else
