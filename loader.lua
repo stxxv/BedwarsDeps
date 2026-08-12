@@ -6,7 +6,7 @@ local HttpService = cloneref(game:GetService('HttpService'))
 local bwdeps = {}
 
 local function wipeFolders()
-    for _, v in {'compiler', 'compiler/cache', 'compiler/cache/controllers', 'compiler/cache/definitions', 'compiler/cache/main'} do
+    for _, v in {'compiler/cache/controllers', 'compiler/cache/definitions', 'compiler/cache/main'} do
         if isfolder(v) then
             for x, d in listfiles(v) do
                 if string.find(d, 'commit.txt') then continue end
@@ -37,9 +37,9 @@ local function fetchFile(name, codeext)
     local time = os.clock()
     print('[COMPILER]: Fetching file: '..name)
     
-	name = name:gsub('compiler/cache/', '')
+	url = name:gsub('compiler/cache/', '')
 	if not isfile(name) then
-	    writefile(name, game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/commit/%s/%s.%s', readfile('compiler/commit.txt'), name, codeext)))
+	    writefile(name, game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/commit/%s/%s.%s', readfile('compiler/commit.txt'), url, codeext)))
 	end
 	
 	repeat task.wait() until isfile(name)
