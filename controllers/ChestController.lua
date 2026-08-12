@@ -2,9 +2,9 @@ local bundler = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/r
 local AnimationUtil, SoundManager, AnimationType, GameSound, AudioCategory
 do
     AnimationUtil = bundler:GetController('AnimationUtil')
+    GameSound = bundler:GetMeta('GameSound').GameSound
     AudioManager = bundler:GetController('AudioManager')
     AnimationType = bundler:GetMeta('AnimationType')
-    GameSound = bundler:GetMeta('GameSound').GameSound
     AudioCategory = bundler:GetMeta('AudioCategory')
 end
 
@@ -13,8 +13,8 @@ return {
         local track = AnimationUtil:PlayAnimation(chest:WaitForChild('Model'):WaitForChild('AnimationController'):WaitForChild('Animator'), AnimationUtil:getAssetId(AnimationType.CHEST_OPEN))
 
         if not track then
-            SoundManager:playSound(GameSound.TREASURE_CHEST_UNLOCK, {
-                position = chest.Position
+            AudioManager:playSound(GameSound.TREASURE_CHEST_UNLOCK, {
+                category = AudioCategory.UI
             })
 
             return

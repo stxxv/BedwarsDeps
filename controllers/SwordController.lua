@@ -20,11 +20,11 @@ local RandomUtil, AnimationUtil, ViewmodelController, AudioManager, AnimationTyp
 do
     ViewmodelController = Loader:GetController('ViewmodelController')
     AnimationUtil = Loader:GetController('AnimationUtil')
+    GameSound = Loader:GetMeta('GameSound').GameSound
     AudioManager = Loader:GetController('AudioManager')
     AudioCategory = Loader:GetMeta('AudioCategory').AudioCategory
     AnimationType = Loader:GetMeta('AnimationType')
     RandomUtil = Loader:GetController('RandomUtil').RandomUtil
-    GameSound = Loader:GetMeta('GameSound').GameSound
 end
 
 local function isAlive()
