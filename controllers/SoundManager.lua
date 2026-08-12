@@ -21,12 +21,12 @@ function SoundManager:createSound(soundId)
     sound.RollOffMinDistance = config.rollOffMinDistance or 10
     sound.RollOffMaxDistance = config.rollOffMaxDistance or 60
     sound.RollOffMode = Enum.RollOffMode.InverseTapered
+    sound.Parent = workspace
 
     if config.playbackSpeed then
         sound.PlaybackSpeed = config.playbackSpeed.Min + math.random() * (config.playbackSpeed.Max - config.playbackSpeed.Min)
     end
 
-    print(sound.Parent)
     return sound
 end
 
