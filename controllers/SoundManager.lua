@@ -26,6 +26,7 @@ function SoundManager:createSound(soundId)
         sound.PlaybackSpeed = config.playbackSpeed.Min + math.random() * (config.playbackSpeed.Max - config.playbackSpeed.Min)
     end
 
+    print(sound.Parent)
     return sound
 end
 
