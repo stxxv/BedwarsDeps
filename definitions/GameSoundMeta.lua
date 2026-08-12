@@ -8302,17 +8302,11 @@ local t = {
     }
 }
 
-for v5, v6 in t[v3] do
-    if v5 ~= 'category' and v5 ~= 'bus' then
-        t3[v5] = v6
-    end
-end
-
 return {
     registerGameSounds = function(p1)
         local t2 = {}
 
-        for v1, v22 in ObjectUtil.entries(p1) do
+        for _, v22 in ObjectUtil.entries(p1) do
             local v3 = v22[1]
             local v4 = v22[2]
 
@@ -8321,24 +8315,17 @@ return {
                     preload = false
                 }
 
-                for v5, v6 in t[v3] do
-                    t3[v5] = v6
-                end
-
-                local v7 = t2[v4]
-
-                if v7 then
-                    local t4 = {}
-
-                    for v9, v10 in v7 do
-                        t4[v9] = v10
+                if t[v3] then
+                    for v5, v6 in t[v3] do
+                        if v5 ~= 'category' and v5 ~= 'bus' then
+                            t3[v5] = v6
+                        end
                     end
-
-                    t2[v4] = t4
-                    continue
                 end
 
-                t2[v4] = t3
+                if not t2[v4] then
+                    t2[v4] = t3
+                end
             end
         end
 
@@ -8346,5 +8333,6 @@ return {
             SoundManager:registerSound(v14, v15)
         end
     end,
+
     GameSoundMeta = t
 }
