@@ -12,6 +12,15 @@ do
     ObjectUtil = Loader:GetController('ObjectUtil')
 end
 
+local BedWarsAudioBuses = {
+    LOBBY_MUSIC = {},
+    MATCH_MUSIC = {},
+    EMOTE_MUSIC = {},
+    RAIN = {},
+    WINTER_AMBIENCE = {},
+    WINTER_MUSIC = {}
+}
+
 local t = {
     QUEUE_JOIN = {
         category = AudioCategory.UI
