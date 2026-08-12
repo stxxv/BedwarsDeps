@@ -3,58 +3,69 @@ local cloneref = cloneref or function(obj)
 end
 
 local HttpService = cloneref(game:GetService('HttpService'))
-local env = (type(getgenv) == 'function' and getgenv()) or _G
+local bwdeps = {}
 
-if not env.HTTPCache then
-    env.HTTPCache = {}
+local function wipeFolders()
+    for _, v in {'compiler', 'compiler/cache', 'compiler/cache/controllers', 'compiler/cache/definitions', 'compiler/cache/main'} do
+        if isfolder(v) then
+            for x, d in listfiles(v) do
+                if string.find(d, 'commit.txt') then continue end
+
+                if not isfolder(d) then
+                    delfile(d)
+                end
+            end
+        end
+    end
 end
 
-local bwdeps, Cache = {}, env.HTTPCache
+for _, v in {'compiler', 'compiler/cache', 'compiler/cache/controllers', 'compiler/cache/definitions', 'compiler/cache/main'} do
+    if not isfolder(v) then
+        makefolder(v)
+    end
+end
 
-local function fetchFile(name, codeext)
+local commit = HttpService:JSONDecode(game:HttpGet('https://codeberg.org/api/v1/repos/stav/koolxtras/commits?limit=1'))[1].sha
+if not isfile('compiler/commit.txt') then
+    writefile('compiler/commit.txt', commit)
+elseif readfile('compiler/commit.txt') ~= commit then
+    wipeFolders()
+    writefile('compiler/commit.txt', commit)
+end
+
+local function fetchFile(file)
     local time = os.clock()
     print('[COMPILER]: Fetching file: '..name)
-
-    if Cache[name] and Cache[name].ext == codeext then
-        print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
-        return Cache[name].file
-    end
-
-    local suc, res = pcall(function()
-        return game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/%s.%s', name, codeext))
-    end)
-
-    if suc then
-        Cache[name] = {
-            file = res,
-            ext = codeext
-        }
-
-        print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
-        return Cache[name].file
-    end
-
-    return warn('[COMPILER]: Unable to fetch file: '..name)
+    
+	url = file:gsub('compiler/cache/', '')
+	if not isfile(file) then
+	    writefile(file, game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/commit/%s/%s.%s', readfile('compiler/commit.txt'), name, codeext)))
+	end
+	
+	repeat task.wait() until isfile(file)
+    
+    print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
+	return readfile(file)
 end
 
 function bwdeps:GetJson(name)
-    return HttpService:JSONDecode(fetchFile(name, 'json'))
+    return HttpService:JSONDecode(fetchFile('compiler/cache/'..name, 'json'))
 end
 
 function bwdeps:GetController(name)
-    return loadstring(fetchFile('controllers/'..name, 'lua'))()
+    return loadstring(fetchFile('compiler/cache/controllers/'..name, 'lua'))()
 end
 
 function bwdeps:GetMeta(name)
     if name == 'ProdAnimations' or name == 'GameSound' or name == 'ItemMeta' or name == 'GameSoundMeta' then
-        return loadstring(fetchFile('definitions/'..name, 'lua'))()
+        return loadstring(fetchFile('compiler/cache/definitions/'..name, 'lua'))()
     end
 
-    return HttpService:JSONDecode(fetchFile('definitions/'..name, 'json'))
+    return HttpService:JSONDecode(fetchFile('compiler/cache/definitions/'..name, 'json'))
 end
 
 function bwdeps:GetMain(name)
-    return loadstring(fetchFile('main/'..name, 'lua'))()
+    return loadstring(fetchFile('compiler/cache/main/'..name, 'lua'))()
 end
 
 return bwdeps
