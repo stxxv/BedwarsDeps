@@ -21,8 +21,7 @@ do
     ViewmodelController = Loader:GetController('ViewmodelController')
     AnimationUtil = Loader:GetController('AnimationUtil')
     GameSound = Loader:GetMeta('GameSound').GameSound
-    AudioManager = Loader:GetController('AudioManager')
-    AudioCategory = Loader:GetMeta('AudioCategory').AudioCategory
+    SoundManager = bundler:GetController('SoundManager')
     AnimationType = Loader:GetMeta('AnimationType')
     RandomUtil = Loader:GetController('RandomUtil').RandomUtil
 end
@@ -137,9 +136,7 @@ function SwordController:playSwordEffect(swordObj, chargedAttack)
     end
 
     if #sword3 > 0 then
-        AudioManager:playSound(RandomUtil.fromList(unpack(sword3)), {
-            category = AudioCategory.GAMEPLAY
-        })
+        SoundManager:playSound(RandomUtil.fromList(unpack(sword3)))
     end
 end
 

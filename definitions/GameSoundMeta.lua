@@ -5,31 +5,12 @@
 -- https://lua.expert/
 
 local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
-local AudioCategory, AudioManager, ObjectUtil
+local AudioCategory, SoundManager, ObjectUtil
 do
-    AudioManager = Loader:GetController('AudioManager')
+    SoundManager = Loader:GetController('SoundManager')
     AudioCategory = Loader:GetMeta('AudioCategory').AudioCategory
     ObjectUtil = Loader:GetController('ObjectUtil')
 end
-
-local BedWars = {
-	LobbyMusic = {},
-	MatchMusic = {},
-	EmoteMusic = {},
-	Rain = {},
-	WinterAmbience = {},
-	WinterMusic = {}
-}
-
-local Lobby, Match = AudioManager:createChildBus(BedWars.LobbyMusic, AudioCategory.MUSIC), AudioManager:createChildBus(BedWars.MatchMusic, AudioCategory.MUSIC)
-local BedWarsAudioBuses = {
-    LOBBY_MUSIC = Lobby,
-    MATCH_MUSIC = Match,
-    EMOTE_MUSIC = AudioManager:createChildBus(BedWars.EmoteMusic, AudioCategory.COSMETICS),
-    RAIN = AudioManager:createChildBus(BedWars.Rain, AudioCategory.AMBIENCE),
-    WINTER_AMBIENCE = AudioManager:createChildBus(BedWars.WinterAmbience, AudioCategory.AMBIENCE),
-    WINTER_MUSIC = AudioManager:createChildBus(BedWars.WinterMusic, Match)
-}
 
 local t = {
     QUEUE_JOIN = {
@@ -8312,8 +8293,14 @@ local t = {
     }
 }
 
+for v5, v6 in t[v3] do
+    if v5 ~= 'category' and v5 ~= 'bus' then
+        t3[v5] = v6
+    end
+end
+
 return {
-    registerGameSounds = function(p1) --[[ registerGameSounds | Line: 8292 | Upvalues: v2 (copy), t (copy), AudioCategory (copy), AudioManager (copy) ]]
+    registerGameSounds = function(p1)
         local t2 = {}
 
         for v1, v22 in ObjectUtil.entries(p1) do
@@ -8332,18 +8319,13 @@ return {
                 local v7 = t2[v4]
 
                 if v7 then
-                    local v8 = if v7.category == t3.category then if v7.bus == t3.bus then true else false else false
                     local t4 = {}
 
                     for v9, v10 in v7 do
                         t4[v9] = v10
                     end
 
-                    t4.preload = if v7.preload == true then true else t3.preload == true
-                    t4.category = if v8 then v7.category else AudioCategory.GAMEPLAY
-                    t4.bus = if v8 then v7.bus else nil
                     t2[v4] = t4
-
                     continue
                 end
 
@@ -8352,7 +8334,7 @@ return {
         end
 
         for v14, v15 in t2 do
-            AudioManager:registerAudioAsset(v14, v15)
+            SoundManager:registerSound(v14, v15)
         end
     end,
     GameSoundMeta = t

@@ -3,9 +3,8 @@ local AnimationUtil, SoundManager, AnimationType, GameSound, AudioCategory
 do
     AnimationUtil = bundler:GetController('AnimationUtil')
     GameSound = bundler:GetMeta('GameSound').GameSound
-    AudioManager = bundler:GetController('AudioManager')
+    SoundManager = bundler:GetController('SoundManager')
     AnimationType = bundler:GetMeta('AnimationType')
-    AudioCategory = bundler:GetMeta('AudioCategory')
 end
 
 return {
@@ -13,8 +12,8 @@ return {
         local track = AnimationUtil:PlayAnimation(chest:WaitForChild('Model'):WaitForChild('AnimationController'):WaitForChild('Animator'), AnimationUtil:getAssetId(AnimationType.CHEST_OPEN))
 
         if not track then
-            AudioManager:playSound(GameSound.TREASURE_CHEST_UNLOCK, {
-                category = AudioCategory.UI
+            SoundManager:playSound(GameSound.TREASURE_CHEST_UNLOCK, {
+                position = chest.Position
             })
 
             return
@@ -24,8 +23,8 @@ return {
             track:AdjustSpeed(0)
         end)
 
-        AudioManager:playSound(GameSound.TREASURE_CHEST_UNLOCK, {
-            category = AudioCategory.UI
+        SoundManager:playSound(GameSound.TREASURE_CHEST_UNLOCK, {
+            position = chest.Position
         })
 
         return track

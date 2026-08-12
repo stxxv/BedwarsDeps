@@ -31,9 +31,10 @@ local Definitions, Controllers, Main = {
     TeamUpgradeMeta = debug.getupvalue(require(ReplicatedStorage.TS.games.bedwars["team-upgrade"]["team-upgrade-meta"]).getTeamUpgradeMetaForQueue, 2),
     AppIds = require(lplr.PlayerScripts.TS.ui.types["app-config"]).BedwarsAppIds,
     SummonerKitBalance = require(ReplicatedStorage.TS.games.bedwars.kit.kits.summoner["summoner-kit-balance"]).SummonerKitBalance,
-    GameSound = game:GetService("ReplicatedStorage").TS.sound["game-sound"],
+    GameSound = ReplicatedStorage.TS.sound["game-sound"],
+    GameSoundMeta = ReplicatedStorage.TS.sound["game-sound-meta"],
     Shop = require(ReplicatedStorage.TS.games.bedwars.shop["bedwars-shop"]).BedwarsShop.ShopItems,
-    AudioCategory = require(game:GetService("ReplicatedStorage").rbxts_include.node_modules["@easy-games"]["game-core"].out.shared.audio["audio-category"])
+    AudioCategory = require(ReplicatedStorage.rbxts_include.node_modules["@easy-games"]["game-core"].out.shared.audio["audio-category"])
 }, {
     GameQuery = ReplicatedStorage.rbxts_include.node_modules["@easy-games"]["game-core"].out.shared["game-world-query"]["game-query-util"],
     RandomUtil = ReplicatedStorage.rbxts_include.node_modules["@easy-games"]["game-core"].out.shared.util["random-util"],
@@ -71,7 +72,7 @@ end
 
 print('[BUNDLER]: Fetching definitions.. (requires a good executor to use require and debug functions, will error if bad!!)')
 for i,v in Definitions do
-    if i == 'ProdAnimations' or i == 'GameSound' then
+    if i == 'ProdAnimations' or i == 'GameSound' or i == 'GameSoundMeta' then
         writefile('compiler/definitions/'..i..'.lua', decompile(v))
         continue
     end
