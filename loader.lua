@@ -25,7 +25,7 @@ for _, v in {'compiler', 'compiler/cache', 'compiler/cache/controllers', 'compil
     end
 end
 
-local commit = HttpService:JSONDecode(game:HttpGet('https://codeberg.org/api/v1/repos/stav/koolxtras/commits?limit=1'))[1].sha
+local commit = HttpService:JSONDecode(game:HttpGet('https://codeberg.org/api/v1/repos/stav/BedwarsDeps/commits?limit=1'))[1].sha
 if not isfile('compiler/commit.txt') then
     writefile('compiler/commit.txt', commit)
 elseif readfile('compiler/commit.txt') ~= commit then
@@ -33,19 +33,19 @@ elseif readfile('compiler/commit.txt') ~= commit then
     writefile('compiler/commit.txt', commit)
 end
 
-local function fetchFile(file, codeext)
+local function fetchFile(name, codeext)
     local time = os.clock()
     print('[COMPILER]: Fetching file: '..name)
     
-	url = file:gsub('compiler/cache/', '')
-	if not isfile(file) then
-	    writefile(file, game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/commit/%s/%s.%s', readfile('compiler/commit.txt'), name, codeext)))
+	url = name:gsub('compiler/cache/', '')
+	if not isfile(name) then
+	    writefile(name, game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/commit/%s/%s.%s', readfile('compiler/commit.txt'), name, codeext)))
 	end
 	
-	repeat task.wait() until isfile(file)
+	repeat task.wait() until isfile(name)
 
     print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
-	return readfile(file)
+	return readfile(name)
 end
 
 function bwdeps:GetJson(name)
