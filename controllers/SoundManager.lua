@@ -5,9 +5,11 @@ local cloneref = cloneref or function(obj)
     return obj
 end
 
+local ContentProvider = cloneref(game:GetService('ContentProvider'))
 local TweenService = cloneref(game:GetService('TweenService'))
-SoundManager.soundConfigs = {}
+local SoundService = cloneref(game:GetService('SoundService'))
 
+SoundManager.soundConfigs = {}
 function SoundManager:registerSound(soundId, config)
     self.soundConfigs[soundId] = config or {}
 end
@@ -18,10 +20,9 @@ function SoundManager:createSound(soundId)
     local sound = Instance.new('Sound')
     sound.SoundId = soundId
     sound.Volume = config.volume or 0.5
-    sound.RollOffMinDistance = config.rollOffMinDistance or 60
+    sound.RollOffMinDistance = config.rollOffMinDistance or 10
     sound.RollOffMaxDistance = config.rollOffMaxDistance or 60
     sound.RollOffMode = Enum.RollOffMode.InverseTapered
-    sound.Parent = workspace
 
     if config.playbackSpeed then
         sound.PlaybackSpeed = config.playbackSpeed.Min + math.random() * (config.playbackSpeed.Max - config.playbackSpeed.Min)
@@ -89,7 +90,7 @@ function SoundManager:playSound(soundOrId, config)
             part:Destroy()
         end)
     else
-        sound.Parent = config.parent or workspace
+        sound.Parent = config.parent or SoundService
     end
 
     if config.fadeInTime then
@@ -128,6 +129,22 @@ function SoundManager:playRandomSound(list, config)
 end
 
 function SoundManager:preload()
+    local sounds = {}
+
+    for _, v in self.soundConfigs do
+        local sound = Instance.new('Sound')
+        sound.SoundId = v
+
+        table.insert(sounds, sound)
+    end
+
+    if #sounds > 0 then
+        ContentProvider:PreloadAsync(sounds)
+    end
+
+    for _, v in sounds do
+        v:Destroy()
+    end
 end
 
 return SoundManager
