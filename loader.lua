@@ -8,13 +8,13 @@ local bwdeps = {}
 local function wipeFolders()
     for _, v in {'compiler/cache/controllers', 'compiler/cache/definitions', 'compiler/cache/main'} do
         if isfolder(v) then
+            print('[COMPILER]: Wiping '..v)
             for x, d in listfiles(v) do
-                if string.find(d, 'commit.txt') then continue end
-
                 if not isfolder(d) then
                     delfile(d)
                 end
             end
+            print('[COMPILER]: Wiped '..v..'!')
         end
     end
 end
