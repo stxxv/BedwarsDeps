@@ -21,7 +21,7 @@ do
     ViewmodelController = Loader:GetController('ViewmodelController')
     AnimationUtil = Loader:GetController('AnimationUtil')
     GameSound = Loader:GetMeta('GameSound').GameSound
-    SoundManager = bundler:GetController('SoundManager')
+    SoundManager = Loader:GetController('SoundManager')
     AnimationType = Loader:GetMeta('AnimationType')
     RandomUtil = Loader:GetController('RandomUtil').RandomUtil
 end
