@@ -33,7 +33,7 @@ elseif readfile('compiler/commit.txt') ~= commit then
     writefile('compiler/commit.txt', commit)
 end
 
-local function fetchFile(file)
+local function fetchFile(file, codeext)
     local time = os.clock()
     print('[COMPILER]: Fetching file: '..name)
     
@@ -43,7 +43,7 @@ local function fetchFile(file)
 	end
 	
 	repeat task.wait() until isfile(file)
-    
+
     print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
 	return readfile(file)
 end
