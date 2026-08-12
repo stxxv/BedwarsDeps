@@ -18,7 +18,7 @@ function SoundManager:createSound(soundId)
     local sound = Instance.new('Sound')
     sound.SoundId = soundId
     sound.Volume = config.volume or 0.5
-    sound.RollOffMinDistance = config.rollOffMinDistance or 10
+    sound.RollOffMinDistance = config.rollOffMinDistance or 60
     sound.RollOffMaxDistance = config.rollOffMaxDistance or 60
     sound.RollOffMode = Enum.RollOffMode.InverseTapered
     sound.Parent = workspace
