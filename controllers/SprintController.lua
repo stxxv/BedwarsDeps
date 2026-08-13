@@ -69,7 +69,7 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
         lplr.Character.Humanoid.WalkSpeed = 20
 
         Connections.isAliveHook = lplr.CharacterAdded:Connect(function(char)
-            repeat task.wait() until char ~= nil
+            repeat task.wait() until char ~= nil and char:FindFirstChildOfClass('Humanoid') ~= nil
 
             for i,v in Connections do
                 if i == 'SpeedHook' then
@@ -90,7 +90,7 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
         }):Play()
     else
         Connections.isAliveHook = lplr.CharacterAdded:Connect(function(char)
-            repeat task.wait() until char ~= nil
+            repeat task.wait() until char ~= nil and char:FindFirstChildOfClass('Humanoid') ~= nil
 
             for i,v in Connections do
                 if i == 'SpeedHook' then
