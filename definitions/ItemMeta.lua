@@ -1,9 +1,3 @@
-local cloneref = cloneref or function(obj)
-    return obj
-end
-
-local HttpService = cloneref(game:GetService('HttpService'))
-
 local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))()
 local ItemMeta
 do
