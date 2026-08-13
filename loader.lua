@@ -1,3 +1,8 @@
+local cloneref = cloneref or function(obj)
+    return obj
+end
+
+local HttpService = cloneref(game:GetService('HttpService'))
 local function wipeFolders()
     for _, v in {'compiler/cache/controllers', 'compiler/cache/definitions', 'compiler/cache/main'} do
         if isfolder(v) then
