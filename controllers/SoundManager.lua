@@ -28,6 +28,10 @@ function SoundManager:createSound(soundId)
         sound.PlaybackSpeed = config.playbackSpeed.Min + math.random() * (config.playbackSpeed.Max - config.playbackSpeed.Min)
     end
 
+    if (workspace.CurrentCamera.CFrame.Position - lplr.Character.Head.Position).Magnitude < 1 then
+        sound.Volume = sound.Volume / 2
+    end
+
     return sound
 end
 
