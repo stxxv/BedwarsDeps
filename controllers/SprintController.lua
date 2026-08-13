@@ -27,15 +27,15 @@ end
 local modifiers = {}
 local SprintController, Connections = {
     getMovementStatusModifier = function(self)
-        local speedboost, speedboostpie = lplr.Character and lplr.Character:GetAttribute('SpeedBoost'), lplr.Character and lplr.Character:GetAttribute('SpeedPieBuff')
+        local speedboost, speedboostpie = (lplr.Character and lplr.Character:GetAttribute('SpeedBoost')), (lplr.Character and lplr.Character:GetAttribute('SpeedPieBuff'))
         if speedboost then
-            modifiers[{
+            modifiers = {
                 moveSpeedMultiplier = speedboost
-            }] = true
+            }
         elseif speedboostpie then
-            modifiers[{
+            modifiers = {
                 moveSpeedMultiplier = speedboostpie
-            }] = true
+            }
         else
             modifiers = {
                 moveSpeedMultiplier = 1
