@@ -47,7 +47,7 @@ local SprintController, Connections = {
         }
     end,
     getModifiers = function(self)
-        return modifiers
+        return self:getMovementStatusModifier().modifiers
     end,
     blockSprint = false,
     sprinting = false
@@ -78,6 +78,14 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
                 end
             end
 
+            Connections.SpeedBoost = lplr.Character:GetAttributeChangedSignal('SpeedBoost'):Connect(function()
+                SprintController:getMovementStatusModifier()
+            end)
+
+            Connections.PieBoost = lplr.Character:GetAttributeChangedSignal('SpeedPieBuff'):Connect(function()
+                SprintController:getMovementStatusModifier()
+            end)
+
             Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
                 if lplr.Character.Humanoid.WalkSpeed ~= (20 * SprintController:getModifiers().moveSpeedMultiplier) then
                     lplr.Character.Humanoid.WalkSpeed = (20 * SprintController:getModifiers().moveSpeedMultiplier)
@@ -98,6 +106,14 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
                     v = nil
                 end
             end
+
+            Connections.SpeedBoost = lplr.Character:GetAttributeChangedSignal('SpeedBoost'):Connect(function()
+                SprintController:getMovementStatusModifier()
+            end)
+
+            Connections.PieBoost = lplr.Character:GetAttributeChangedSignal('SpeedPieBuff'):Connect(function()
+                SprintController:getMovementStatusModifier()
+            end)
 
             Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
                 if lplr.Character.Humanoid.WalkSpeed ~= (14 * SprintController:getModifiers().moveSpeedMultiplier) then
