@@ -10,12 +10,12 @@ local function fetchFile(name, codeext)
     print('[COMPILER]: Fetching file: '..name)
     
 	url = name:gsub('compiler/cache/', '')
-	if not isfile(name) then
+	if not isfile(name..'.'..codeext) then
 	    writefile(name..'.'..codeext, game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/commit/%s/%s.%s', readfile('compiler/commit.txt'), url, codeext)))
-        repeat task.wait() until isfile(name)
+        repeat task.wait() until isfile(name..'.'..codeext)
     end
 
-    local res = readfile(name)
+    local res = readfile(name..'.'..codeext)
     print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
 
     return res
