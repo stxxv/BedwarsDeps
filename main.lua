@@ -11,7 +11,7 @@ local function fetchFile(name, codeext)
     
 	url = name:gsub('compiler/cache/', '')
 	if not isfile(name) then
-	    writefile(name, game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/commit/%s/%s.%s', readfile('compiler/commit.txt'), url, codeext)))
+	    writefile(name..'.'..codeext, game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/commit/%s/%s.%s', readfile('compiler/commit.txt'), url, codeext)))
         repeat task.wait() until isfile(name)
     end
 
