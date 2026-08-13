@@ -8,6 +8,8 @@ end
 local ContentProvider = cloneref(game:GetService('ContentProvider'))
 local TweenService = cloneref(game:GetService('TweenService'))
 local SoundService = cloneref(game:GetService('SoundService'))
+local Players = cloneref(game:GetService('Players'))
+local lplr = Players.LocalPlayer
 
 SoundManager.soundConfigs = {}
 function SoundManager:registerSound(soundId, config)
