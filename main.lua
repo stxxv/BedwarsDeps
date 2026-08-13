@@ -2,6 +2,8 @@ local cloneref = cloneref or function(obj)
     return obj
 end
 
+local HttpService = cloneref(game:GetService('HttpService'))
+
 local bwdeps = {}
 local function fetchFile(name, codeext)
     local time = os.clock()
@@ -15,7 +17,7 @@ local function fetchFile(name, codeext)
 
     local res = readfile(name)
     print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
-    
+
     return res
 end
 
