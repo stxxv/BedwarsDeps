@@ -1,6 +1,6 @@
 local prodAnimations
 do
-    prodAnimations = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))():GetMeta('ProdAnimations').ProdAnimations
+    prodAnimations = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))():GetMeta('ProdAnimations').ProdAnimations
 end
 
 local animUtil = {}

@@ -1,6 +1,6 @@
 -- https://lua.expert/
 
-local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
+local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))()
 local GameSoundMeta, AudioManager
 do
 	GameSoundMeta = Loader:GetMeta('GameSoundMeta')

@@ -6,7 +6,7 @@ local ReplicatedStorage = cloneref(game:GetService('ReplicatedStorage'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
-local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
+local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))()
 local Client, matchController
 do
     Client = Loader:GetMain('Client')

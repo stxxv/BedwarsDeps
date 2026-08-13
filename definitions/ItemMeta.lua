@@ -4,7 +4,7 @@ end
 
 local HttpService = cloneref(game:GetService('HttpService'))
 
-local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
+local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))()
 local ItemMeta
 do
     ItemMeta = Loader:GetJson('definitions/ItemMeta')

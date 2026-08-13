@@ -8,24 +8,72 @@ local ReplicatedStorage = cloneref(game:GetService('ReplicatedStorage'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
-local Client, Cache = {}, {}
+local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))()
+local Ratelimits
+
+do
+    Ratelimits = Loader:GetMeta('Ratelimits').remotes
+end
+
+local Client, Cache = {}, {
+    Ratelimits = {},
+    Remotes = {}
+}
+
+local function canFire(name)
+    if tick() < Ratelimits[name].rate then
+        return false
+    end
+
+    Cache.Ratelimits[name] = tick() + Ratelimits[name].rate
+    return true
+end
+
 for _, v in ReplicatedStorage:GetDescendants() do
     if v:IsA('RemoteEvent') then
-        table.insert(Cache, {
+        if not Ratelimits[v.Name] then
+            Ratelimits[v.Name] = {
+                rate = 0.3
+            }
+        end
+        
+        Cache.Ratelimits[v.Name] = 0
+        table.insert(Cache.Remotes, {
             inst = v,
             SendToServer = function(self, ...)
-                v:FireServer(...)
+                if canFire(v.Name) then
+                    v:FireServer(...)
+                end
             end,
             Connect = function(self, func)
                 return v.OnClientEvent:Connect(func)
             end
         })
     elseif v:IsA('RemoteFunction') then
-        table.insert(Cache, {
+        if not Ratelimits[v.Name] then
+            Ratelimits[v.Name] = {
+                rate = 0.3
+            }
+        end
+        
+        Cache.Ratelimits[v.Name] = 0
+        table.insert(Cache.Remotes, {
             inst = v,
             CallServerAsync = function(self, ...)
-                local val = v:InvokeServer(...)
+                if not canFire(v.Name) then
+                    return {
+                        andThen = function(self, func)
+                            func(nil)
+                            return self
+                        end,
+                        awaitStatus = function(self)
+                            return nil
+                        end,
+                        returned = nil
+                    }
+                end
 
+                local val = v:InvokeServer(...)
                 return {
                     andThen = function(self, func)
                         func(val)
@@ -33,11 +81,13 @@ for _, v in ReplicatedStorage:GetDescendants() do
                     awaitStatus = function(self)
                         return val
                     end,
-                    returned = val,
+                    returned = val
                 }
             end,
             CallServer = function(self, ...)
-                return v:InvokeServer(...)
+                if canFire(v.Name) then
+                    return v:InvokeServer(...)
+                end
             end,
             Connect = function(self, func)
                 v.OnClientInvoke = func
@@ -47,7 +97,7 @@ for _, v in ReplicatedStorage:GetDescendants() do
 end
 
 function Client:Get(name)
-    for _, v in Cache do
+    for _, v in Cache.Remotes do
         if v.inst.Name == name then
             return v
         end

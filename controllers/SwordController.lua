@@ -15,7 +15,7 @@ local CoreGui = cloneref(game:GetService('CoreGui'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
-local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/loader.lua'))()
+local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))()
 local RandomUtil, AnimationUtil, ViewmodelController, AudioManager, AnimationType, GameSound, AudioCategory
 do
     ViewmodelController = Loader:GetController('ViewmodelController')

@@ -1,13 +1,15 @@
-local cloneref = cloneref or function(obj)
-    return obj
+local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))()
+local Client
+
+do
+    Client = Loader:GetMain('Client')
 end
 
-local ReplicatedStorage = cloneref(game:GetService('ReplicatedStorage'))
 return {
     canUseAbility = function(self)
         return true
     end,
     useAbility = function(self, name, ...)
-        return ReplicatedStorage["events-@easy-games/game-core:shared/game-core-networking@getEvents.Events"].useAbility:FireServer(name, ...)
+        return Client:Get('useAbility'):SendToServer(name, ...)
     end
 }
