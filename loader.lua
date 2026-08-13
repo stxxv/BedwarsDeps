@@ -23,7 +23,7 @@ for _, v in {'compiler', 'compiler/cache', 'compiler/cache/controllers', 'compil
     end
 end
 
-local commit = HttpService:JSONDecode(game:HttpGet('https://gitlab.com/api/v4/projects/stxvv%2FBedwarsDeps/repository/commits?per_page=1'))[1].sha
+local commit = HttpService:JSONDecode(game:HttpGet('https://gitlab.com/api/v4/projects/stxvv%2FBedwarsDeps/repository/commits?per_page=1'))[1].id
 if not isfile('compiler/commit.txt') then
     writefile('compiler/commit.txt', commit)
 elseif readfile('compiler/commit.txt') ~= commit then
