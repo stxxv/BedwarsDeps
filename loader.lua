@@ -32,3 +32,5 @@ elseif readfile('compiler/commit.txt') ~= commit then
     wipeFolders()
     writefile('compiler/commit.txt', commit)
 end
+
+return loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))()
