@@ -79,8 +79,8 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
             end
 
             Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
-                if lplr.Character.Humanoid.WalkSpeed ~= 20 * SprintController:getModifiers().moveSpeedMultiplier then
-                    lplr.Character.Humanoid.WalkSpeed = 20 * SprintController:getModifiers().moveSpeedMultiplier
+                if lplr.Character.Humanoid.WalkSpeed ~= (20 * SprintController:getModifiers().moveSpeedMultiplier) then
+                    lplr.Character.Humanoid.WalkSpeed = (20 * SprintController:getModifiers().moveSpeedMultiplier)
                 end
             end)
         end)
@@ -100,8 +100,8 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
             end
 
             Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
-                if lplr.Character.Humanoid.WalkSpeed ~= 14 * SprintController:getModifiers().moveSpeedMultiplier then
-                    lplr.Character.Humanoid.WalkSpeed = 14 * SprintController:getModifiers().moveSpeedMultiplier
+                if lplr.Character.Humanoid.WalkSpeed ~= (14 * SprintController:getModifiers().moveSpeedMultiplier) then
+                    lplr.Character.Humanoid.WalkSpeed = (14 * SprintController:getModifiers().moveSpeedMultiplier)
                 end
             end)
         end)
