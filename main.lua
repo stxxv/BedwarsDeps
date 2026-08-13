@@ -10,12 +10,14 @@ local function fetchFile(name, codeext)
 	url = name:gsub('compiler/cache/', '')
 	if not isfile(name) then
 	    writefile(name, game:HttpGet(string.format('https://codeberg.org/stav/BedwarsDeps/raw/commit/%s/%s.%s', readfile('compiler/commit.txt'), url, codeext)))
-	end
-	
-	repeat task.wait() until isfile(name)
+        repeat task.wait() until isfile(name)
     
-    print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
-	return readfile(name)
+        print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
+        return readfile(name)
+    else
+        print(('[COMPILER]: Fetched file in %.3fs'):format(os.clock() - time))
+        return readfile(name)
+    end
 end
 
 function bwdeps:GetJson(name)
