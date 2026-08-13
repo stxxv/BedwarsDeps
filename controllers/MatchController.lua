@@ -8,7 +8,7 @@ local lplr = Players.LocalPlayer
 
 local Client
 do
-    Client = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))():GetMain('Client')
+    Client = loadstring(game:HttpGet('https://gitlab.com/stxvv/bedwarsdeps/-/raw/main/main.lua?ref_type=heads'))():GetMain('Client')
 end
 
 if not lplr:WaitForChild('PlayerGui'):WaitForChild('TopBarAppGui'):WaitForChild('TopBarApp'):FindFirstChild('2'):FindFirstChild('5') then

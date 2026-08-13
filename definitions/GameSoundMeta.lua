@@ -4,7 +4,7 @@
 
 -- https://lua.expert/
 
-local Loader = loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))()
+local Loader = loadstring(game:HttpGet('https://gitlab.com/stxvv/bedwarsdeps/-/raw/main/main.lua?ref_type=heads'))()
 local AudioCategory, SoundManager, ObjectUtil
 do
     SoundManager = Loader:GetController('SoundManager')

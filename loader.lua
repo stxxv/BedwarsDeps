@@ -23,7 +23,7 @@ for _, v in {'compiler', 'compiler/cache', 'compiler/cache/controllers', 'compil
     end
 end
 
-local commit = HttpService:JSONDecode(game:HttpGet('https://codeberg.org/api/v1/repos/stav/BedwarsDeps/commits?limit=1'))[1].sha
+local commit = HttpService:JSONDecode(game:HttpGet('https://gitlab.com/api/v4/projects/stxvv%2FBedwarsDeps/repository/commits?per_page=1'))[1].sha
 if not isfile('compiler/commit.txt') then
     writefile('compiler/commit.txt', commit)
 elseif readfile('compiler/commit.txt') ~= commit then
@@ -31,4 +31,4 @@ elseif readfile('compiler/commit.txt') ~= commit then
     writefile('compiler/commit.txt', commit)
 end
 
-return loadstring(game:HttpGet('https://codeberg.org/stav/BedwarsDeps/raw/branch/main/main.lua'))()
+return loadstring(game:HttpGet('https://gitlab.com/stxvv/bedwarsdeps/-/raw/main/main.lua?ref_type=heads'))()
