@@ -117,6 +117,9 @@ function Client:OnEvent(name, func)
     return {
         andThen = function(self, func)
             func(val)
+        end,
+        Disconnect = function(self)
+            val:Disconnect()
         end
     }
 end
