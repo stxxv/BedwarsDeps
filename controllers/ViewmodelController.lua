@@ -57,7 +57,7 @@ function ViewmodelController:stopAnimation(track, fadeTime)
 end
 
 function ViewmodelController:isVisible()
-    return (workspace.CurrentCamera.CFrame.Position - lplr.Character.Head.Position).Magnitude < 1
+    return lplr.CameraMode == Enum.CameraMode.LockFirstPerson or (workspace.CurrentCamera.CFrame.Position - lplr.Character.Head.Position).Magnitude < 1.5
 end
 
 return ViewmodelController
