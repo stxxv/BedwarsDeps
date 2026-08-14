@@ -26,8 +26,19 @@ do
     RandomUtil = Loader:GetController('RandomUtil').RandomUtil
 end
 
-local function isAlive()
-	return (lplr.Character:FindFirstChildOfClass('Humanoid').Health > 0 and true) or false
+local function isAlive(plr)
+    plr = plr or lplr
+
+    local obj
+	if plr:IsA('Model') then
+		obj = {
+			Character = plr
+		}
+	else
+		obj = plr
+	end
+
+	return (obj.Character and obj.Character:FindFirstChild('Humanoid') and obj.Character.Humanoid.Health > 0) and true or false
 end
 
 local PlayerGui = lplr.PlayerGui

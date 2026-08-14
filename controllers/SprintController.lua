@@ -20,8 +20,19 @@ do
     fovController = Loader:GetController('FovController')
 end
 
-local function isAlive()
-	return (lplr.Character:FindFirstChildOfClass('Humanoid').Health > 0 and true) or false
+local function isAlive(plr)
+    plr = plr or lplr
+
+    local obj
+	if plr:IsA('Model') then
+		obj = {
+			Character = plr
+		}
+	else
+		obj = plr
+	end
+
+	return (obj.Character and obj.Character:FindFirstChild('Humanoid') and obj.Character.Humanoid.Health > 0) and true or false
 end
 
 local modifiers = {}
@@ -98,7 +109,7 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
         }):Play()
     else
         Connections.isAliveHook = lplr.CharacterAdded:Connect(function(char)
-            repeat task.wait() until char ~= nil and char:FindFirstChildOfClass('Humanoid') ~= nil
+            repeat task.wait() until char ~= nil and char:FindFirstChildOfClass('Humanoid') ~= nil and isAlive(char)
 
             for i,v in Connections do
                 if i == 'SpeedHook' then
