@@ -21,7 +21,7 @@ local Client, Cache = {}, {
 }
 
 local function canFire(name)
-    if tick() < Ratelimits[name].rate then
+    if tick() < Cache.Ratelimits[name] then
         return false
     end
 
