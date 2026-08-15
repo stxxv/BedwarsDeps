@@ -10,7 +10,7 @@
             "rate": 2
         },
         "CannonLookVectorUpdate": {
-            "rate": 0.01
+            "rate": 0.1
         },
         "MomentumUpdate": {
             "rate": 0.0666666667
