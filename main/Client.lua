@@ -106,7 +106,30 @@ end
 Client.WaitFor = Client.Get
 
 function Client:GetNamespace(name)
-    return {Get = Client.Get}
+    return {
+        Get = function(self, nme)
+            for _, v in Cache.Remotes do
+                if v.inst.Name == name..'/'..nme then
+                    return v
+                end
+            end
+
+            return nil
+        end,
+        WaitFor = function(self, name) return self:Get(name) end,
+        OnEvent = function(self, name, func)
+            local val = self:Get(name).inst.OnClientEvent:Connect(func)
+
+            return {
+                andThen = function(self, func)
+                    func(val)
+                end,
+                Disconnect = function(self)
+                    val:Disconnect()
+                end
+            }
+        end
+    }
 end
 
 function Client:OnEvent(name, func)
