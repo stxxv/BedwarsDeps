@@ -59,6 +59,9 @@
         },
         "EggHuntUI2025Collect": {
             "rate": 2
+        },
+        "SwordHit": {
+            "rate": 0.285151
         }
     }
 }
