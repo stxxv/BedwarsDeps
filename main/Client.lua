@@ -32,7 +32,7 @@ end
 for _, v in ReplicatedStorage:GetDescendants() do
     if not Ratelimits[v.Name] then
         Ratelimits[v.Name] = {
-            rate = 0.2
+            rate = 0.3
         }
     end
         
@@ -88,7 +88,9 @@ for _, v in ReplicatedStorage:GetDescendants() do
                 v.OnClientInvoke = func
             end
         })
-    end
+    else
+        Ratelimits[v.Name] = nil
+        Cache.Ratelimits[v.Name] = nil
 end
 
 function Client:Get(name)
