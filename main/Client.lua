@@ -40,6 +40,7 @@ for _, v in ReplicatedStorage:GetDescendants() do
     if v:IsA('RemoteEvent') then
         table.insert(Cache.Remotes, {
             inst = v,
+            instance = v,
             SendToServer = function(self, ...)
                 if canFire(v.Name) then
                     v:FireServer(...)
@@ -52,6 +53,7 @@ for _, v in ReplicatedStorage:GetDescendants() do
     elseif v:IsA('RemoteFunction') then
         table.insert(Cache.Remotes, {
             inst = v,
+            instance = v,
             CallServerAsync = function(self, ...)
                 if not canFire(v.Name) then
                     return {
