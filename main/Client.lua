@@ -30,14 +30,14 @@ local function canFire(name)
 end
 
 for _, v in ReplicatedStorage:GetDescendants() do
-    if v:IsA('RemoteEvent') then
-        if not Ratelimits[v.Name] then
-            Ratelimits[v.Name] = {
-                rate = 0.2
-            }
-        end
+    if not Ratelimits[v.Name] then
+        Ratelimits[v.Name] = {
+            rate = 0.2
+        }
+    end
         
-        Cache.Ratelimits[v.Name] = 0
+    Cache.Ratelimits[v.Name] = 0
+    if v:IsA('RemoteEvent') then
         table.insert(Cache.Remotes, {
             inst = v,
             SendToServer = function(self, ...)
@@ -50,13 +50,6 @@ for _, v in ReplicatedStorage:GetDescendants() do
             end
         })
     elseif v:IsA('RemoteFunction') then
-        if not Ratelimits[v.Name] then
-            Ratelimits[v.Name] = {
-                rate = 0.3
-            }
-        end
-        
-        Cache.Ratelimits[v.Name] = 0
         table.insert(Cache.Remotes, {
             inst = v,
             CallServerAsync = function(self, ...)
