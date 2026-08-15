@@ -3,13 +3,13 @@ local cloneref = cloneref or function(obj)
 end
 
 local HttpService = cloneref(game:GetService('HttpService'))
-local function wipeFiles(commit)
-    local changes = HttpService:JSONDecode(game:HttpGet('https://gitlab.com/api/v4/projects/stxvv%2FBedwarsDeps/repository/commits/'..commit..'/diff'))
+local function wipeFiles(old, new)
+    local changes = HttpService:JSONDecode(game:HttpGet('https://gitlab.com/api/v4/projects/stxvv%2FBedwarsDeps/repository/compare?from='..old..'&to='..new)).diffs
 
     for _, d in changes do
         for _, v in {d.new_path, d.old_path} do
             if v then
-                local clock = os.clock()
+                local time = os.clock()
                 if isfile('compiler/cache/'..v) then
                     print('[COMPILER]: Deleting compiler/cache/'..v)
                     delfile('compiler/cache/'..v)
