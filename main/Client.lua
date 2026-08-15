@@ -32,7 +32,7 @@ end
 for _, v in ReplicatedStorage:GetDescendants() do
     if not Ratelimits[v.Name] then
         Ratelimits[v.Name] = {
-            rate = 0.3
+            rate = 0.2
         }
     end
         
