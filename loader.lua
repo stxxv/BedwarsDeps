@@ -30,7 +30,7 @@ local commit = HttpService:JSONDecode(game:HttpGet('https://gitlab.com/api/v4/pr
 if not isfile('compiler/commit.txt') then
     writefile('compiler/commit.txt', commit)
 elseif readfile('compiler/commit.txt') ~= commit then
-    wipeFiles(commit)
+    wipeFiles(readfile('compiler/commit.txt'), commit)
     writefile('compiler/commit.txt', commit)
 end
 
