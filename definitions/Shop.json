@@ -2126,18 +2126,59 @@
         ]
     },
     {
-        "category": "Combat",
-        "currency": "iron",
-        "itemType": "jade_hammer",
-        "amount": 1,
+        "lockAfterPurchase": true,
+        "itemType": "jade_hammer_1",
         "price": 40,
+        "nextTier": "jade_hammer_2",
+        "superiorItems": [
+            "jade_hammer_2",
+            "jade_hammer_3"
+        ],
+        "currency": "iron",
+        "amount": 1,
+        "category": "Combat",
+        "spawnWithItems": [
+            "jade_hammer_1"
+        ],
         "requiresKit": [
             "jade"
+        ]
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "jade_hammer_2",
+        "price": 80,
+        "prevTier": "jade_hammer_1",
+        "nextTier": "jade_hammer_3",
+        "superiorItems": [
+            "jade_hammer_3"
         ],
+        "currency": "iron",
+        "amount": 1,
+        "tiered": true,
+        "category": "Combat",
         "spawnWithItems": [
-            "jade_hammer"
+            "jade_hammer_2"
         ],
-        "lockAfterPurchase": true
+        "requiresKit": [
+            "jade"
+        ]
+    },
+    {
+        "lockAfterPurchase": true,
+        "itemType": "jade_hammer_3",
+        "price": 4,
+        "prevTier": "jade_hammer_2",
+        "currency": "emerald",
+        "amount": 1,
+        "tiered": true,
+        "category": "Combat",
+        "spawnWithItems": [
+            "jade_hammer_3"
+        ],
+        "requiresKit": [
+            "jade"
+        ]
     },
     {
         "requiresKit": [

@@ -47,7 +47,7 @@ return {
 		[AnimationType.NET_CATCH] = 'rbxassetid://7377150622',
 		[AnimationType.RAVEN_HOLD] = 'rbxassetid://7341023369',
 		[AnimationType.JADE_HAMMER_IDLE] = 'rbxassetid://7341724549',
-		[AnimationType.JADE_HAMMER_SLAM] = 'rbxassetid://7341729415',
+		[AnimationType.JADE_HAMMER_SLAM] = 'rbxassetid://79601612304177',
 		[AnimationType.STATUE] = 'rbxassetid://7344012158',
 		[AnimationType.ASCEND] = 'rbxassetid://7344363114',
 		[AnimationType.BEE_FLAP] = 'rbxassetid://7378131388',

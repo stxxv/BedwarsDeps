@@ -64,7 +64,7 @@ end
 for _, v in {'compiler', 'compiler/definitions', 'compiler/controllers', 'compiler/main'} do
     if not isfolder(v) then
         makefolder(v)
-    else
+    elseif v ~= 'compiler' then
         delfolder(v)
         makefolder(v)
     end

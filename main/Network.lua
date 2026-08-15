@@ -244,12 +244,12 @@ if not RunService:IsServer() then
 					v9 = v9 + 1
 					v3 = p23[v9]
 					assert(if v3 == nil then true else v3:IsA("Model"))
-					v4 = v522
-					v5 = v49
+					v4 = v49
+					v5 = v522
 				else
-					v4 = v522
 					v3 = nil
-					v5 = v49
+					v4 = v49
+					v5 = v522
 				end
 
 				local v69 = v7
@@ -631,7 +631,7 @@ if not RunService:IsServer() then
 
 				if v15[0][1] then
 					for v196, v197 in v15[0] do
-						task.spawn(v197, v45, v5, v4, v2, v3, v62, v72, v82, v92, v10, v11, v122, v13, v14)
+						task.spawn(v197, v45, v4, v5, v2, v3, v62, v72, v82, v92, v10, v11, v122, v13, v14)
 					end
 
 					continue
@@ -639,8 +639,8 @@ if not RunService:IsServer() then
 
 				table.insert(v16[0], {
 					v45,
-					v5,
 					v4,
+					v5,
 					v2,
 					v3,
 					v62,
