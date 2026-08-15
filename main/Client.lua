@@ -91,6 +91,7 @@ for _, v in ReplicatedStorage:GetDescendants() do
     else
         Ratelimits[v.Name] = nil
         Cache.Ratelimits[v.Name] = nil
+    end
 end
 
 function Client:Get(name)
