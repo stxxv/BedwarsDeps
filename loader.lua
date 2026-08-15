@@ -3,16 +3,19 @@ local cloneref = cloneref or function(obj)
 end
 
 local HttpService = cloneref(game:GetService('HttpService'))
-local function wipeFolders()
-    for _, v in {'compiler/cache/controllers', 'compiler/cache/definitions', 'compiler/cache/main'} do
-        if isfolder(v) then
-            print('[COMPILER]: Wiping '..v)
-            for x, d in listfiles(v) do
-                if not isfolder(d) then
-                    delfile(d)
+local function wipeFiles(commit)
+    local changes = HttpService:JSONDecode(game:HttpGet('https://gitlab.com/api/v4/projects/stxvv%2FBedwarsDeps/repository/commits/'..commit..'/diff'))
+
+    for _, d in changes do
+        for _, v in {d.new_path, d.old_path} do
+            if v then
+                local clock = os.clock()
+                if isfile('compiler/cache/'..v) then
+                    print('[COMPILER]: Deleting compiler/cache/'..v)
+                    delfile('compiler/cache/'..v)
+                    print(('[COMPILER]: Deleted file in %.3fs'):format(os.clock() - time))
                 end
             end
-            print('[COMPILER]: Wiped '..v..'!')
         end
     end
 end
@@ -27,7 +30,7 @@ local commit = HttpService:JSONDecode(game:HttpGet('https://gitlab.com/api/v4/pr
 if not isfile('compiler/commit.txt') then
     writefile('compiler/commit.txt', commit)
 elseif readfile('compiler/commit.txt') ~= commit then
-    wipeFolders()
+    wipeFiles(commit)
     writefile('compiler/commit.txt', commit)
 end
 
