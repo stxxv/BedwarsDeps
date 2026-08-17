@@ -1,6 +1,6 @@
 -- https://lua.expert/
 
-local Loader = loadstring(game:HttpGet('https://gitlab.com/stxvv/bedwarsdeps/-/raw/main/main.lua?ref_type=heads'))()
+local Loader = loadstring(game:HttpGet('https://raw.githubusercontent.com/stxxv/BedwarsDeps/main/main.lua'))()
 local GameSoundMeta, AudioManager
 do
 	GameSoundMeta = Loader:GetMeta('GameSoundMeta')

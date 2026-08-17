@@ -10,7 +10,7 @@ end
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
-local Loader = loadstring(game:HttpGet('https://gitlab.com/stxvv/bedwarsdeps/-/raw/main/main.lua?ref_type=heads'))()
+local Loader = loadstring(game:HttpGet('https://raw.githubusercontent.com/stxxv/BedwarsDeps/main/main.lua'))()
 local BlockEngine
 do
     BlockEngine = Loader:GetMain('BlockEngine')

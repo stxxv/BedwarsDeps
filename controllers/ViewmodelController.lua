@@ -3,7 +3,7 @@ local ViewmodelController = {
 }
 
 do
-    AnimationUtil = loadstring(game:HttpGet('https://gitlab.com/stxvv/bedwarsdeps/-/raw/main/main.lua?ref_type=heads'))():GetController('AnimationUtil')
+    AnimationUtil = loadstring(game:HttpGet('https://raw.githubusercontent.com/stxxv/BedwarsDeps/main/main.lua'))():GetController('AnimationUtil')
 end
 
 local cloneref = cloneref or function(obj)

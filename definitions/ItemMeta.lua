@@ -1,4 +1,4 @@
-local Loader = loadstring(game:HttpGet('https://gitlab.com/stxvv/bedwarsdeps/-/raw/main/main.lua?ref_type=heads'))()
+local Loader = loadstring(game:HttpGet('https://raw.githubusercontent.com/stxxv/BedwarsDeps/main/main.lua'))()
 local ItemMeta
 do
     ItemMeta = Loader:GetJson('definitions/ItemMeta')

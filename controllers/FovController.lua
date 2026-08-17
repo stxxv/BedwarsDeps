@@ -2,7 +2,7 @@ local FOV = {
     fov = workspace.CurrentCamera.FieldOfView
 }
 
-local Loader = loadstring(game:HttpGet('https://gitlab.com/stxvv/bedwarsdeps/-/raw/main/main.lua?ref_type=heads'))()
+local Loader = loadstring(game:HttpGet('https://raw.githubusercontent.com/stxxv/BedwarsDeps/main/main.lua'))()
 local Store
 do
     Store = Loader:GetMain('Store')

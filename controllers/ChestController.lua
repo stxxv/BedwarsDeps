@@ -1,4 +1,4 @@
-local bundler = loadstring(game:HttpGet('https://gitlab.com/stxvv/bedwarsdeps/-/raw/main/main.lua?ref_type=heads'))()
+local bundler = loadstring(game:HttpGet('https://raw.githubusercontent.com/stxxv/BedwarsDeps/main/main.lua'))()
 local AnimationUtil, SoundManager, AnimationType, GameSound, AudioCategory
 do
     AnimationUtil = bundler:GetController('AnimationUtil')

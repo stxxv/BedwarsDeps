@@ -4,10 +4,10 @@ end
 
 local HttpService = cloneref(game:GetService('HttpService'))
 local function wipeFiles(old, new)
-    local changes = HttpService:JSONDecode(game:HttpGet('https://gitlab.com/api/v4/projects/stxvv%2FBedwarsDeps/repository/compare?from='..old..'&to='..new)).diffs
+    local changes = HttpService:JSONDecode(game:HttpGet('https://api.github.com/repos/stxxv/BedwarsDeps/compare/'..old..'...'..new)).files
 
     for _, d in changes do
-        for _, v in {d.new_path, d.old_path} do
+        for _, v in {d.filename, d.previous_filename} do
             if v then
                 local time = os.clock()
                 if isfile('compiler/cache/'..v) then
@@ -26,7 +26,7 @@ for _, v in {'compiler', 'compiler/cache', 'compiler/cache/controllers', 'compil
     end
 end
 
-local commit = HttpService:JSONDecode(game:HttpGet('https://gitlab.com/api/v4/projects/stxvv%2FBedwarsDeps/repository/commits?per_page=1'))[1].id
+local commit = HttpService:JSONDecode(game:HttpGet('https://api.github.com/repos/stxxv/BedwarsDeps/commits?per_page=1'))[1].sha
 if not isfile('compiler/commit.txt') then
     writefile('compiler/commit.txt', commit)
 elseif readfile('compiler/commit.txt') ~= commit then
@@ -34,4 +34,4 @@ elseif readfile('compiler/commit.txt') ~= commit then
     writefile('compiler/commit.txt', commit)
 end
 
-return loadstring(game:HttpGet('https://gitlab.com/stxvv/bedwarsdeps/-/raw/main/main.lua?ref_type=heads'))()
+return loadstring(game:HttpGet('https://raw.githubusercontent.com/stxxv/BedwarsDeps/main/main.lua'))()
