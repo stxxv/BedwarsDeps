@@ -31,6 +31,7 @@ local Definitions, Controllers, Main = {
     TeamUpgradeMeta = debug.getupvalue(require(ReplicatedStorage.TS.games.bedwars["team-upgrade"]["team-upgrade-meta"]).getTeamUpgradeMetaForQueue, 2),
     AppIds = require(lplr.PlayerScripts.TS.ui.types["app-config"]).BedwarsAppIds,
     SummonerKitBalance = require(ReplicatedStorage.TS.games.bedwars.kit.kits.summoner["summoner-kit-balance"]).SummonerKitBalance,
+    GameSoundJSON = require(ReplicatedStorage.TS.sound["game-sound"]).GameSound,
     GameSound = ReplicatedStorage.TS.sound["game-sound"],
     GameSoundMeta = ReplicatedStorage.TS.sound["game-sound-meta"],
     Shop = require(ReplicatedStorage.TS.games.bedwars.shop["bedwars-shop"]).BedwarsShop.ShopItems,

@@ -7,28 +7,28 @@
         "splitDamage": 6,
         "damage": 20
     },
-    "SPELL_CAST_RANGE": 39,
+    "SPELL_CAST_RANGE": 45,
     "SPELL_TIER_2_DATA": {
         "splitDamage": 19,
-        "castTime": 0.6,
-        "hitsToLevelUp": 4,
-        "maxRadius": 13.998000000000001,
+        "castTime": 0.5,
+        "hitsToLevelUp": 3,
+        "maxRadius": 15,
         "damage": 30
     },
     "CASTING_MOVE_SPEED_MULTIPLIER": 0.85,
     "SPELL_COOLDOWN": 20,
     "SPELL_TIER_3_DATA": {
         "splitDamage": 20,
-        "castTime": 0.8,
-        "hitsToLevelUp": 6,
-        "maxRadius": 15.999,
+        "castTime": 0.6,
+        "hitsToLevelUp": 5,
+        "maxRadius": 18,
         "damage": 40
     },
     "SPELL_MINIMUM_CAST_TIME": 0.5,
     "SPELL_TIER_4_DATA": {
         "splitDamage": 20,
-        "castTime": 1,
-        "maxRadius": 19.998,
+        "castTime": 0.7,
+        "maxRadius": 21,
         "damage": 55
     },
     "CLAW_TIER_3_DATA": {
@@ -51,7 +51,7 @@
     "CIRCLE_HEIGHT": 15,
     "SPELL_TIER_1_DATA": {
         "splitDamage": 15,
-        "castTime": 0.6,
+        "castTime": 0.4,
         "hitsToLevelUp": 2,
         "maxRadius": 12,
         "damage": 20

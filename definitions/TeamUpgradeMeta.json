@@ -19,7 +19,7 @@
             }
         ],
         "name": "Damage",
-        "icon": "rbxassetid://98759196482529"
+        "icon": "rbxassetid://128451449508558"
     },
     "TEAM_GENERATOR": {
         "order": 1,
@@ -41,7 +41,7 @@
             }
         ],
         "name": "Team Gen",
-        "icon": "rbxassetid://109513164484899"
+        "icon": "rbxassetid://106483592727787"
     },
     "BREAK_SPEED": {
         "order": 5,
@@ -63,7 +63,7 @@
             }
         ],
         "name": "Break Speed",
-        "icon": "rbxassetid://99325324428160"
+        "icon": "rbxassetid://122786015140647"
     },
     "DIAMOND_GENERATOR": {
         "order": 2,
@@ -85,7 +85,7 @@
             }
         ],
         "name": "Diamond Gen",
-        "icon": "rbxassetid://87959990622561"
+        "icon": "rbxassetid://132065705643855"
     },
     "ARMOR": {
         "order": 4,
@@ -107,6 +107,6 @@
             }
         ],
         "name": "Armor",
-        "icon": "rbxassetid://121388634858388"
+        "icon": "rbxassetid://90293756988986"
     }
 }

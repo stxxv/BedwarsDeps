@@ -25,74 +25,76 @@ local function canFire(name)
         return false
     end
 
-    Cache.Ratelimits[name] = tick() + Ratelimits[name].rate
+    Cache.Ratelimits[name] = tick() + (60 / Ratelimits[name].rate)
     return true
 end
 
-for _, v in ReplicatedStorage:GetDescendants() do
-    if not Ratelimits[v.Name] then
-        Ratelimits[v.Name] = {
-            rate = 0.2
-        }
-    end
-        
-    Cache.Ratelimits[v.Name] = 0
-    if v:IsA('RemoteEvent') then
-        table.insert(Cache.Remotes, {
-            inst = v,
-            instance = v,
-            SendToServer = function(self, ...)
-                if canFire(v.Name) then
-                    v:FireServer(...)
+task.spawn(function()
+    for _, v in ReplicatedStorage:GetDescendants() do
+        if not Ratelimits[v.Name] then
+            Ratelimits[v.Name] = {
+                rate = 300
+            }
+        end
+            
+        Cache.Ratelimits[v.Name] = 0
+        if v:IsA('RemoteEvent') then
+            table.insert(Cache.Remotes, {
+                inst = v,
+                instance = v,
+                SendToServer = function(self, ...)
+                    if canFire(v.Name) then
+                        v:FireServer(...)
+                    end
+                end,
+                Connect = function(self, func)
+                    return v.OnClientEvent:Connect(func)
                 end
-            end,
-            Connect = function(self, func)
-                return v.OnClientEvent:Connect(func)
-            end
-        })
-    elseif v:IsA('RemoteFunction') then
-        table.insert(Cache.Remotes, {
-            inst = v,
-            instance = v,
-            CallServerAsync = function(self, ...)
-                if not canFire(v.Name) then
+            })
+        elseif v:IsA('RemoteFunction') then
+            table.insert(Cache.Remotes, {
+                inst = v,
+                instance = v,
+                CallServerAsync = function(self, ...)
+                    if not canFire(v.Name) then
+                        return {
+                            andThen = function(self, func)
+                                func(nil)
+                                return self
+                            end,
+                            awaitStatus = function(self)
+                                return nil
+                            end,
+                            returned = nil
+                        }
+                    end
+
+                    local val = v:InvokeServer(...)
                     return {
                         andThen = function(self, func)
-                            func(nil)
-                            return self
+                            func(val)
                         end,
                         awaitStatus = function(self)
-                            return nil
+                            return val
                         end,
-                        returned = nil
+                        returned = val
                     }
+                end,
+                CallServer = function(self, ...)
+                    if canFire(v.Name) then
+                        return v:InvokeServer(...)
+                    end
+                end,
+                Connect = function(self, func)
+                    v.OnClientInvoke = func
                 end
-
-                local val = v:InvokeServer(...)
-                return {
-                    andThen = function(self, func)
-                        func(val)
-                    end,
-                    awaitStatus = function(self)
-                        return val
-                    end,
-                    returned = val
-                }
-            end,
-            CallServer = function(self, ...)
-                if canFire(v.Name) then
-                    return v:InvokeServer(...)
-                end
-            end,
-            Connect = function(self, func)
-                v.OnClientInvoke = func
-            end
-        })
-    else
-        Ratelimits[v.Name] = nil
-        Cache.Ratelimits[v.Name] = nil
+            })
+        else
+            Ratelimits[v.Name] = nil
+            Cache.Ratelimits[v.Name] = nil
+        end
     end
-end
+end)
 
 function Client:Get(name)
     for _, v in Cache.Remotes do

@@ -1,4 +1,6 @@
 -- https://lua.expert/
+local function warn() end
+
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local v1 = nil
