@@ -20,7 +20,6 @@ do
     fovController = Loader:GetController('FovController')
 end
 
-
 local function isAlive(plr)
     plr = plr or lplr
 
