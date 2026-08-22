@@ -20,6 +20,7 @@ do
     fovController = Loader:GetController('FovController')
 end
 
+
 local function isAlive(plr)
     plr = plr or lplr
 
@@ -64,6 +65,31 @@ local SprintController, Connections = {
     sprinting = false
 }, {}
 
+local function hookAlive(char, val)
+    repeat task.wait() until char ~= nil and char:FindFirstChildOfClass('Humanoid') ~= nil and isAlive(char)
+
+    for i,v in Connections do
+        if i == 'SpeedHook' then
+            v:Disconnect()
+            v = nil
+        end
+    end
+
+    Connections.SpeedBoost = lplr.Character:GetAttributeChangedSignal('SpeedBoost'):Connect(function()
+        SprintController:getMovementStatusModifier()
+    end)
+
+    Connections.PieBoost = lplr.Character:GetAttributeChangedSignal('SpeedPieBuff'):Connect(function()
+        SprintController:getMovementStatusModifier()
+    end)
+
+    Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
+        if lplr.Character.Humanoid.WalkSpeed ~= (val and 20) or 14 then
+            lplr.Character.Humanoid.WalkSpeed = (val and 20) or 14
+        end
+    end)
+end
+
 lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
     local val = lplr:GetAttribute('Sprinting')
     if not isAlive() then return end
@@ -76,32 +102,12 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
         end
     end
 
+    hookAlive(lplr.Character, val)
     if val then
         lplr.Character.Humanoid.WalkSpeed = 20
 
         Connections.isAliveHook = lplr.CharacterAdded:Connect(function(char)
-            repeat task.wait() until char ~= nil and char:FindFirstChildOfClass('Humanoid') ~= nil
-
-            for i,v in Connections do
-                if i == 'SpeedHook' then
-                    v:Disconnect()
-                    v = nil
-                end
-            end
-
-            Connections.SpeedBoost = lplr.Character:GetAttributeChangedSignal('SpeedBoost'):Connect(function()
-                SprintController:getMovementStatusModifier()
-            end)
-
-            Connections.PieBoost = lplr.Character:GetAttributeChangedSignal('SpeedPieBuff'):Connect(function()
-                SprintController:getMovementStatusModifier()
-            end)
-
-            Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
-                if lplr.Character.Humanoid.WalkSpeed ~= 20 then
-                    lplr.Character.Humanoid.WalkSpeed = 20
-                end
-            end)
+            hookAlive(char, val)
         end)
 
         TweenService:Create(Workspace.CurrentCamera, TweenInfo.new(0.1, Enum.EasingStyle.Linear), {
@@ -109,28 +115,7 @@ lplr:GetAttributeChangedSignal('Sprinting'):Connect(function()
         }):Play()
     else
         Connections.isAliveHook = lplr.CharacterAdded:Connect(function(char)
-            repeat task.wait() until char ~= nil and char:FindFirstChildOfClass('Humanoid') ~= nil and isAlive(char)
-
-            for i,v in Connections do
-                if i == 'SpeedHook' then
-                    v:Disconnect()
-                    v = nil
-                end
-            end
-
-            Connections.SpeedBoost = lplr.Character:GetAttributeChangedSignal('SpeedBoost'):Connect(function()
-                SprintController:getMovementStatusModifier()
-            end)
-
-            Connections.PieBoost = lplr.Character:GetAttributeChangedSignal('SpeedPieBuff'):Connect(function()
-                SprintController:getMovementStatusModifier()
-            end)
-
-            Connections.SpeedHook = lplr.Character.Humanoid:GetPropertyChangedSignal('WalkSpeed'):Connect(function()
-                if lplr.Character.Humanoid.WalkSpeed ~= 14 then
-                    lplr.Character.Humanoid.WalkSpeed = 14
-                end
-            end)
+            hookAlive(char, val)
         end)
 
         TweenService:Create(Workspace.CurrentCamera, TweenInfo.new(0.1, Enum.EasingStyle.Linear), {
