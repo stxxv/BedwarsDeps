@@ -13,7 +13,7 @@ local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
 function ViewmodelController:getViewModel()
-    return workspace.CurrentCamera:FindFirstChild(lplr.Name)
+    return workspace.CurrentCamera:FindFirstChild(lplr.Name) or workspace.CurrentCamera:FindFirstChild('Viewmodel')
 end
 
 function ViewmodelController:getAnimator()
