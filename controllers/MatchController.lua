@@ -11,7 +11,20 @@ do
     Client = loadstring(game:HttpGet('https://raw.githubusercontent.com/stxxv/BedwarsDeps/main/main.lua'))():GetMain('Client')
 end
 
-if not lplr:WaitForChild('PlayerGui'):WaitForChild('TopBarAppGui'):WaitForChild('TopBarApp'):FindFirstChild('2'):FindFirstChild('5') then
+local timer
+local function getTimerTxt(text)
+    return text:match('^%d%d:%d%d$') ~= nil
+end
+
+for _, v in lplr:WaitForChild('PlayerGui'):FindFirstChild('TopBarAppGui'):FindFirstChild('TopBarApp'):GetDescendants() do
+    if v:IsA('TextLabel') and isTimerText(v.Text) then
+        if not timer or (timer and (v.AbsolutePosition.X > timer.AbsolutePosition.X)) then
+            timer = v
+        end
+    end
+end
+
+if not timer then
     return {
         matchState = 0,
         getMatchState = function(self)
@@ -20,10 +33,10 @@ if not lplr:WaitForChild('PlayerGui'):WaitForChild('TopBarAppGui'):WaitForChild(
     }
 end
 
-local matchController, timer = {
+local matchController = {
     Name = 'MatchController',
     matchState = 0
-}, lplr:WaitForChild('PlayerGui'):WaitForChild('TopBarAppGui'):WaitForChild('TopBarApp'):FindFirstChild('2'):FindFirstChild('5')
+}
 
 local timersecs, lasttimersecs = 0, 0
 
