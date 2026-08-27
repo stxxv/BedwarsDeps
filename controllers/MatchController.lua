@@ -17,7 +17,7 @@ local function getTimerTxt(text)
 end
 
 for _, v in lplr:WaitForChild('PlayerGui'):FindFirstChild('TopBarAppGui'):FindFirstChild('TopBarApp'):GetDescendants() do
-    if v:IsA('TextLabel') and isTimerText(v.Text) then
+    if v:IsA('TextLabel') and getTimerTxt(v.Text) then
         if not timer or (timer and (v.AbsolutePosition.X > timer.AbsolutePosition.X)) then
             timer = v
         end
