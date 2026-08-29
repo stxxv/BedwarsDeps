@@ -9,7 +9,7 @@ local cloneref = cloneref or function(obj)
 	return obj
 end
 
-local InputService = cloneref(game:GetService('InputService'))
+local InputService = cloneref(game:GetService('UserInputService'))
 local VirtualUser = cloneref(game:GetService('VirtualUser'))
 local HttpService = cloneref(game:GetService('HttpService'))
 local CoreGui = cloneref(game:GetService('CoreGui'))
