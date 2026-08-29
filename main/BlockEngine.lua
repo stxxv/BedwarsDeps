@@ -12,6 +12,7 @@ local CollectionService = cloneref(game:GetService('CollectionService'))
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
 
+local Bundler = local Loader = loadstring(game:HttpGet('https://raw.githubusercontent.com/stxxv/BedwarsDeps/main/main.lua'))()
 local Engine, Cache, Positions = {}, {}, {}
 
 do
@@ -45,7 +46,7 @@ Engine.Store = {
 }
 
 Engine.BlockEngineRemotes = {
-    Client = Client
+    Client = Bundler:GetMain('Client')
 }
 
 function Engine:getBlockPosition(pos: Vector3)

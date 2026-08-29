@@ -9,6 +9,7 @@ local cloneref = cloneref or function(obj)
 	return obj
 end
 
+local InputService = cloneref(game:GetService('InputService'))
 local VirtualUser = cloneref(game:GetService('VirtualUser'))
 local HttpService = cloneref(game:GetService('HttpService'))
 local CoreGui = cloneref(game:GetService('CoreGui'))
@@ -46,26 +47,15 @@ lplr.CharacterAdded:Connect(function()
     PlayerGui = lplr.PlayerGui
 end)
 
-local function getBlockingUI(pos)
+local function getBlockingUI()
+    local pos = InputService:GetMouseLocation()
     local suc, res = pcall(function()
         return PlayerGui:GetGuiObjectsAtPosition(pos.X, pos.Y)
     end)
 
     if suc then
         for _, v in res do
-            if v.Visible and (v:IsA('TextButton') or obj:IsA('ImageButton') or obj:IsA('TextBox') or obj:IsA('Frame')) then
-                return true
-            end
-        end
-    end
-
-    local sucCore, resCore = pcall(function()
-        return CoreGui:GetGuiObjectsAtPosition(pos.X, pos.Y)
-    end)
-
-    if sucCore then
-        for _, v in resCore do
-            if v.Visible and (v:IsA('TextButton') or obj:IsA('ImageButton') or obj:IsA('TextBox') or obj:IsA('Frame')) then
+            if v.Visible and v.BackgroundTransparency < 1 and (v:IsA('TextButton') or v:IsA('ImageButton') or v:IsA('TextBox') or v:IsA('Frame')) then
                 return true
             end
         end
@@ -73,10 +63,7 @@ local function getBlockingUI(pos)
 
     return false
 end
-
-do
-	VirtualUser:CaptureController()
-end
+VirtualUser:CaptureController()
 
 function SwordController:getHandItem()
 	if not isAlive() then return end
@@ -107,11 +94,9 @@ function SwordController:swingSwordAtMouse()
     	return
     end
 
-    --[[if getBlockingUI(Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)) then
-        return
-    end]]
-
-    VirtualUser:ClickButton1(Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2))
+    if not getBlockingUI() then
+        VirtualUser:ClickButton1(Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2))
+    end
 end
 
 function SwordController:playSwordEffect(swordObj, chargedAttack)
