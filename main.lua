@@ -30,7 +30,7 @@ function bwdeps:GetController(name)
 end
 
 function bwdeps:GetMeta(name)
-    if name == 'ProdAnimations' or name == 'GameSound' or name == 'ItemMeta' or name == 'GameSoundMeta' then
+    if name == 'ProdAnimations' or name == 'GameSound' or name == 'ItemMeta' or name == 'GameSoundMeta' or name == 'Images' then
         return loadstring(fetchFile('compiler/cache/definitions/'..name, 'lua'))()
     end
 
