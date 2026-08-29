@@ -8,7 +8,7 @@ do
 end
 
 return {
-    playOpenChestAnimation = function(self, chest)
+    playChestOpenAnimation = function(self, chest)
         local track = AnimationUtil:PlayAnimation(chest:WaitForChild('Model'):WaitForChild('AnimationController'):WaitForChild('Animator'), AnimationUtil:getAssetId(AnimationType.CHEST_OPEN))
 
         if not track then
