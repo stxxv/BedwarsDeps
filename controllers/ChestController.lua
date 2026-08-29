@@ -9,8 +9,15 @@ end
 
 return {
     playChestOpenAnimation = function(self, chest)
-        local track = AnimationUtil:PlayAnimation(chest:WaitForChild('Model'):WaitForChild('AnimationController'):WaitForChild('Animator'), AnimationUtil:getAssetId(AnimationType.CHEST_OPEN))
+        if not chest:FindFirstChild('Model'):FindFirstChild('AnimationController'):FindFirstChild('Animator') then
+            SoundManager:playSound(GameSound.TREASURE_CHEST_UNLOCK, {
+                position = chest.Position
+            })
 
+            return
+        end
+            
+        local track = AnimationUtil:PlayAnimation(chest:WaitForChild('Model'):WaitForChild('AnimationController'):WaitForChild('Animator'), AnimationUtil:getAssetId(AnimationType.CHEST_OPEN))
         if not track then
             SoundManager:playSound(GameSound.TREASURE_CHEST_UNLOCK, {
                 position = chest.Position
