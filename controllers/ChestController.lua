@@ -9,7 +9,7 @@ end
 
 return {
     playChestOpenAnimation = function(self, chest)
-        if not chest:FindFirstChild('Model'):FindFirstChild('AnimationController'):FindFirstChild('Animator') then
+        if not chest:FindFirstChild('Model') or not chest:FindFirstChild('Model'):FindFirstChild('AnimationController') or not chest:FindFirstChild('Model'):FindFirstChild('AnimationController'):FindFirstChild('Animator') then
             SoundManager:playSound(GameSound.TREASURE_CHEST_UNLOCK, {
                 position = chest.Position
             })
