@@ -73,7 +73,7 @@ function BlockController:placeBlock(data)
 
     return Client:Get('PlaceBlock'):CallServerAsync({
         position = data.position,
-        blockTytpe = data.itemType,
+        blockType = data.itemType,
         blockdata = 0,
         mouseBlockInfo = {
             placementPosition = data.position
