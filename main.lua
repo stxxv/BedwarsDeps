@@ -11,7 +11,7 @@ local function fetchFile(name, codeext)
     
 	url = name:gsub('compiler/cache/', '')
 	if not isfile(name..'.'..codeext) then
-	    writefile(name..'.'..codeext, game:HttpGet(string.format('https://raw.githubusercontent.com/stxxv/BedwarsDeps/%s/%s.%s', readfile('compiler/commit.txt'), url, codeext)))
+	    writefile(name..'.'..codeext, game:HttpGet(string.format('https://raw.githubusercontent.com/stxxv/BedwarsDeps/%s/%s.%s', readfile('compiler/gitcommit.txt'), url, codeext)))
         repeat task.wait() until isfile(name..'.'..codeext)
     end
 

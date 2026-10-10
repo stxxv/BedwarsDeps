@@ -27,11 +27,11 @@ for _, v in {'compiler', 'compiler/cache', 'compiler/cache/controllers', 'compil
 end
 
 local commit = HttpService:JSONDecode(game:HttpGet('https://api.github.com/repos/stxxv/BedwarsDeps/commits?per_page=1'))[1].sha
-if not isfile('compiler/commit.txt') then
-    writefile('compiler/commit.txt', commit)
-elseif readfile('compiler/commit.txt') ~= commit then
-    wipeFiles(readfile('compiler/commit.txt'), commit)
-    writefile('compiler/commit.txt', commit)
+if not isfile('compiler/gitcommit.txt') then
+    writefile('compiler/gitcommit.txt', commit)
+elseif readfile('compiler/gitcommit.txt') ~= commit then
+    wipeFiles(readfile('compiler/gitcommit.txt'), commit)
+    writefile('compiler/gitcommit.txt', commit)
 end
 
 return loadstring(game:HttpGet('https://raw.githubusercontent.com/stxxv/BedwarsDeps/main/main.lua'))()
